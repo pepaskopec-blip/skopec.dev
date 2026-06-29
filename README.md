@@ -20,19 +20,19 @@ This repo holds the main source files of the site — the core HTML pages, style
 
 ├── projects.html           # projects page
 
-├── friends-websites....html
+├── friends-websites.html   # friends-websites page     
 
 ├── style.css               # styles
 
-├── script.js                # scripts
+├── script.js               # scripts
 
 ├── images/                 # photos and images
 
-├── favicon.svg
+├── favicon.svg             # my own icon
 
-├── sitemap.xml
+├── sitemap.xml             # sitemap for search engines
 
-├── robots.txt
+├── robots.txt              # crawler rules 
 
 └── .idea/                  # IDE config
 
