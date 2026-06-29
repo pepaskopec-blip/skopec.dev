@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Josef</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
+    <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #f38020 rgba(8, 12, 22, 0.85);
+        }
+
+        *::-webkit-scrollbar {
+            width: 12px;
+            height: 12px;
+        }
+
+        *::-webkit-scrollbar-track {
+            background: rgba(8, 12, 22, 0.8);
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #ffad4d 0%, #f38020 55%, #d66b13 100%);
+            border-radius: 999px;
+            border: 2px solid rgba(243, 128, 32, 0.18);
+        }
+
+        *::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #445375 0%, #334362 55%, #293754 100%);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(243, 128, 32, 0.22), transparent 35%),
+                radial-gradient(circle at bottom right, rgba(255, 183, 77, 0.14), transparent 32%),
+                linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e8e8e8;
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-text-size-adjust: 100%;
+            animation: pageEnter 720ms cubic-bezier(0.2, 0.75, 0.2, 1) both;
+            transform-origin: 50% 0;
+        }
+
+        @keyframes pageEnter {
+            from {
+                opacity: 0;
+                transform: translateY(16px) scale(0.995);
+                filter: blur(3px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0);
+            }
+        }
+
+        a,
+        button {
+            touch-action: manipulation;
+        }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(22px);
+            filter: blur(2px);
+            transition: opacity 0.58s ease, transform 0.58s ease, filter 0.58s ease;
+        }
+
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+        }
+
+        .lift-on-hover {
+            transition: transform 0.24s ease, box-shadow 0.24s ease;
+        }
+
+        .lift-on-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 28px rgba(243, 128, 32, 0.14);
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 clamp(14px, 2.4vw, 24px);
+        }
+
+        header {
+            background: rgba(10, 10, 20, 0.34);
+            padding: 1.1rem 0;
+            border-bottom: 1px solid rgba(243, 128, 32, 0.25);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            -webkit-backdrop-filter: blur(20px) saturate(140%);
+            backdrop-filter: blur(20px) saturate(140%);
+            transition: padding 0.25s ease, background 0.25s ease, backdrop-filter 0.25s ease;
+        }
+
+        header.scrolled {
+            padding: 1.1rem 0;
+            background: rgba(10, 10, 20, 0.46);
+            -webkit-backdrop-filter: blur(28px) saturate(145%);
+            backdrop-filter: blur(28px) saturate(145%);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            white-space: nowrap;
+            overflow: hidden;
+            max-width: 220px;
+            transition: none;
+        }
+
+        .brand-mark {
+            width: 38px;
+            height: 38px;
+            border-radius: 11px;
+            background: linear-gradient(135deg, #ffefcf 0%, #f38020 55%, #ff6b35 100%);
+            color: #111;
+            display: grid;
+            place-items: center;
+            font-weight: 800;
+            box-shadow: 0 8px 20px rgba(243, 128, 32, 0.3);
+            flex-shrink: 0;
+        }
+
+        .brand-text,
+        .section-title,
+        #contact h2 {
+            color: #ffd7a8;
+            background: linear-gradient(120deg, #fff0dd 0%, #ffbf6f 25%, #ff8a00 50%, #ff5e00 75%, #ffd18c 100%);
+            background-size: 240% 240%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: orangeGradientFlow 6s ease-in-out infinite;
+            filter: drop-shadow(0 0 8px rgba(255, 122, 0, 0.28));
+        }
+
+        .brand-text {
+            animation: none;
+            font-size: 1.45rem;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+        }
+
+        @keyframes orangeGradientFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            body {
+                animation: none;
+            }
+
+            .section-title,
+            #contact h2 {
+                animation: none;
+            }
+
+            .reveal-on-scroll {
+                opacity: 1;
+                transform: none;
+                filter: none;
+                transition: none;
+            }
+
+            .lift-on-hover,
+            .lift-on-hover:hover {
+                transition: none;
+                transform: none;
+                box-shadow: none;
+            }
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+        }
+
+        nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            margin-left: 0;
+            transition: color 0.3s, font-size 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+            border: 1px solid rgba(243, 128, 32, 0.28);
+            border-radius: 999px;
+            background: rgba(243, 128, 32, 0.08);
+            padding: 0.38rem 0.82rem;
+        }
+
+        header.scrolled nav a {
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            color: #f38020;
+            border-color: rgba(243, 128, 32, 0.52);
+            background: rgba(243, 128, 32, 0.14);
+        }
+
+        .hero {
+            padding: 4rem 0 2rem;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: stretch;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-intro-card,
+        .hero-panel {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(243, 128, 32, 0.25);
+            border-radius: 24px;
+            padding: 1.4rem;
+            box-shadow: 0 20px 44px rgba(0, 0, 0, 0.25);
+        }
+
+        .hero-intro-card {
+            border-left: 3px solid #f38020;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.45rem 0.8rem;
+            border-radius: 999px;
+            background: rgba(243, 128, 32, 0.12);
+            border: 1px solid rgba(243, 128, 32, 0.35);
+            color: #ffd7a8;
+            font-size: 0.92rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.05;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #c9c9c9;
+            max-width: 58ch;
+        }
+
+        .hero-panel h2 {
+            font-size: 1.25rem;
+            margin-bottom: 0.8rem;
+            color: #ffcf9a;
+        }
+
+        .hero-panel ul {
+            list-style: none;
+            display: grid;
+            gap: 0.7rem;
+            color: #d6d6d6;
+        }
+
+        .hero-panel li {
+            display: flex;
+            gap: 0.6rem;
+            align-items: flex-start;
+        }
+
+        .hero-panel li i {
+            margin-top: 0.25rem;
+            color: #f89a4f;
+        }
+
+        main {
+            padding: 0.8rem 0 2.4rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.9rem, 5vw, 2.6rem);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-lead {
+            text-align: center;
+            color: #c8c8c8;
+            margin-bottom: 2rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(243, 128, 32, 0.25);
+            border-radius: 22px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+        }
+
+        .project-card.project-link-card {
+            cursor: pointer;
+        }
+
+        .project-card[id] {
+            scroll-margin-top: 110px;
+        }
+
+
+        .project-media {
+            position: relative;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(243, 128, 32, 0.25);
+            background: radial-gradient(circle at 18% 18%, rgba(243, 128, 32, 0.32), transparent 48%), #10192f;
+        }
+
+        .project-media-gallery {
+            aspect-ratio: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 0;
+            background: #10192f;
+        }
+
+        .project-media-gallery img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .project-media-split {
+            aspect-ratio: auto;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0;
+            background: #10192f;
+        }
+
+        .project-media-split > * {
+            min-width: 0;
+        }
+
+        .project-media-split img,
+        .project-media-split svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .project-media-split img {
+            object-fit: cover;
+        }
+
+        .project-media > img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-media svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .project-body {
+            padding: 1.15rem 1.1rem 1.15rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .project-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .project-head h3 {
+            font-size: 1.2rem;
+            color: #fff;
+        }
+
+        .project-badge {
+            font-size: 0.82rem;
+            border: 1px solid rgba(243, 128, 32, 0.5);
+            border-radius: 999px;
+            padding: 0.25rem 0.65rem;
+            background: rgba(243, 128, 32, 0.16);
+            color: #ffdcb3;
+            white-space: nowrap;
+        }
+
+        .project-body p {
+            color: #cfd1da;
+        }
+
+        .feature-list {
+            list-style: none;
+            display: grid;
+            gap: 0.42rem;
+            color: #dedede;
+            font-size: 0.95rem;
+        }
+
+        .feature-list li {
+            display: flex;
+            gap: 0.52rem;
+            align-items: flex-start;
+        }
+
+        .feature-list li i {
+            margin-top: 0.22rem;
+            color: #f49a53;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid rgba(243, 128, 32, 0.36);
+            border-radius: 999px;
+            background: rgba(243, 128, 32, 0.1);
+            padding: 0.24rem 0.7rem;
+            font-size: 0.82rem;
+            color: #ffc98f;
+        }
+
+        .project-actions {
+            margin-top: 0.2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .btn {
+            text-decoration: none;
+            border-radius: 999px;
+            border: 1px solid rgba(243, 128, 32, 0.45);
+            padding: 0.56rem 0.95rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            transition: transform 0.22s ease, filter 0.22s ease, background 0.22s ease;
+        }
+
+        .btn-main {
+            color: #111;
+            background: linear-gradient(135deg, #ffd7a8 0%, #f38020 100%);
+            border-color: transparent;
+        }
+
+        .btn-ghost {
+            color: #ffcc95;
+            background: rgba(243, 128, 32, 0.09);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.04);
+        }
+
+        .download-note {
+            margin-top: 2rem;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(243, 128, 32, 0.25);
+            border-left: 3px solid #f38020;
+            border-radius: 18px;
+            padding: 1rem 1.1rem;
+            color: #d7d7d7;
+        }
+
+        #contact {
+            padding: 3rem 0;
+            border-top: 1px solid rgba(243, 128, 32, 0.2);
+        }
+
+        #contact h2 {
+            font-size: clamp(1.8rem, 4.8vw, 2.5rem);
+            margin-bottom: clamp(1.2rem, 3.2vw, 2rem);
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            padding: 2rem 0;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(243, 128, 32, 0.12);
+            border: 1px solid rgba(243, 128, 32, 0.55);
+            border-radius: 50%;
+            text-decoration: none;
+            color: #f38020;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .social-btn:hover {
+            background: #f38020;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #aaa;
+            border-top: 1px solid rgba(243, 128, 32, 0.2);
+            background: rgba(0, 0, 0, 0.35);
+        }
+
+        @media (max-width: 1100px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 0.95rem 0;
+            }
+
+            header.scrolled {
+                padding: 0.95rem 0;
+            }
+
+            .header-content {
+                justify-content: space-between;
+                align-items: center;
+                gap: 0.45rem;
+            }
+
+            .brand-text {
+                font-size: 1.45rem;
+            }
+
+            nav {
+                width: 100%;
+                justify-content: flex-start;
+                gap: 0.45rem;
+                overflow-x: auto;
+                white-space: nowrap;
+                padding-bottom: 0.1rem;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+
+            nav::-webkit-scrollbar {
+                display: none;
+            }
+
+            nav a {
+                font-size: 1rem;
+                border: 1px solid rgba(243, 128, 32, 0.55);
+                border-radius: 999px;
+                min-height: auto;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0.38rem 0.82rem;
+                background: rgba(243, 128, 32, 0.1);
+                text-align: center;
+                flex: 0 0 auto;
+            }
+
+            .project-media-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .project-media-split {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+                line-height: 1.1;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .social-links {
+                gap: 0.75rem;
+                padding: 1rem 0;
+            }
+
+            .social-btn {
+                width: 46px;
+                height: 46px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="brand" aria-label="Josef brand">
+                    <div class="brand-mark">J</div>
+                    <div class="brand-text">Josef</div>
+                </div>
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="hardware.html">Hardware</a>
+                    <a href="friends-websites.html">Friends' Websites</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-intro-card">
+                    <div class="eyebrow"><i class="fas fa-diagram-project"></i> Projects</div>
+                    <h1>Projects</h1>
+                    <p>Detailed breakdown of the projects I build and where you can open and download each source code on GitHub.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <div class="container">
+            <h2 class="section-title">Project Overview</h2>
+            <p class="section-lead">A closer look at the projects from my portfolio.</p>
+
+            <div class="projects-grid">
+                <article id="project-snake" class="project-card lift-on-hover project-link-card" data-project-url="https://github.com/pepaskopec-blip/Snake-Pygame-">
+                    <figure class="project-media project-media-gallery" aria-label="Snake game screenshots preview">
+                        <img src="images/Screenshot_20260411_163147.webp" alt="Snake menu screenshot">
+                        <img src="images/Screenshot_20260411_163421.webp" alt="Snake gameplay screenshot">
+                    </figure>
+                    <div class="project-body">
+                        <div class="project-head">
+                            <h3>Snake (Pygame)</h3>
+                            <span class="project-badge">Game project</span>
+                        </div>
+                        <p>Arcade snake game with a cleaner UI and more gameplay depth than a basic clone.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-angle-right"></i><span>Game Modes: Play solo or go head-to-head in Duo mode with a friend.</span></li>
+                            <li><i class="fas fa-angle-right"></i><span>Smart AI: Challenge yourself against an optional AI-controlled opponent for Player 2.</span></li>
+                            <li><i class="fas fa-angle-right"></i><span>Deep Customization: Adjust difficulty levels, map sizes, and obstacle density to suit your playstyle.</span></li>
+                            <li><i class="fas fa-angle-right"></i><span>Dynamic Gameplay: Various fruit types with unique scores/effects and customizable "bad food" behavior.</span></li>
+                            <li><i class="fas fa-angle-right"></i><span>Progression System: Unlockable skins, trails, visual effects, SFX packs, and music styles to personalize your experience.</span></li>
+                            <li><i class="fas fa-angle-right"></i><span>Persistence: Your high scores and settings are automatically saved and loaded via JSON and text files.</span></li>
+                        </ul>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Pygame</span>
+                            <span class="tag">Game</span>
+                            <span class="tag">Game Dev</span>
+                            <span class="tag">OOP</span>
+                        </div>
+                        <div class="project-actions">
+                            <a class="btn btn-main" href="https://github.com/pepaskopec-blip/Snake-Pygame-" target="_blank" rel="noopener noreferrer">
+                                Open on GitHub <i class="fas fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="project-batchgym" class="project-card lift-on-hover project-link-card" data-project-url="https://github.com/pepaskopec-blip/BatchGym">
+                    <figure class="project-media" aria-label="ASCII dumbbell preview" style="aspect-ratio: auto; margin: 0;">
+                        <pre style="margin: 0; padding: 1.4rem 1rem; color: #ffd7a8; background: linear-gradient(180deg, rgba(17, 23, 34, 0.96), rgba(9, 11, 16, 0.96)); border: 1px solid rgba(243, 128, 32, 0.35); border-radius: 20px; font: 700 clamp(1rem, 2.6vw, 1.4rem)/1.15 Consolas, 'Courier New', monospace; text-align: center; white-space: pre; overflow-x: auto;">
+  _______________     _______________
+ /               \___/               \
+|                 ___                 |
+|________________/   \________________|
+                ||||| |||||                
+                ||||| |||||                
+                        </pre>
+                    </figure>
+                    <div class="project-body">
+                        <div class="project-head">
+                            <h3>BatchGym</h3>
+                            <span class="project-badge">Game project</span>
+                        </div>
+                        <p>My first-ever programming project: a Windows Batch text RPG about surviving a gym session and managing your budget.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-angle-right"></i><span>Choose your experience level with tailored advice for beginners, intermediates, and advanced players.</span></li>
+                            <li><i class="fas fa-angle-right"></i><span>Train through bench press, incline bench, and triceps exercises inside the console.</span></li>
+                            <li><i class="fas fa-angle-right"></i><span>Use your starting 1,500 CZK carefully for entry fees and supplements.</span></li>
+                            <li><i class="fas fa-angle-right"></i><span>ASCII animations and a simple risk system keep the run playful and a bit chaotic.</span></li>
+                            <li><i class="fas fa-angle-right"></i><span>Skipping warm-ups or overdoing cardio can send you straight to the hospital.</span></li>
+                        </ul>
+                        <div class="project-tags">
+                            <span class="tag">Batchfile</span>
+                            <span class="tag">Windows</span>
+                            <span class="tag">RPG</span>
+                            <span class="tag">Game</span>
+                            <span class="tag">CLI</span>
+                            <span class="tag">ASCII</span>
+                        </div>
+                        <div class="project-actions">
+                            <a class="btn btn-main" href="https://github.com/pepaskopec-blip/BatchGym" target="_blank" rel="noopener noreferrer">
+                                Open on GitHub <i class="fas fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="project-website" class="project-card lift-on-hover">
+                    <div class="project-body">
+                        <div class="project-head">
+                            <h3>Personal Website</h3>
+                            <span class="project-badge">Web project</span>
+                        </div>
+                        <p>My personal portfolio website for projects, hardware details, and personal links.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-angle-right"></i><span>Multi-page structure with consistent visual system.</span></li>
+                            <li><i class="fas fa-angle-right"></i><span>Responsive layout and animated sections for better UX.</span></li>
+                            <li><i class="fas fa-angle-right"></i><span>Simple static deployment and easy maintenance.</span></li>
+                        </ul>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">UI</span>
+                            <span class="tag">Web</span>
+                            <span class="tag">Design</span>
+                            <span class="tag">Layouts</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="project-linux-lab" class="project-card lift-on-hover">
+                    <figure class="project-media project-media-split" aria-label="Linux lab visual preview">
+                        <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="linuxTitle">
+                            <title id="linuxTitle">Linux lab project artwork</title>
+                            <defs>
+                                <linearGradient id="linuxBg" x1="0" y1="0" x2="1" y2="1">
+                                    <stop offset="0%" stop-color="#121826"/>
+                                    <stop offset="100%" stop-color="#203047"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="800" height="450" fill="url(#linuxBg)"/>
+                            <rect x="0" y="0" width="800" height="450" fill="#0b1220" opacity="0.88"/>
+                            <rect x="0" y="0" width="800" height="48" fill="#1b2538"/>
+                            <line x1="0" y1="48" x2="800" y2="48" stroke="#f38020" stroke-width="2" opacity="0.65"/>
+                            <text x="18" y="31" fill="#ffcf9a" font-size="20" font-family="Consolas, monospace">terminal</text>
+                            <text x="20" y="112" fill="#8ec5ff" font-size="22" font-family="Consolas, monospace">$ sudo pacman -Syu</text>
+                            <text x="20" y="156" fill="#9be08f" font-size="22" font-family="Consolas, monospace">:: system updated successfully</text>
+                            <text x="20" y="214" fill="#8ec5ff" font-size="22" font-family="Consolas, monospace">$ cat /etc/os-release</text>
+                            <text x="20" y="258" fill="#ffd7a8" font-size="22" font-family="Consolas, monospace">Arch / Debian / custom configs</text>
+                            <text x="20" y="314" fill="#c9d4ff" font-size="22" font-family="Consolas, monospace">$ ./rice-status --check</text>
+                            <text x="20" y="358" fill="#f9a85a" font-size="22" font-family="Consolas, monospace">:: desktop layout tuned</text>
+                        </svg>
+                        <img src="images/Screenshot_20260321_215141.webp" alt="Linux lab screenshot">
+                    </figure>
+                    <div class="project-body">
+                        <div class="project-head">
+                            <h3>Linux Lab</h3>
+                            <span class="project-badge">Experiment hub</span>
+                        </div>
+                        <p>Personal test lab for Linux distros, desktop setups, and performance tuning ideas.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-angle-right"></i><span>Testing Arch, Debian and alternative desktop workflows.</span></li>
+                            <li><i class="fas fa-angle-right"></i><span>Focus on practical customizations and lighter system behavior.</span></li>
+                            <li><i class="fas fa-angle-right"></i><span>Documenting what works and what to avoid in future setups.</span></li>
+                        </ul>
+                        <div class="project-tags">
+                            <span class="tag">Arch Linux</span>
+                            <span class="tag">Debian</span>
+                            <span class="tag">Customization</span>
+                            <span class="tag">Tuning</span>
+                            <span class="tag">Tinkering</span>
+                            <span class="tag">Linux ricing</span>
+                        </div>
+                    </div>
+                </article>
+                <article id="project-homelab" class="project-card lift-on-hover project-link-card" data-project-url="https://github.com/pepaskopec-blip/homelab">
+                    <figure class="project-media" aria-label="Homelab rack preview">
+                        <img src="images/Screenshot 2026-06-22 202806.webp" alt="Homelab rack or dashboard screenshot" onerror="this.style.display='none'">
+                    </figure>
+                    <div class="project-body">
+                        <div class="project-head">
+                            <h3>Homelab/Proxmox</h3>
+                            <span class="project-badge">Infrastructure</span>
+                        </div>
+                        <p>My homelab for home server services, virtualization, networking and self-hosted tooling.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-angle-right"></i><span>Virtualization with Proxmox and lightweight VMs/containers.</span></li>
+                            <li><i class="fas fa-angle-right"></i><span>Self-hosted services: automation, monitoring, backups and media.</span></li>
+                        </ul>
+                        <div class="project-tags">
+                            <span class="tag">Homelab</span>
+                            <span class="tag">Proxmox</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">Networking</span>
+                            <span class="tag">NAS</span>
+                        </div>
+                        <div class="project-actions">
+                            <a class="btn btn-main" href="index.html#services">
+                                Services <i class="fas fa-arrow-up-right-from-square"></i>
+                            </a>
+                            <a class="btn btn-ghost" href="hardware.html#server">Hardware Details</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="download-note">
+                <strong><i class="fas fa-download"></i> Download tip:</strong>
+                after opening a repository on GitHub, click <em>Code</em> and choose <em>Download ZIP</em>.
+            </div>
+        </div>
+    </main>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Connect With Me</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #aaa;">Follow me on social media or get in touch</p>
+            <div class="social-links">
+                <a href="https://github.com/pepaskopec-blip" class="social-btn" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="https://git.dvorakmortonxd.dev/skopcak" class="social-btn" title="GitDXD" target="_blank" rel="noopener noreferrer"><i class="fab fa-git-alt"></i></a>
+                <a href="https://www.linkedin.com/in/josef-skopec-69380234b/" class="social-btn" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/ishoot4fun11" class="social-btn" title="X" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/skopcaak1/" class="social-btn" title="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@skopcaak_1" class="social-btn" title="TikTok" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.snapchat.com/add/skopcaak?share_id=xwTiIsZlpos&amp;locale=en-US" class="social-btn" title="Snapchat" target="_blank" rel="noopener noreferrer"><i class="fab fa-snapchat"></i></a>
+                <a href="https://www.threads.com/@skopcaak1" class="social-btn" title="Threads" target="_blank" rel="noopener noreferrer">@</a>
+                <a href="https://quipee.me/u/skopcaak_1" class="social-btn" title="Quipee" target="_blank" rel="noopener noreferrer">Q</a>
+                <a href="https://itch.io/profile/skopcaak" class="social-btn" title="itch.io" target="_blank" rel="noopener noreferrer"><i class="fab fa-itch-io"></i></a>
+                <a href="https://discord.com/app" class="social-btn" title="Discord: ishootn4fun" aria-label="Discord: ishootn4fun" target="_blank" rel="noopener noreferrer"><i class="fab fa-discord"></i></a>
+                <a href="mailto:josef@skopec.dev" class="social-btn" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Josef Skopec.</p>
+    </footer>
+
+    <script>
+        const header = document.querySelector('header');
+        const SCROLL_ADD_THRESHOLD = 64;
+        const SCROLL_REMOVE_THRESHOLD = 20;
+        let isHeaderScrolled = window.scrollY > SCROLL_ADD_THRESHOLD;
+
+        function updateHeaderOnScroll() {
+            if (!header) return;
+
+            if (!isHeaderScrolled && window.scrollY >= SCROLL_ADD_THRESHOLD) {
+                isHeaderScrolled = true;
+            } else if (isHeaderScrolled && window.scrollY <= SCROLL_REMOVE_THRESHOLD) {
+                isHeaderScrolled = false;
+            }
+
+            header.classList.toggle('scrolled', isHeaderScrolled);
+        }
+
+        function initRevealAnimations() {
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reduceMotion) return;
+
+            const revealTargets = document.querySelectorAll(
+                '.hero h1, .hero p, .hero-panel, .section-title, .section-lead, .project-card, .social-btn'
+            );
+
+            revealTargets.forEach((el) => {
+                el.classList.add('reveal-on-scroll');
+            });
+
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: '0px 0px -6% 0px'
+            });
+
+            revealTargets.forEach((el) => revealObserver.observe(el));
+        }
+
+        function resolveProjectTargetId() {
+            if (window.location.hash) {
+                const idFromHash = decodeURIComponent(window.location.hash.slice(1));
+                if (idFromHash) return idFromHash;
+            }
+
+            const params = new URLSearchParams(window.location.search);
+            const project = params.get('project');
+            const projectToId = {
+                snake: 'project-snake',
+                batchgym: 'project-batchgym',
+                website: 'project-website',
+                'linux-lab': 'project-linux-lab',
+                'homelab': 'project-homelab'
+            };
+
+            if (!project) return '';
+            return projectToId[project] || '';
+        }
+
+        function scrollToProjectFromHash() {
+            const targetId = resolveProjectTargetId();
+            if (!targetId) return;
+
+            const target = document.getElementById(targetId);
+            if (!target) return;
+
+            if (window.location.hash !== `#${targetId}`) {
+                history.replaceState(null, '', `#${targetId}`);
+            }
+
+            const headerOffset = (header?.offsetHeight || 0) + 12;
+            const targetTop = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+            window.scrollTo({ top: Math.max(targetTop, 0), behavior: 'auto' });
+
+            // One subtle retry helps in cases where late layout updates shift content.
+            window.setTimeout(() => {
+                const correctedTop = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+                const distance = Math.abs(window.scrollY - Math.max(correctedTop, 0));
+                if (distance > 6) {
+                    window.scrollTo({ top: Math.max(correctedTop, 0), behavior: 'auto' });
+                }
+            }, 180);
+        }
+
+        function initProjectCardLinks() {
+            const clickableCards = document.querySelectorAll('.project-link-card');
+            if (!clickableCards.length) return;
+
+            clickableCards.forEach((card) => {
+                const projectUrl = card.getAttribute('data-project-url');
+                if (!projectUrl) return;
+
+                card.addEventListener('click', (event) => {
+                    if (event.button !== 0) return;
+
+                    const modifierClick = event.metaKey || event.ctrlKey || event.shiftKey || event.altKey;
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    if (modifierClick) {
+                        window.open(projectUrl, '_blank', 'noopener,noreferrer');
+                        return;
+                    }
+
+                    window.location.assign(projectUrl);
+                }, true);
+            });
+        }
+
+        updateHeaderOnScroll();
+        window.addEventListener('scroll', updateHeaderOnScroll, { passive: true });
+        initRevealAnimations();
+        initProjectCardLinks();
+        scrollToProjectFromHash();
+        window.addEventListener('hashchange', scrollToProjectFromHash);
+        window.addEventListener('load', scrollToProjectFromHash);
+    </script>
+</body>
+</html>

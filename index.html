@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Josef - IT STUDENT & DEVELOPER</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
+    <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="brand" aria-label="Josef brand">
+                    <div class="brand-mark">J</div>
+                    <div class="brand-text">Josef</div>
+                </div>
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="hardware.html">Hardware</a>
+                    <a href="friends-websites.html">Friends' Websites</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Hi, I'm <span class="hero-name-wrap"><span class="brand-text">Josef</span></span></h1>
+            <p>Student developer building projects, experimenting with Linux, and learning cool stuff.</p>
+            <div class="hero-badges">
+                <span class="badge">AI</span>
+                <span class="badge">Retro Computing</span>
+                <span class="badge">Tech Projects</span>
+                <span class="badge">Fitness</span>
+                <span class="badge">Airsoft</span>
+                <span class="badge">Linux</span>
+                <span class="badge">Homelab</span>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>Welcome! 👋</h3>
+                    <p>Hey, I'm Josef a 16 year old student based in the Czech Republic specializing in Graphic systems and website creation at Private Secondary School of Information Technology.</p>
+                    <p>I'm really into AI, old PCs, Linux, home-labing, self-hosting, writing code and building random projects just to see how things work.
+                    </p>
+                </div>
+                <div>
+                    <div class="interests">
+                        <div class="interest-item">
+                            <strong>🤖 AI</strong>
+                            <p>Exploring artificial intelligence and AI applications</p>
+                        </div>
+                        <div class="interest-item">
+                            <strong>💻 Retro Tech</strong>
+                            <p>Fascinated by vintage computers and their engineering</p>
+                        </div>
+                        <div class="interest-item">
+                            <strong>🐧 Linux</strong>
+                            <p>I use Arch linux btw</p>
+                        </div>
+                        <div class="interest-item">
+                            <strong>⚙️ Building</strong>
+                            <p>Creating projects and learning through hands-on development</p>
+                        </div>
+                        <div class="interest-item">
+                            <strong>💪 Fitness</strong>
+                            <p>Regular gym enthusiast balancing tech life with hitting the gym</p>
+                        </div>
+                        <div class="interest-item">
+                            <strong>🔫 Airsoft</strong>
+                            <p>Playing airsoft since 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services-section">
+            <h2>My Services</h2>
+            <p class="services-intro">Self-hosted tools running on my homelab. Public services are meant for web access, while private ones stay inside my network.</p>
+            <div class="services-grid">
+                <div class="service-group">
+                    <h3>Public</h3>
+                    <div class="service-buttons">
+                        <a class="service-btn service-btn-public" href="https://proxmox.skopec.dev" target="_blank" rel="noopener noreferrer"><span class="service-icon"><img src="https://cdn.simpleicons.org/proxmox/E57000" alt="" aria-hidden="true"></span><span>Proxmox</span></a>
+                        <a class="service-btn service-btn-public" href="https://jelly.skopec.dev" target="_blank" rel="noopener noreferrer"><span class="service-icon"><img src="https://cdn.simpleicons.org/jellyfin/00A4DC" alt="" aria-hidden="true"></span><span>Jellyfin</span></a>
+                        <a class="service-btn service-btn-public" href="https://navi.skopec.dev" target="_blank" rel="noopener noreferrer"><span class="service-icon"><img src="https://raw.githubusercontent.com/navidrome/navidrome/master/resources/logo-192x192.png" alt="" aria-hidden="true"></span><span>Navidrome</span></a>
+                        <a class="service-btn service-btn-public" href="https://ai.skopec.dev" target="_blank" rel="noopener noreferrer"><span class="service-icon"><img src="https://cdn.simpleicons.org/ollama/FFFFFF" alt="" aria-hidden="true"></span><span>Ollama</span></a>
+                        <a class="service-btn service-btn-public" href="https://convert.skopec.dev" target="_blank" rel="noopener noreferrer"><span class="service-icon"><i class="fas fa-arrow-right-arrow-left"></i></span><span>ConvertX</span></a>
+                        <a class="service-btn service-btn-public" href="https://search.skopec.dev" target="_blank" rel="noopener noreferrer"><span class="service-icon"><img src="https://cdn.simpleicons.org/searxng/6691E6" alt="" aria-hidden="true"></span><span>SearXNG</span></a>
+                    </div>
+                </div>
+                <div class="service-group">
+                    <h3>Private</h3>
+                    <div class="service-buttons">
+                        <span class="service-btn service-btn-private"><span class="service-icon"><img src="https://cdn.simpleicons.org/pihole/96060C" alt="" aria-hidden="true"></span><span>Pi-hole</span></span>
+                        <span class="service-btn service-btn-private"><span class="service-icon"><i class="fas fa-hard-drive"></i></span><span>NAS</span></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>My Projects</h2>
+            <div class="projects-grid">
+                <a class="project-card-link" href="projects.html#project-snake" aria-label="Open Snake project details">
+                    <div class="project-card">
+                        <div class="project-image">🐍</div>
+                        <div class="project-content">
+                            <h3>Snake (Pygame)</h3>
+                            <p>Advanced Snake game with dynamic difficulty, soundtrack and sfx, obstacles, power-ups.</p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Pygame</span>
+                                <span class="tag">Game</span>
+                                <span class="tag">Game Dev</span>
+                                <span class="tag">OOP</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="project-card-link" href="projects.html#project-batchgym" aria-label="Open BatchGym project details">
+                    <div class="project-card">
+                        <div class="project-image">🏋️</div>
+                        <div class="project-content">
+                            <h3>BatchGym</h3>
+                            <p>Windows Batch text RPG where you manage money, train at the gym, and avoid injuries.</p>
+                            <div class="project-tags">
+                                <span class="tag">Batchfile</span>
+                                <span class="tag">Windows</span>
+                                <span class="tag">Game</span>
+                                <span class="tag">RPG</span>
+                                <span class="tag">ASCII</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="project-card-link" href="projects.html#project-website" aria-label="Open Personal Website project details">
+                    <div class="project-card">
+                        <div class="project-image">🌐</div>
+                        <div class="project-content">
+                            <h3>Personal Website</h3>
+                            <p>Personal portfolio website where I put my projects, hardware, experiences and ideas.</p>
+                            <div class="project-tags">
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">UI</span>
+                                <span class="tag">Web</span>
+                                <span class="tag">Design</span>
+                                <span class="tag">Layouts</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="project-card-link" href="projects.html#project-linux-lab" aria-label="Open Linux Lab project details">
+                    <div class="project-card">
+                        <div class="project-image">🐧</div>
+                        <div class="project-content">
+                            <h3>Linux Lab</h3>
+                            <p>Experimenting and testing different Linux distributions and configurations.</p>
+                            <div class="project-tags">
+                                <span class="tag">Arch Linux</span>
+                                <span class="tag">Debian</span>
+                                <span class="tag">Customization</span>
+                                <span class="tag">Tuning</span>
+                                <span class="tag">Tinkering</span>
+                                <span class="tag">Linux ricing</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a class="project-card-link" href="projects.html#project-homelab" aria-label="Open Homelab project details">
+                    <div class="project-card">
+                        <div class="project-image">🖧</div>
+                        <div class="project-content">
+                            <h3>Homelab</h3>
+                            <p>Self-hosted services and virtualization — Proxmox, containers, virtual machines, etc.</p>
+                            <div class="project-tags">
+                                <span class="tag">Homelab</span>
+                                <span class="tag">Proxmox</span>
+                                <span class="tag">Docker</span>
+                                <span class="tag">Virtualization</span>
+                                <span class="tag">NAS</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="project-card-link" href="projects.html#project-homelab" aria-label="Open Proxmox Server project details">
+                    <div class="project-card">
+                        <div class="project-image">🗄️</div>
+                        <div class="project-content">
+                            <h3>Proxmox Server</h3>
+                            <p>My home server running Proxmox VE for virtualization, services and homelab testing.</p>
+                            <div class="project-tags">
+                                <span class="tag">Proxmox</span>
+                                <span class="tag">Virtualization</span>
+                                <span class="tag">Homelab</span>
+                                <span class="tag">Linux</span>
+                                <span class="tag">Server</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <p style="text-align: center; margin-top: 1.5rem; color: #c8c8c8;">
+                Want full details? <a href="projects.html" style="color: #f38020; font-weight: 700;">Open the complete Projects page</a>
+            </p>
+        </section>
+
+        <!-- Hardware Section -->
+        <section id="hardware">
+            <h2>Hardware</h2>
+
+            <h3 class="hardware-group-title">Desktop</h3>
+            <div class="hardware-grid">
+                <div class="hardware-item hardware-item-featured">
+                    <h3>Build / System</h3>
+                    <p>Custom PC (2022) - Dual boot: Arch Linux (modified Zen kernel) + debloated Windows 11</p>
+                </div>
+                <div class="hardware-item">
+                    <h3>CPU</h3>
+                    <p>AMD Ryzen 5 5600</p>
+                </div>
+                <div class="hardware-item">
+                    <h3>GPU</h3>
+                    <p>AMD Radeon RX 6700</p>
+                </div>
+                <div class="hardware-item">
+                    <h3>RAM</h3>
+                    <p>16 GB RAM</p>
+                </div>
+                <div class="hardware-item">
+                    <h3>Storage</h3>
+                    <p>1 TB SSD</p>
+                </div>
+                <div class="hardware-item">
+                    <h3>Motherboard</h3>
+                    <p>ASUS TUF B550-Plus</p>
+                </div>
+                <div class="hardware-item">
+                    <h3>PSU</h3>
+                    <p>600W SilentiumPC</p>
+                </div>
+                <div class="hardware-item">
+                    <h3>CPU Cooler</h3>
+                    <p>SilentiumPC Fera 5</p>
+                </div>
+                <div class="hardware-item">
+                    <h3>Case</h3>
+                    <p>SilentiumPC PC Case</p>
+                </div>
+            </div>
+
+            <h3 class="hardware-group-title">Server</h3>
+            <div class="hardware-grid">
+                <div class="hardware-item hardware-item-featured">
+                    <h3>Build / System</h3>
+                    <p>Homelab/Proxmox server (2026)  - Proxmox VE </p>
+                </div>
+                <div class="hardware-item">
+                    <h3>CPU</h3>
+                    <p>Intel Xeon E5-2630L v4</p>
+                </div>
+                <div class="hardware-item">
+                    <h3>GPU</h3>
+                    <p>(nVidia GT 440) Only for BIOS configuration, most of the time completely headless.</p>
+                </div>
+                <div class="hardware-item">
+                    <h3>RAM</h3>
+                    <p>40 GB RAM</p>
+                </div>
+                <div class="hardware-item">
+                    <h3>Storage</h3>
+                    <p>256 GB SSD, 512 GB HDD, 320 GB HDD</p>
+                </div>
+                <div class="hardware-item">
+                    <h3>Motherboard</h3>
+                    <p>Huanazhi X99 P4F</p>
+                </div>
+                <div class="hardware-item">
+                    <h3>PSU</h3>
+                    <p>Corsair CX450</p>
+                </div>
+                <div class="hardware-item">
+                    <h3>CPU Cooler</h3>
+                    <p>Endorfy Fera 5</p>
+                </div>
+                <div class="hardware-item">
+                    <h3>Case</h3>
+                    <p>Old case from office computer</p>
+                </div>
+            </div>
+
+            <h3 class="hardware-group-title">Laptop</h3>
+            <div class="hardware-grid">
+                <div class="hardware-item hardware-item-featured">
+                    <h3>Model / Year</h3>
+                    <p>MacBook Air M5 (2026)</p>
+                </div>
+                <div class="hardware-item">
+                    <h3>CPU</h3>
+                    <p>Apple M5</p>
+                </div>
+                <div class="hardware-item">
+                    <h3>GPU</h3>
+                    <p>Apple M5 GPU</p>
+                </div>
+                <div class="hardware-item">
+                    <h3>RAM</h3>
+                    <p>16 GB unified memory</p>
+                </div>
+                <div class="hardware-item">
+                    <h3>Storage</h3>
+                    <p>512 GB SSD</p>
+                </div>
+                <div class="hardware-item">
+                    <h3>Display</h3>
+                    <p>13.6", 2560x1664</p>
+                </div>
+            </div>
+
+            <h3 class="hardware-group-title">Phone</h3>
+            <div class="hardware-grid">
+                <div class="hardware-item hardware-item-featured">
+                    <h3>Model / System</h3>
+                    <p>Xiaomi Redmi Note 11 Pro 5G - Android (HyperOS) - I am planning to root it</p>
+                </div>
+                <div class="hardware-item">
+                    <h3>Display</h3>
+                    <p>6.67" AMOLED, 120 Hz, FHD+</p>
+                </div>
+                <div class="hardware-item">
+                    <h3>Chipset</h3>
+                    <p>Qualcomm Snapdragon 695</p>
+                </div>
+                <div class="hardware-item">
+                    <h3>RAM</h3>
+                    <p>6 GB RAM</p>
+                </div>
+                <div class="hardware-item">
+                    <h3>Storage</h3>
+                    <p>128 GB</p>
+                </div>
+                <div class="hardware-item">
+                    <h3>Battery</h3>
+                    <p>5000 mAh</p>
+                </div>
+                <div class="hardware-item">
+                    <h3>Main Camera</h3>
+                    <p>108 MP</p>
+                </div>
+                <div class="hardware-item">
+                    <h3>Connectivity</h3>
+                    <p>5G, NFC, Wi-Fi, Bluetooth, USB-C</p>
+                </div>
+            </div>
+
+            <p style="text-align: center; margin-top: 1.5rem; color: #c8c8c8;">
+                Want full details? <a href="hardware.html" style="color: #f38020; font-weight: 700;">Open the complete Hardware page</a>
+            </p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Connect With Me</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #aaa;">Follow me on social media or get in touch</p>
+            <div class="social-links">
+                <a href="https://github.com/pepaskopec-blip" class="social-btn" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="https://git.dvorakmortonxd.dev/skopcak" class="social-btn" title="GitDXD" target="_blank" rel="noopener noreferrer"><i class="fab fa-git-alt"></i></a>
+                <a href="https://www.linkedin.com/in/josef-skopec-69380234b/" class="social-btn" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/ishoot4fun11" class="social-btn" title="X" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/skopcaak1/" class="social-btn" title="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@skopcaak_1" class="social-btn" title="TikTok" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.snapchat.com/add/skopcaak?share_id=xwTiIsZlpos&locale=en-US" class="social-btn" title="Snapchat" target="_blank" rel="noopener noreferrer"><i class="fab fa-snapchat"></i></a>
+                <a href="https://www.threads.com/@skopcaak1" class="social-btn" title="Threads" target="_blank" rel="noopener noreferrer">@</a>
+                <a href="https://quipee.me/u/skopcaak_1" class="social-btn" title="Quipee" target="_blank" rel="noopener noreferrer">Q</a>
+                <a href="https://itch.io/profile/skopcaak" class="social-btn" title="itch.io" target="_blank" rel="noopener noreferrer"><i class="fab fa-itch-io"></i></a>
+                <a href="https://discord.com/app" class="social-btn" title="Discord: ishootn4fun" aria-label="Discord: ishootn4fun" target="_blank" rel="noopener noreferrer"><i class="fab fa-discord"></i></a>
+                <a href="mailto:josef@skopec.dev" class="social-btn" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Josef Skopec.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

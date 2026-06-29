@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends Websites | Josef</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
+    <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #f38020 rgba(8, 12, 22, 0.85);
+        }
+
+        *::-webkit-scrollbar {
+            width: 12px;
+            height: 12px;
+        }
+
+        *::-webkit-scrollbar-track {
+            background: rgba(8, 12, 22, 0.8);
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #ffad4d 0%, #f38020 55%, #d66b13 100%);
+            border-radius: 999px;
+            border: 2px solid rgba(243, 128, 32, 0.18);
+        }
+
+        *::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #445375 0%, #334362 55%, #293754 100%);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(243, 128, 32, 0.22), transparent 35%),
+                radial-gradient(circle at bottom right, rgba(255, 183, 77, 0.14), transparent 32%),
+                linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e8e8e8;
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-text-size-adjust: 100%;
+            animation: pageEnter 720ms cubic-bezier(0.2, 0.75, 0.2, 1) both;
+            transform-origin: 50% 0;
+        }
+
+        @keyframes pageEnter {
+            from {
+                opacity: 0;
+                transform: translateY(16px) scale(0.995);
+                filter: blur(3px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0);
+            }
+        }
+
+        a,
+        button {
+            touch-action: manipulation;
+        }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(22px);
+            filter: blur(2px);
+            transition: opacity 0.58s ease, transform 0.58s ease, filter 0.58s ease;
+        }
+
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+        }
+
+        .lift-on-hover {
+            transition: transform 0.24s ease, box-shadow 0.24s ease;
+        }
+
+        .lift-on-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 28px rgba(243, 128, 32, 0.14);
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 clamp(14px, 2.4vw, 24px);
+        }
+
+        header {
+            background: rgba(10, 10, 20, 0.34);
+            padding: 1.1rem 0;
+            border-bottom: 1px solid rgba(243, 128, 32, 0.25);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            -webkit-backdrop-filter: blur(20px) saturate(140%);
+            backdrop-filter: blur(20px) saturate(140%);
+            transition: padding 0.25s ease, background 0.25s ease, backdrop-filter 0.25s ease;
+        }
+
+        header.scrolled {
+            padding: 1.1rem 0;
+            background: rgba(10, 10, 20, 0.46);
+            -webkit-backdrop-filter: blur(28px) saturate(145%);
+            backdrop-filter: blur(28px) saturate(145%);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            white-space: nowrap;
+            overflow: hidden;
+            max-width: 220px;
+            transition: none;
+        }
+
+        .brand-mark {
+            width: 38px;
+            height: 38px;
+            border-radius: 11px;
+            background: linear-gradient(135deg, #ffefcf 0%, #f38020 55%, #ff6b35 100%);
+            color: #111;
+            display: grid;
+            place-items: center;
+            font-weight: 800;
+            box-shadow: 0 8px 20px rgba(243, 128, 32, 0.3);
+            flex-shrink: 0;
+        }
+
+        .brand-text {
+            color: #ffd7a8;
+            background: linear-gradient(120deg, #fff0dd 0%, #ffbf6f 25%, #ff8a00 50%, #ff5e00 75%, #ffd18c 100%);
+            background-size: 240% 240%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: none;
+            filter: drop-shadow(0 0 8px rgba(255, 122, 0, 0.28));
+            font-size: 1.45rem;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+        }
+
+        @keyframes orangeGradientFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            body {
+                animation: none;
+            }
+
+            .brand-text {
+                animation: none;
+            }
+
+            .reveal-on-scroll {
+                opacity: 1;
+                transform: none;
+                filter: none;
+                transition: none;
+            }
+
+            .lift-on-hover,
+            .lift-on-hover:hover {
+                transition: none;
+                transform: none;
+                box-shadow: none;
+            }
+        }
+
+        header.scrolled .brand-text {
+            font-size: 1.45rem;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+        }
+
+        nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            margin-left: 0;
+            transition: color 0.3s, font-size 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+            border: 1px solid rgba(243, 128, 32, 0.28);
+            border-radius: 999px;
+            background: rgba(243, 128, 32, 0.08);
+            padding: 0.38rem 0.82rem;
+        }
+
+        header.scrolled nav a {
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            color: #f38020;
+            border-color: rgba(243, 128, 32, 0.52);
+            background: rgba(243, 128, 32, 0.14);
+        }
+
+        .hero {
+            padding: 4rem 0 2rem;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .hero-intro-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 3px solid #f38020;
+            border-top: 1px solid rgba(243, 128, 32, 0.25);
+            border-right: 1px solid rgba(243, 128, 32, 0.25);
+            border-bottom: 1px solid rgba(243, 128, 32, 0.25);
+            border-radius: 24px;
+            padding: 1.4rem;
+            box-shadow: 0 20px 44px rgba(0, 0, 0, 0.25);
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.45rem 0.8rem;
+            border-radius: 999px;
+            background: rgba(243, 128, 32, 0.12);
+            border: 1px solid rgba(243, 128, 32, 0.35);
+            color: #ffd7a8;
+            font-size: 0.92rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.05;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #c9c9c9;
+            max-width: 58ch;
+        }
+
+        .hero-note {
+            margin-top: 1.2rem;
+            color: #ffce9b;
+        }
+
+        .hero-panel {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(243, 128, 32, 0.25);
+            border-radius: 24px;
+            padding: 1.4rem;
+            box-shadow: 0 20px 44px rgba(0, 0, 0, 0.25);
+            display: flex;
+            align-items: center;
+        }
+
+        .preview-rack {
+            display: grid;
+            gap: 0.85rem;
+            width: 100%;
+        }
+
+        .preview-pill {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 0.22rem;
+            background: rgba(40, 52, 84, 0.82);
+            border-left: 3px solid #f38020;
+            border-top: 1px solid rgba(243, 128, 32, 0.28);
+            border-right: 1px solid rgba(243, 128, 32, 0.28);
+            border-bottom: 1px solid rgba(243, 128, 32, 0.28);
+            border-radius: 18px;
+            padding: 1rem 1.06rem;
+            min-height: 102px;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+        }
+
+        .preview-pill strong {
+            color: #f2f5fc;
+            font-size: 1.5rem;
+            line-height: 1.1;
+            font-weight: 700;
+        }
+
+        .preview-pill span {
+            color: #cfd8e8;
+            font-size: 0.95rem;
+            line-height: 1.25;
+        }
+
+        main {
+            padding: 1rem 0 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #ffd7a8;
+            background: linear-gradient(120deg, #fff0dd 0%, #ffbf6f 25%, #ff8a00 50%, #ff5e00 75%, #ffd18c 100%);
+            background-size: 240% 240%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: orangeGradientFlow 6s ease-in-out infinite;
+            filter: drop-shadow(0 0 8px rgba(255, 122, 0, 0.28));
+        }
+
+        .section-lead {
+            text-align: center;
+            color: #bdbdbd;
+            max-width: 70ch;
+            margin: 0 auto 2.2rem;
+        }
+
+        .sites-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(545px, 1fr));
+            justify-content: center;
+            gap: 1.4rem;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .sites-container {
+            max-width: 1820px;
+        }
+
+        .site-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(243, 128, 32, 0.14);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .site-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 56px rgba(243, 128, 32, 0.18);
+            border-color: rgba(243, 128, 32, 0.5);
+        }
+
+        .site-preview {
+            aspect-ratio: 16 / 9;
+            background: #111622;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .browser-preview {
+            aspect-ratio: 16 / 9;
+            min-height: 495px;
+            background: #0f0f0f;
+        }
+
+        .browser-view {
+            position: relative;
+            height: 100%;
+            overflow: hidden;
+            background: #0f0f0f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.35rem;
+        }
+
+        .site-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .browser-view iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 10px;
+            background: #fff;
+        }
+
+        .browser-view img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: top center;
+        }
+
+        .site-overlay {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 1rem;
+            background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.88));
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 1rem;
+        }
+
+        .site-overlay span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.35rem 0.7rem;
+            border-radius: 999px;
+            background: rgba(243, 128, 32, 0.9);
+            color: #111;
+            font-size: 0.82rem;
+            font-weight: 800;
+        }
+
+        .site-content {
+            padding: 1.2rem 1.2rem 1.35rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+            flex: 1;
+            border-left: 3px solid #f38020;
+            border-top: 1px solid rgba(243, 128, 32, 0.2);
+            border-right: 1px solid rgba(243, 128, 32, 0.2);
+            border-bottom: 1px solid rgba(243, 128, 32, 0.2);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .site-content h2 {
+            font-size: 1.45rem;
+            margin-bottom: 0;
+            color: #fff;
+        }
+
+        .site-content p {
+            color: #c8c8c8;
+            margin-bottom: 1rem;
+        }
+
+        .site-actions {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-top: auto;
+        }
+
+        .primary-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.82rem 1rem;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.25s ease, filter 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+        }
+
+        .primary-btn {
+            color: #111;
+            background: linear-gradient(135deg, #ffd7a8 0%, #f38020 100%);
+            border: 1px solid rgba(243, 128, 32, 0.36);
+            flex: 1 1 170px;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.05);
+        }
+
+        .mini-facts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .fact {
+            padding: 0.45rem 0.7rem;
+            border-radius: 999px;
+            background: rgba(243, 128, 32, 0.12);
+            border: 1px solid rgba(243, 128, 32, 0.22);
+            color: #dedede;
+            font-size: 0.88rem;
+            font-weight: 700;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #aaa;
+            border-top: 1px solid rgba(243, 128, 32, 0.2);
+            background: rgba(0, 0, 0, 0.35);
+        }
+
+        #contact {
+            padding: 3rem 0;
+            border-top: 1px solid rgba(243, 128, 32, 0.2);
+        }
+
+        #contact h2 {
+            font-size: clamp(1.8rem, 4.8vw, 2.5rem);
+            margin-bottom: clamp(1.2rem, 3.2vw, 2rem);
+            text-align: center;
+            color: #ffd7a8;
+            background: linear-gradient(120deg, #fff0dd 0%, #ffbf6f 25%, #ff8a00 50%, #ff5e00 75%, #ffd18c 100%);
+            background-size: 240% 240%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: orangeGradientFlow 6s ease-in-out infinite;
+            filter: drop-shadow(0 0 8px rgba(255, 122, 0, 0.28));
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            padding: 2rem 0;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(243, 128, 32, 0.12);
+            border: 1px solid rgba(243, 128, 32, 0.55);
+            border-radius: 50%;
+            text-decoration: none;
+            color: #f38020;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .social-btn:hover {
+            background: #f38020;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 1700px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sites-grid {
+                grid-template-columns: repeat(2, minmax(420px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 0.95rem 0;
+            }
+
+            header.scrolled {
+                padding: 0.95rem 0;
+            }
+
+            .header-content {
+                justify-content: space-between;
+                align-items: center;
+                gap: 0.45rem;
+            }
+
+            .brand-text {
+                font-size: 1.45rem;
+            }
+
+            nav {
+                width: 100%;
+                justify-content: flex-start;
+                gap: 0.45rem;
+                overflow-x: auto;
+                white-space: nowrap;
+                padding-bottom: 0.1rem;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+
+            nav::-webkit-scrollbar {
+                display: none;
+            }
+
+            nav a {
+                font-size: 1rem;
+                border: 1px solid rgba(243, 128, 32, 0.55);
+                border-radius: 999px;
+                min-height: auto;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0.38rem 0.82rem;
+                background: rgba(243, 128, 32, 0.1);
+                text-align: center;
+                flex: 0 0 auto;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+                line-height: 1.12;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .preview-pill {
+                min-height: 88px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                padding-top: 2.6rem;
+            }
+
+            .browser-preview {
+                min-height: 190px;
+            }
+
+            .sites-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .site-content {
+                padding: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.7rem;
+            }
+
+            .social-links {
+                gap: 0.75rem;
+                padding: 1rem 0;
+            }
+
+            .social-btn {
+                width: 46px;
+                height: 46px;
+                font-size: 1.2rem;
+            }
+
+            .site-overlay {
+                padding: 0.75rem;
+            }
+
+            .site-overlay span:last-child {
+                display: none;
+            }
+
+            .primary-btn {
+                min-height: 44px;
+                font-size: 0.92rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="brand" aria-label="Josef brand">
+                    <div class="brand-mark">J</div>
+                    <div class="brand-text">Josef</div>
+                </div>
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="hardware.html">Hardware</a>
+                    <a href="friends-websites.html">Friends' Websites</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div>
+                    <div class="hero-intro-card">
+                        <div class="eyebrow"><i class="fas fa-globe"></i> Friends' Websites</div>
+                        <h1>Friends' Websites</h1>
+                        <p>Clean live previews of sites I want to keep nearby, with quick one-click access to each full page.</p>
+                        <div class="mini-facts">
+                            <span class="fact">3 sites</span>
+                            <span class="fact">Live preview</span>
+                            <span class="fact">Fast access</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-panel">
+                    <div class="preview-rack">
+                        <div class="preview-pill">
+                            <strong>Martin Dvořák</strong>
+                            <span>dvorakmortonxd.dev</span>
+                        </div>
+                        <div class="preview-pill">
+                            <strong>Filip Bukovina</strong>
+                            <span>bukovinafilip.com</span>
+                        </div>
+                        <div class="preview-pill">
+                            <strong>Tomáš Vlk</strong>
+                            <span>vlcak.me</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <div class="container sites-container">
+            <h2 class="section-title">Web previews</h2>
+            <p class="section-lead">The cards below embed each site directly for a real live preview. If a site blocks embedding, use the buttons to open it normally.</p>
+
+            <div class="sites-grid">
+                <article class="site-card">
+                    <div class="site-preview browser-preview">
+                        <div class="browser-view">
+                            <iframe src="https://dvorakmortonxd.dev" title="Live preview of dvorakmortonxd.dev" loading="lazy" referrerpolicy="no-referrer"></iframe>
+                        </div>
+                        <div class="site-overlay">
+                            <span><i class="fas fa-tower-broadcast"></i> Live preview</span>
+                            <span>Martin Dvořák</span>
+                        </div>
+                    </div>
+                    <div class="site-content">
+                        <h2>Martin Dvořák</h2>
+                        <div class="site-actions">
+                            <a class="primary-btn" href="https://dvorakmortonxd.dev" target="_blank" rel="noopener noreferrer">
+                                Open website <i class="fas fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="site-card">
+                    <div class="site-preview browser-preview">
+                        <div class="browser-view">
+                            <iframe src="https://bukovinafilip.com" title="Live preview of bukovinafilip.com" loading="lazy" referrerpolicy="no-referrer"></iframe>
+                        </div>
+                        <div class="site-overlay">
+                            <span><i class="fas fa-tower-broadcast"></i> Live preview</span>
+                            <span>Filip Bukovina</span>
+                        </div>
+                    </div>
+                    <div class="site-content">
+                        <h2>Filip Bukovina</h2>
+                        <div class="site-actions">
+                            <a class="primary-btn" href="https://bukovinafilip.com" target="_blank" rel="noopener noreferrer">
+                                Open website <i class="fas fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="site-card">
+                    <div class="site-preview browser-preview">
+                        <div class="browser-view">
+                            <iframe src="https://vlcak.me" title="Live preview of vlcak.me" loading="lazy" referrerpolicy="no-referrer"></iframe>
+                        </div>
+                        <div class="site-overlay">
+                            <span><i class="fas fa-tower-broadcast"></i> Live preview</span>
+                            <span>Tomáš Vlk</span>
+                        </div>
+                    </div>
+                    <div class="site-content">
+                        <h2>Tomáš Vlk</h2>
+                        <div class="site-actions">
+                            <a class="primary-btn" href="https://vlcak.me" target="_blank" rel="noopener noreferrer">
+                                Open website <i class="fas fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Connect With Me</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #aaa;">Follow me on social media or get in touch</p>
+            <div class="social-links">
+                <a href="https://github.com/pepaskopec-blip" class="social-btn" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="https://git.dvorakmortonxd.dev/skopcak" class="social-btn" title="GitDXD" target="_blank" rel="noopener noreferrer"><i class="fab fa-git-alt"></i></a>
+                <a href="https://www.linkedin.com/in/josef-skopec-69380234b/" class="social-btn" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/ishoot4fun11" class="social-btn" title="X" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/skopcaak1/" class="social-btn" title="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@skopcaak_1" class="social-btn" title="TikTok" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.snapchat.com/add/skopcaak?share_id=xwTiIsZlpos&locale=en-US" class="social-btn" title="Snapchat" target="_blank" rel="noopener noreferrer"><i class="fab fa-snapchat"></i></a>
+                <a href="https://www.threads.com/@skopcaak1" class="social-btn" title="Threads" target="_blank" rel="noopener noreferrer">@</a>
+                <a href="https://quipee.me/u/skopcaak_1" class="social-btn" title="Quipee" target="_blank" rel="noopener noreferrer">Q</a>
+                <a href="https://itch.io/profile/skopcaak" class="social-btn" title="itch.io" target="_blank" rel="noopener noreferrer"><i class="fab fa-itch-io"></i></a>
+                <a href="https://discord.com/app" class="social-btn" title="Discord: ishootn4fun" aria-label="Discord: ishootn4fun" target="_blank" rel="noopener noreferrer"><i class="fab fa-discord"></i></a>
+                <a href="mailto:josef@skopec.dev" class="social-btn" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Josef Skopec.</p>
+    </footer>
+
+    <script>
+        const header = document.querySelector('header');
+        const SCROLL_ADD_THRESHOLD = 64;
+        const SCROLL_REMOVE_THRESHOLD = 20;
+        let isHeaderScrolled = window.scrollY > SCROLL_ADD_THRESHOLD;
+
+        function updateHeaderOnScroll() {
+            if (!header) return;
+
+            if (!isHeaderScrolled && window.scrollY >= SCROLL_ADD_THRESHOLD) {
+                isHeaderScrolled = true;
+            } else if (isHeaderScrolled && window.scrollY <= SCROLL_REMOVE_THRESHOLD) {
+                isHeaderScrolled = false;
+            }
+
+            header.classList.toggle('scrolled', isHeaderScrolled);
+        }
+
+        function initRevealAnimations() {
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reduceMotion) return;
+
+            const revealTargets = document.querySelectorAll(
+                '.hero h1, .hero p, .hero-panel, .preview-pill, .section-title, .section-lead, .site-card, .social-btn'
+            );
+
+            revealTargets.forEach((el) => el.classList.add('reveal-on-scroll'));
+            document.querySelectorAll('.site-card, .preview-pill').forEach((el) => el.classList.add('lift-on-hover'));
+
+            if (!('IntersectionObserver' in window)) {
+                revealTargets.forEach((el) => el.classList.add('is-visible'));
+                return;
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.14,
+                rootMargin: '0px 0px -8% 0px'
+            });
+
+            revealTargets.forEach((el) => observer.observe(el));
+        }
+
+        updateHeaderOnScroll();
+        initRevealAnimations();
+        window.addEventListener('scroll', updateHeaderOnScroll, { passive: true });
+    </script>
+</body>
+</html>

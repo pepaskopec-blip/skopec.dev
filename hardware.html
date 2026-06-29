@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware | Josef</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
+    <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #f38020 rgba(8, 12, 22, 0.85);
+        }
+
+        *::-webkit-scrollbar {
+            width: 12px;
+            height: 12px;
+        }
+
+        *::-webkit-scrollbar-track {
+            background: rgba(8, 12, 22, 0.8);
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #ffad4d 0%, #f38020 55%, #d66b13 100%);
+            border-radius: 999px;
+            border: 2px solid rgba(243, 128, 32, 0.18);
+        }
+
+        *::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #445375 0%, #334362 55%, #293754 100%);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(243, 128, 32, 0.22), transparent 35%),
+                radial-gradient(circle at bottom right, rgba(255, 183, 77, 0.14), transparent 32%),
+                linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-text-size-adjust: 100%;
+            animation: pageEnter 720ms cubic-bezier(0.2, 0.75, 0.2, 1) both;
+            transform-origin: 50% 0;
+        }
+
+        @keyframes pageEnter {
+            from {
+                opacity: 0;
+                transform: translateY(16px) scale(0.995);
+                filter: blur(3px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0);
+            }
+        }
+
+        a,
+        button {
+            touch-action: manipulation;
+        }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(22px);
+            filter: blur(2px);
+            transition: opacity 0.58s ease, transform 0.58s ease, filter 0.58s ease;
+        }
+
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+        }
+
+        .lift-on-hover {
+            transition: transform 0.24s ease, box-shadow 0.24s ease;
+        }
+
+        .lift-on-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 28px rgba(243, 128, 32, 0.14);
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 clamp(14px, 2.4vw, 24px);
+        }
+
+        header {
+            background: rgba(10, 10, 20, 0.34);
+            padding: 1.1rem 0;
+            border-bottom: 1px solid rgba(243, 128, 32, 0.25);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            -webkit-backdrop-filter: blur(20px) saturate(140%);
+            backdrop-filter: blur(20px) saturate(140%);
+            transition: padding 0.25s ease, background 0.25s ease, backdrop-filter 0.25s ease;
+        }
+
+        header.scrolled {
+            padding: 1.1rem 0;
+            background: rgba(10, 10, 20, 0.46);
+            -webkit-backdrop-filter: blur(28px) saturate(145%);
+            backdrop-filter: blur(28px) saturate(145%);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            white-space: nowrap;
+            overflow: hidden;
+            max-width: 220px;
+            transition: none;
+        }
+
+        .brand-mark {
+            width: 38px;
+            height: 38px;
+            border-radius: 11px;
+            background: linear-gradient(135deg, #ffefcf 0%, #f38020 55%, #ff6b35 100%);
+            color: #111;
+            display: grid;
+            place-items: center;
+            font-weight: 800;
+            box-shadow: 0 8px 20px rgba(243, 128, 32, 0.3);
+            flex-shrink: 0;
+        }
+
+        .brand-text,
+        section h2,
+        .hardware-group-title,
+        .section-title,
+        #contact h2 {
+            color: #ffd7a8 !important;
+            background: linear-gradient(120deg, #fff0dd 0%, #ffbf6f 25%, #ff8a00 50%, #ff5e00 75%, #ffd18c 100%) !important;
+            background-size: 240% 240% !important;
+            -webkit-background-clip: text !important;
+            background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            animation: orangeGradientFlow 6s ease-in-out infinite !important;
+            filter: drop-shadow(0 0 8px rgba(255, 122, 0, 0.28)) !important;
+        }
+
+        @keyframes orangeGradientFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            body {
+                animation: none;
+            }
+
+            .brand-text,
+            section h2,
+            .hardware-group-title,
+            .section-title,
+            #contact h2 {
+                animation: none;
+            }
+
+            .reveal-on-scroll {
+                opacity: 1;
+                transform: none;
+                filter: none;
+                transition: none;
+            }
+
+            .lift-on-hover,
+            .lift-on-hover:hover {
+                transition: none;
+                transform: none;
+                box-shadow: none;
+            }
+        }
+
+        .brand-text {
+            font-size: 1.45rem;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            animation: none !important;
+        }
+
+        header.scrolled .brand-text {
+            font-size: 1.45rem;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+        }
+
+        nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            margin-left: 0;
+            transition: color 0.3s, font-size 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+            border: 1px solid rgba(243, 128, 32, 0.28);
+            border-radius: 999px;
+            background: rgba(243, 128, 32, 0.08);
+            padding: 0.38rem 0.82rem;
+        }
+
+        header.scrolled nav a {
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            color: #f38020;
+            border-color: rgba(243, 128, 32, 0.52);
+            background: rgba(243, 128, 32, 0.14);
+        }
+
+        .hero {
+            padding: 4rem 0 2rem;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.08fr 0.92fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .hero-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 3px solid #f38020;
+            border-top: 1px solid rgba(243, 128, 32, 0.25);
+            border-right: 1px solid rgba(243, 128, 32, 0.25);
+            border-bottom: 1px solid rgba(243, 128, 32, 0.25);
+            border-radius: 24px;
+            padding: 1.4rem;
+            box-shadow: 0 20px 44px rgba(0, 0, 0, 0.25);
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.45rem 0.8rem;
+            border-radius: 999px;
+            background: rgba(243, 128, 32, 0.12);
+            border: 1px solid rgba(243, 128, 32, 0.35);
+            color: #ffd7a8;
+            font-size: 0.92rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.05;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #c9c9c9;
+            max-width: 58ch;
+        }
+
+        .hero-panel {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(243, 128, 32, 0.2);
+            border-radius: 24px;
+            padding: 1.4rem;
+            box-shadow: 0 20px 44px rgba(0, 0, 0, 0.25);
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-panel-inner {
+            width: 100%;
+            display: grid;
+            gap: 0.85rem;
+        }
+
+        .panel-line {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            background: rgba(40, 52, 84, 0.82);
+            border-left: 3px solid #f38020;
+            border-top: 1px solid rgba(243, 128, 32, 0.22);
+            border-right: 1px solid rgba(243, 128, 32, 0.22);
+            border-bottom: 1px solid rgba(243, 128, 32, 0.22);
+            border-radius: 18px;
+            padding: 1rem 1.06rem;
+            min-height: 102px;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+            transition: transform 0.24s ease, box-shadow 0.24s ease, background 0.24s ease, border-color 0.24s ease;
+            will-change: transform;
+        }
+
+        .panel-line:hover {
+            transform: translateY(-4px);
+            background: rgba(47, 61, 96, 0.9);
+            border-color: rgba(243, 128, 32, 0.42);
+            box-shadow: 0 10px 22px rgba(243, 128, 32, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+        }
+
+        .panel-line strong {
+            color: #f2f5fc;
+            font-size: 1.5rem;
+            line-height: 1.1;
+            font-weight: 700;
+        }
+
+        .panel-line span {
+            color: #cfd8e8;
+            font-size: 0.95rem;
+            line-height: 1.25;
+            text-align: right;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .panel-line {
+                transition: none;
+            }
+
+            .panel-line:hover {
+                transform: none;
+            }
+        }
+
+        main {
+            padding: 1rem 0 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: #ffd7a8;
+        }
+
+        .section-lead {
+            text-align: center;
+            color: #bdbdbd;
+            max-width: 70ch;
+            margin: 0 auto 2.2rem;
+        }
+
+        .hardware-section {
+            margin-bottom: 3rem;
+        }
+
+        #server {
+            scroll-margin-top: 110px;
+        }
+
+        .hardware-group-title {
+            margin: 1.5rem 0 0.9rem;
+            font-size: 1.2rem;
+            letter-spacing: 0.02em;
+        }
+
+        .hardware-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .hardware-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-left: 3px solid #f38020;
+            border-radius: 12px;
+            border-top: 1px solid rgba(243, 128, 32, 0.2);
+            border-right: 1px solid rgba(243, 128, 32, 0.2);
+            border-bottom: 1px solid rgba(243, 128, 32, 0.2);
+        }
+
+        .hardware-item h3 {
+            color: #f38020;
+            font-size: 1rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .hardware-item p {
+            color: #d8d8d8;
+            font-size: 0.95rem;
+        }
+
+        .hardware-item-featured {
+            grid-column: 1 / -1;
+            border-left-width: 5px;
+            background: rgba(243, 128, 32, 0.18);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .hardware-item-featured h3 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #ffd5b3;
+        }
+
+        .hardware-item-featured p {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-top: 0.2rem;
+        }
+
+        .hardware-grid-laptop {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            align-items: stretch;
+        }
+
+        .hardware-grid-laptop .hardware-item-featured {
+            grid-column: 1 / -1;
+        }
+
+        .hardware-laptop-focus {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+            gap: 1rem;
+            align-items: stretch;
+        }
+
+        .hardware-laptop-focus-text {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .hardware-photo-gallery-laptop {
+            margin-top: 0;
+            grid-template-columns: 1fr;
+            align-self: stretch;
+        }
+
+        .hardware-photo-gallery-laptop .hardware-photo-card {
+            border-left: 1px solid rgba(243, 128, 32, 0.2);
+            background: rgba(10, 18, 38, 0.56);
+            display: grid;
+            grid-template-rows: minmax(0, 1fr) auto;
+            align-items: stretch;
+            justify-items: stretch;
+            padding: 0.7rem 0.7rem 0;
+            min-height: 540px;
+        }
+
+        .hardware-photo-gallery-laptop .hardware-photo-card img {
+            width: 100%;
+            height: 100%;
+            max-height: none;
+            object-fit: contain;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .hardware-photo-caption {
+            padding: 0.65rem 0.85rem 0.8rem;
+            font-size: 0.82rem;
+            color: #bfbfbf;
+            text-align: center;
+        }
+
+        .hardware-item-laptop-note h4 {
+            color: #ffd7a8;
+            margin-bottom: 0.35rem;
+            font-size: 1rem;
+        }
+
+        .hardware-item-laptop-note p {
+            color: #d4d4d4;
+        }
+
+        .hardware-notes {
+            margin-top: 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+        }
+
+        .hardware-photo-gallery {
+            margin-top: 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1rem;
+        }
+
+        .hardware-photo-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(243, 128, 32, 0.22);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .hardware-photo-card img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            max-height: 380px;
+            object-fit: cover;
+        }
+
+        .hardware-photo-gallery-server .hardware-photo-card {
+            width: min(100%, 620px);
+            display: grid;
+            place-items: center;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .hardware-photo-gallery-server .hardware-photo-card img {
+            width: 100%;
+            height: auto;
+            max-height: none;
+            object-fit: contain;
+        }
+
+        .hardware-photo-gallery-server .hardware-photo-card-fill img {
+            height: 100%;
+            max-height: 380px;
+            object-fit: cover;
+        }
+
+        .hardware-photo-gallery-server .hardware-photo-card-fill {
+            width: min(100%, 620px);
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+        }
+
+        .hardware-photo-gallery-server .hardware-photo-card-fill img {
+            width: 100%;
+            height: 100%;
+            max-height: none;
+            object-fit: cover;
+        }
+
+        .note-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(243, 128, 32, 0.22);
+            border-radius: 16px;
+            padding: 1rem;
+        }
+
+        .note-card h4 {
+            color: #ffd7a8;
+            margin-bottom: 0.4rem;
+            font-size: 1rem;
+        }
+
+        .note-card p {
+            color: #d4d4d4;
+            font-size: 0.95rem;
+        }
+
+        #contact {
+            padding: 3rem 0;
+            border-top: 1px solid rgba(243, 128, 32, 0.2);
+        }
+
+        #contact h2 {
+            font-size: clamp(1.8rem, 4.8vw, 2.5rem);
+            margin-bottom: clamp(1.2rem, 3.2vw, 2rem);
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            padding: 2rem 0;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(243, 128, 32, 0.12);
+            border: 1px solid rgba(243, 128, 32, 0.55);
+            border-radius: 50%;
+            text-decoration: none;
+            color: #f38020;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .social-btn:hover {
+            background: #f38020;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #aaa;
+            border-top: 1px solid rgba(243, 128, 32, 0.2);
+            background: rgba(0, 0, 0, 0.35);
+        }
+
+        @media (max-width: 1100px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 0.95rem 0;
+            }
+
+            header.scrolled {
+                padding: 0.95rem 0;
+            }
+
+            .header-content {
+                justify-content: space-between;
+                align-items: center;
+                gap: 0.45rem;
+            }
+
+            .brand-text {
+                font-size: 1.45rem;
+            }
+
+            nav {
+                width: 100%;
+                justify-content: flex-start;
+                gap: 0.45rem;
+                overflow-x: auto;
+                white-space: nowrap;
+                padding-bottom: 0.1rem;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+
+            nav::-webkit-scrollbar {
+                display: none;
+            }
+
+            nav a {
+                font-size: 1rem;
+                border: 1px solid rgba(243, 128, 32, 0.55);
+                border-radius: 999px;
+                min-height: auto;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0.38rem 0.82rem;
+                background: rgba(243, 128, 32, 0.1);
+                text-align: center;
+                flex: 0 0 auto;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+                line-height: 1.1;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .panel-line {
+                min-height: 88px;
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .panel-line span {
+                text-align: left;
+            }
+
+            .hardware-grid-laptop {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            }
+
+            .hardware-laptop-focus {
+                grid-template-columns: 1fr;
+            }
+
+            .hardware-laptop-focus-text {
+                gap: 0.75rem;
+            }
+
+            .hardware-photo-gallery-laptop,
+            .hardware-item-laptop-note {
+                grid-column: auto;
+                grid-row: auto;
+            }
+
+            .hardware-photo-gallery-laptop .hardware-photo-card {
+                min-height: 360px;
+            }
+
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                padding-top: 2.6rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hardware-item-featured p {
+                font-size: 1rem;
+            }
+
+            .social-links {
+                gap: 0.75rem;
+                padding: 1rem 0;
+            }
+
+            .social-btn {
+                width: 46px;
+                height: 46px;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .brand-text {
+                font-size: 1.45rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="brand" aria-label="Josef brand">
+                    <div class="brand-mark">J</div>
+                    <div class="brand-text">Josef</div>
+                </div>
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="hardware.html">Hardware</a>
+                    <a href="friends-websites.html">Friends' Websites</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-card">
+                    <div class="eyebrow"><i class="fas fa-microchip"></i> Hardware</div>
+                    <h1>Hardware</h1>
+                    <p>A more detailed look at the devices I use every day.</p>
+                </div>
+
+                <div class="hero-panel">
+                    <div class="hero-panel-inner">
+                        <div class="panel-line">
+                            <strong>Desktop</strong>
+                            <span>Ryzen 5600 + RX 6700 + 16 GB RAM + 1 TB SSD</span>
+                        </div>
+                        <div class="panel-line">
+                            <strong>Laptop</strong>
+                            <span>MacBook Air M5 (2026)</span>
+                        </div>
+                        <div class="panel-line">
+                            <strong>Server</strong>
+                            <span>Xeon E5 2630L V4 + 40 GB RAM</span>
+                        </div>
+                        <div class="panel-line">
+                            <strong>Phone</strong>
+                            <span>Redmi Note 11 Pro 5G</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <div class="container">
+            <h2 class="section-title">Hardware overview</h2>
+            <p class="section-lead">These are the main devices I actually use.</p>
+
+            <section class="hardware-section">
+                <h3 class="hardware-group-title">Desktop</h3>
+                <div class="hardware-grid">
+                    <div class="hardware-item hardware-item-featured">
+                        <h3>Build / System</h3>
+                        <p>Custom PC (2022) - Debloated Windows 11.</p>
+                    </div>
+                    <div class="hardware-item">
+                        <h3>CPU</h3>
+                        <p>AMD Ryzen 5 5600 (3,5 GHZ, Turbo up to 4,4 GHZ)</p>
+                    </div>
+                    <div class="hardware-item">
+                        <h3>GPU</h3>
+                        <p>XFX Speedster SWFT309 AMD Radeon RX 6700</p>
+                    </div>
+                    <div class="hardware-item">
+                        <h3>RAM</h3>
+                        <p>Kingston Fury Beast 16 GB DDR4 3200 MHz (RGB)</p>
+                    </div>
+                    <div class="hardware-item">
+                        <h3>Storage</h3>
+                        <p>Western Digital Blue SN570 NVMe PCle 3.0 1 TB</p>
+                    </div>
+                    <div class="hardware-item">
+                        <h3>Motherboard</h3>
+                        <p>ASUS TUF B550-Plus</p>
+                    </div>
+                    <div class="hardware-item">
+                        <h3>PSU</h3>
+                        <p>SilentiumPC Vero M3 (600W)</p>
+                    </div>
+                    <div class="hardware-item">
+                        <h3>CPU Cooler</h3>
+                        <p>SilentiumPC Fera 5</p>
+                    </div>
+                    <div class="hardware-item">
+                        <h3>Case</h3>
+                        <p>SilentiumPC Signum SG1V EVO TG ARGB</p>
+                    </div>
+                </div>
+                <div class="hardware-photo-gallery" aria-label="Desktop photos">
+                    <figure class="hardware-photo-card">
+                        <img src="images/IMG_20260420_201759.webp" alt="Desktop photo, front view">
+                    </figure>
+                    <figure class="hardware-photo-card">
+                        <img src="images/IMG_20260420_201834.webp" alt="Desktop photo, side view">
+                    </figure>
+                </div>
+                <div class="hardware-notes">
+                    <div class="note-card">
+                        <h4>Why I use it</h4>
+                        <p>This is my main workstation for daily use, development, gaming, browsing, media, and heavier tasks.</p>
+                    </div>
+                    <div class="note-card">
+                        <h4>What matters most</h4>
+                        <p>Quiet operation, more than enough power for everyday use, and a clean software setup that I can keep tuned without wasting time.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="hardware-section">
+                <h3 class="hardware-group-title">Laptop</h3>
+                <div class="hardware-grid hardware-grid-laptop">
+                    <div class="hardware-item hardware-item-featured">
+                        <h3>Model / Year</h3>
+                        <p>MacBook Air M5 (2026)</p>
+                    </div>
+                    <div class="hardware-item">
+                        <h3>CPU</h3>
+                        <p>Apple M5</p>
+                    </div>
+                    <div class="hardware-item">
+                        <h3>GPU</h3>
+                        <p>Apple M5 GPU</p>
+                    </div>
+                    <div class="hardware-item">
+                        <h3>RAM</h3>
+                        <p>16 GB unified memory</p>
+                    </div>
+                    <div class="hardware-item">
+                        <h3>Storage</h3>
+                        <p>512 GB PCIe SSD</p>
+                    </div>
+                    <div class="hardware-laptop-focus">
+                        <div class="hardware-laptop-focus-text">
+                            <div class="hardware-item">
+                                <h3>Display</h3>
+                                <p>13.6", 2560x1664</p>
+                            </div>
+                            <div class="hardware-item">
+                                <h3>Wireless</h3>
+                                <p>Wi-Fi 7, Bluetooth 6 I think</p>
+                            </div>
+                            <div class="hardware-item hardware-item-laptop-note">
+                                <h4>Why I keep it</h4>
+                                <p>It is a great portable machine for work, writing, watching videos, and testing, basically for everything on the go.</p>
+                            </div>
+                        </div>
+                        <div class="hardware-photo-gallery hardware-photo-gallery-laptop" aria-label="Laptop photos">
+                            <figure class="hardware-photo-card">
+                                <img src="images/m5-air-mac-3205957544.webp" alt="MacBook Air M5 photo">
+                                <figcaption class="hardware-photo-caption">Not my photo btw.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+            </section>
+
+            <section id="server" class="hardware-section">
+                <h3 class="hardware-group-title">Server</h3>
+                <div class="hardware-grid">
+                    <div class="hardware-item hardware-item-featured">
+                        <h3>Build / System</h3>
+                        <p>Homelab/Proxmox server (2026) - Proxmox VE</p>
+                    </div>
+                    <div class="hardware-item">
+                        <h3>CPU</h3>
+                        <p>Intel Xeon E5-2630L v4 (10 cores, 20 threads, 1.8 GHz base, up to 2.9 GHz turbo)</p>
+                    </div>
+                    <div class="hardware-item">
+                        <h3>GPU</h3>
+                        <p>nVidia GT 440, used only for BIOS configuration; the server is usually headless.</p>
+                    </div>
+                    <div class="hardware-item">
+                        <h3>RAM</h3>
+                        <p>40 GB of ECC registered DDR4 RAM (RDIMM)</p>
+                    </div>
+                    <div class="hardware-item">
+                        <h3>Storage</h3>
+                        <p>OEM version of Samsung 970 EVO NVMe PCle 3.0 256 GB, 2,5 inch 512 GB HDD from Western Digital, 3,5 inch 320 GB HDD also from Western Digital</p>
+                    </div>
+                    <div class="hardware-item">
+                        <h3>Motherboard</h3>
+                        <p>Huanazhi X99 P4F</p>
+                    </div>
+                    <div class="hardware-item">
+                        <h3>PSU</h3>
+                        <p>Corsair CX450</p>
+                    </div>
+                    <div class="hardware-item">
+                        <h3>CPU Cooler</h3>
+                        <p>Endorfy Fera 5</p>
+                    </div>
+                    <div class="hardware-item">
+                        <h3>Case</h3>
+                        <p>M-ATX case from old office computer</p>
+                    </div>
+                </div>
+                <div class="hardware-photo-gallery hardware-photo-gallery-server" aria-label="Server photo">
+                    <figure class="hardware-photo-card">
+                        <img src="images/IMG_20260622_192129.webp" alt="Homelab server photo">
+                    </figure>
+                    <figure class="hardware-photo-card hardware-photo-card-fill">
+                        <img src="images/Screenshot 2026-06-22 202806.webp" alt="Homelab server and services screenshot">
+                    </figure>
+                </div>
+            </section>
+
+            <section class="hardware-section">
+                <h3 class="hardware-group-title">Phone</h3>
+                <div class="hardware-grid">
+                    <div class="hardware-item hardware-item-featured">
+                        <h3>Model / System</h3>
+                        <p>Xiaomi Redmi Note 11 Pro 5G - Android (HyperOS) - I am planning to root it.</p>
+                    </div>
+                    <div class="hardware-item">
+                        <h3>Display</h3>
+                        <p>6.67" AMOLED, 120 Hz, FHD+ (2400x1080)</p>
+                    </div>
+                    <div class="hardware-item">
+                        <h3>Chipset</h3>
+                        <p>Qualcomm Snapdragon 695 5G (6 nm)</p>
+                    </div>
+                    <div class="hardware-item">
+                        <h3>RAM</h3>
+                        <p>6 GB LPDDR4X</p>
+                    </div>
+                    <div class="hardware-item">
+                        <h3>Storage</h3>
+                        <p>128 GB UFS 2.2 + microSD slot</p>
+                    </div>
+                    <div class="hardware-item">
+                        <h3>Battery</h3>
+                        <p>5000 mAh, 67 W turbo charging</p>
+                    </div>
+                    <div class="hardware-item">
+                        <h3>Main Camera</h3>
+                        <p>108 MP + 8 MP ultrawide + 2 MP macro</p>
+                    </div>
+                    <div class="hardware-item">
+                        <h3>Connectivity</h3>
+                        <p>5G, NFC, Wi-Fi 5, Bluetooth 5.1, USB-C</p>
+                    </div>
+                </div>
+                <div class="hardware-notes">
+                    <div class="note-card">
+                        <h4>Daily use</h4>
+                        <p>This is my main phone for messaging, browsing, photography, light gaming, and general everyday use.</p>
+                    </div>
+                    <div class="note-card">
+                        <h4>What I want to change</h4>
+                        <p>I am interested in rooting it eventually so I can customize the system and get more control over the device.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Connect With Me</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #aaa;">Follow me on social media or get in touch</p>
+            <div class="social-links">
+                <a href="https://github.com/pepaskopec-blip" class="social-btn" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="https://git.dvorakmortonxd.dev/skopcak" class="social-btn" title="GitDXD" target="_blank" rel="noopener noreferrer"><i class="fab fa-git-alt"></i></a>
+                <a href="https://www.linkedin.com/in/josef-skopec-69380234b/" class="social-btn" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/ishoot4fun11" class="social-btn" title="X" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/skopcaak1/" class="social-btn" title="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@skopcaak_1" class="social-btn" title="TikTok" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.snapchat.com/add/skopcaak?share_id=xwTiIsZlpos&locale=en-US" class="social-btn" title="Snapchat" target="_blank" rel="noopener noreferrer"><i class="fab fa-snapchat"></i></a>
+                <a href="https://www.threads.com/@skopcaak1" class="social-btn" title="Threads" target="_blank" rel="noopener noreferrer">@</a>
+                <a href="https://quipee.me/u/skopcaak_1" class="social-btn" title="Quipee" target="_blank" rel="noopener noreferrer">Q</a>
+                <a href="https://itch.io/profile/skopcaak" class="social-btn" title="itch.io" target="_blank" rel="noopener noreferrer"><i class="fab fa-itch-io"></i></a>
+                <a href="https://discord.com/app" class="social-btn" title="Discord: ishootn4fun" aria-label="Discord: ishootn4fun" target="_blank" rel="noopener noreferrer"><i class="fab fa-discord"></i></a>
+                <a href="mailto:josef@skopec.dev" class="social-btn" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Josef Skopec.</p>
+    </footer>
+
+    <script>
+        const header = document.querySelector('header');
+        const SCROLL_ADD_THRESHOLD = 64;
+        const SCROLL_REMOVE_THRESHOLD = 20;
+        let isHeaderScrolled = window.scrollY > SCROLL_ADD_THRESHOLD;
+
+        function updateHeaderOnScroll() {
+            if (!header) return;
+
+            if (!isHeaderScrolled && window.scrollY >= SCROLL_ADD_THRESHOLD) {
+                isHeaderScrolled = true;
+            } else if (isHeaderScrolled && window.scrollY <= SCROLL_REMOVE_THRESHOLD) {
+                isHeaderScrolled = false;
+            }
+
+            header.classList.toggle('scrolled', isHeaderScrolled);
+        }
+
+        function initRevealAnimations() {
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reduceMotion) return;
+
+            const revealTargets = document.querySelectorAll(
+                '.hero h1, .hero p, .hero-card, .hero-panel, .panel-line, .section-title, .section-lead, .hardware-item, .note-card, .social-btn'
+            );
+
+            revealTargets.forEach((el) => el.classList.add('reveal-on-scroll'));
+            document.querySelectorAll('.panel-line, .hardware-item, .note-card').forEach((el) => el.classList.add('lift-on-hover'));
+
+            if (!('IntersectionObserver' in window)) {
+                revealTargets.forEach((el) => el.classList.add('is-visible'));
+                return;
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.14,
+                rootMargin: '0px 0px -8% 0px'
+            });
+
+            revealTargets.forEach((el) => observer.observe(el));
+        }
+
+        updateHeaderOnScroll();
+        initRevealAnimations();
+        window.addEventListener('scroll', updateHeaderOnScroll, { passive: true });
+    </script>
+</body>
+</html>
