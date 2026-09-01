@@ -237,10 +237,9 @@ a:hover {
 /* —— Hero —— */
 .hero {
   position: relative;
-  min-height: calc(100vh - var(--nav-h));
   display: grid;
-  align-items: end;
-  padding: 3rem 0 4.5rem;
+  align-items: start;
+  padding: 2.75rem 0 3.5rem;
   overflow: hidden;
 }
 
@@ -269,39 +268,25 @@ a:hover {
 .hero-content {
   position: relative;
   z-index: 1;
-  max-width: 40rem;
+  max-width: 42rem;
 }
 
-.hero-brand {
-  margin: 0 0 1.25rem;
+.hero-about-title {
+  margin: 0 0 0.85rem;
   font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(4.5rem, 14vw, 8.5rem);
-  letter-spacing: -0.06em;
-  line-height: 0.9;
+  font-size: clamp(1.85rem, 4vw, 2.6rem);
+  font-weight: 750;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
   color: var(--ink);
 }
 
-.hero-brand em {
-  font-style: normal;
-  color: var(--accent);
+.hero .about-text {
+  margin: 0 0 0.85rem;
 }
 
-.hero h1 {
-  margin: 0 0 0.9rem;
-  font-family: var(--font-display);
-  font-size: clamp(1.35rem, 2.6vw, 1.85rem);
-  font-weight: 650;
-  letter-spacing: -0.02em;
-  line-height: 1.25;
-  color: var(--ink-soft);
-}
-
-.hero p {
-  margin: 0 0 1.75rem;
-  max-width: 32rem;
-  color: var(--muted);
-  font-size: 1.05rem;
+.hero .meta-row {
+  margin: 1.25rem 0 1.75rem;
 }
 
 .hero-actions {
@@ -541,12 +526,6 @@ a:hover {
   fill: currentColor;
 }
 
-.social-link.is-placeholder {
-  opacity: 0.55;
-  cursor: default;
-  pointer-events: none;
-}
-
 .connect-note {
   margin: 1rem 0 0;
   font-size: 0.9rem;
@@ -556,6 +535,45 @@ a:hover {
 /* —— Inner pages —— */
 .page-hero {
   padding: 3.5rem 0 2.5rem;
+}
+
+.breadcrumbs {
+  margin: 0 0 1rem;
+}
+
+.breadcrumbs ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.5rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.breadcrumbs li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.breadcrumbs li:not(:last-child)::after {
+  content: "/";
+  color: var(--line-strong);
+}
+
+.breadcrumbs a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  color: var(--accent-ink);
+}
+
+.breadcrumbs [aria-current="page"] {
+  color: var(--ink-soft);
 }
 
 .page-hero h1 {
@@ -815,10 +833,11 @@ a:hover {
   animation: rise 0.85s var(--ease) both;
 }
 
-.hero-brand { animation-delay: 0.05s; }
-.hero h1 { animation-delay: 0.16s; }
-.hero p { animation-delay: 0.28s; }
-.hero-actions { animation-delay: 0.4s; }
+.hero-about-title { animation-delay: 0.05s; }
+.hero .about-text:nth-of-type(1) { animation-delay: 0.12s; }
+.hero .about-text:nth-of-type(2) { animation-delay: 0.18s; }
+.hero .meta-row { animation-delay: 0.24s; }
+.hero-actions { animation-delay: 0.3s; }
 
 @keyframes rise {
   from {

@@ -20,6 +20,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Syne:wght@500..800&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#07090d">
   <link rel="stylesheet" href="style.css">
   <script type="application/ld+json">
   {
@@ -75,7 +79,7 @@
         "name": "Where is the source for this site?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "On GitHub: pepaskopec-blip/skopec.dev-reimagined. Older version: pepaskopec-blip/skopec.dev."
+          "text": "On GitHub: pepaskopec-blip/skopec.dev."
         }
       },
       {
@@ -97,6 +101,21 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "skopec.dev",
+    "url": "https://skopec.dev/",
+    "description": "Josef Skopec — student portfolio: graphic design, web development, and a Proxmox home lab.",
+    "inLanguage": "en",
+    "author": {
+      "@type": "Person",
+      "name": "Josef Skopec",
+      "url": "https://skopec.dev/"
+    }
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -116,35 +135,28 @@
   </header>
 
   <main id="main" class="page">
-    <section class="hero wrap">
+    <section class="hero wrap" id="about" aria-labelledby="about-title">
       <div class="hero-content">
-        <p class="hero-brand" aria-label="Josef">Josef<em>.</em></p>
-        <h1>Design, the web, and a rack that never sleeps.</h1>
-        <p>Sixteen, based in the Czech Republic — building interfaces by day and running a Proxmox lab by night.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#services">My services</a>
-          <a class="btn btn-ghost" href="projects.html">See projects</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="about" aria-labelledby="about-title">
-      <div class="wrap reveal">
-        <p class="section-label">About</p>
-        <h2 id="about-title">Hey, I’m Josef.</h2>
+        <h1 id="about-title" class="hero-about-title">Hey, I’m Josef.</h1>
         <p class="about-text">
           I’m a 16-year-old student from the Czech Republic specializing in graphic design and web development at SSŠVT.
-          I’m a home lab enthusiast and developer — I run my own Proxmox server where I host things like Jellyfin for movies and TV shows,
+          I’m a home lab enthusiast and developer — I run Linux on my desktop and my own Proxmox server where I host things like Jellyfin for movies and TV shows,
           Navidrome for music, Ollama for local AI, SearXNG as a search engine, and more.
         </p>
         <p class="about-text">
-          Outside of screens I train five times a week on a UL / PPL split.
+          Outside of screens I train five times a week on a UL / PPL split, and I play airsoft.
         </p>
         <div class="meta-row">
           <span><strong>School</strong> SSŠVT</span>
-          <span><strong>Focus</strong> Graphic design &amp; web</span>
-          <span><strong>Lab</strong> Proxmox @ home</span>
+          <span><strong>Focus</strong> Developement, Tinkering &amp; web</span>
+          <span><strong>OS</strong> Linux</span>
+          <span><strong>Home Lab</strong> Proxmox</span>
           <span><strong>Gym</strong> 5× / week · UL/PPL</span>
+          <span><strong>Hobby</strong> Airsoft, Gym</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#services">My services</a>
+          <a class="btn btn-ghost" href="projects.html">See projects</a>
         </div>
       </div>
     </section>
@@ -203,8 +215,8 @@
 
     <section class="section" id="friends" aria-labelledby="friends-title">
       <div class="wrap reveal">
-        <p class="section-label">People</p>
-        <h2 id="friends-title">Friends</h2>
+        <p class="section-label">Friends</p>
+        <h2 id="friends-title">Websites</h2>
         <p class="section-lead">A few sites worth visiting.</p>
         <ul class="friend-list">
           <li>
@@ -245,7 +257,7 @@
           </details>
           <details class="faq-item">
             <summary>Where’s the source for this site?</summary>
-            <p>On GitHub: <a href="https://github.com/pepaskopec-blip/skopec.dev-reimagined" target="_blank" rel="noopener noreferrer">skopec.dev-reimagined</a>. Older version lives in <a href="https://github.com/pepaskopec-blip/skopec.dev" target="_blank" rel="noopener noreferrer">skopec.dev</a>.</p>
+            <p>On GitHub: <a href="https://github.com/pepaskopec-blip/skopec.dev" target="_blank" rel="noopener noreferrer">skopec.dev</a>.</p>
           </details>
           <details class="faq-item">
             <summary>What hardware do you run?</summary>
