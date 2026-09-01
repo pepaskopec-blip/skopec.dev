@@ -1,0 +1,17 @@
+# skopec.dev
+
+> Personal portfolio of Josef — graphic design, web development, and home lab.
+
+## Pages
+- [Home](https://skopec.dev/): Intro, self-hosted services, friends, FAQ, contact
+- [Projects](https://skopec.dev/projects.html): Selected work and lab experiments
+- [Hardware](https://skopec.dev/hardware.html): Desktop, laptop, server, and phone specs
+- [Privacy](https://skopec.dev/privacy.html): Short privacy note for this personal site
+
+## Services
+- Proxmox: https://proxmox.skopec.dev
+- Jellyfin: https://jelly.skopec.dev
+- Navidrome: https://navi.skopec.dev
+- Ollama: https://ai.skopec.dev
+- SearXNG: https://search.skopec.dev
+- ConvertX: https://convert.skopec.dev

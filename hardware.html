@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Josef’s hardware — Ryzen desktop, MacBook Air M5, Proxmox Xeon server, and Redmi Note 11 Pro 5G with full component specs.">
+  <title>Hardware — desktop, laptop, server &amp; phone · Josef</title>
+  <link rel="canonical" href="https://skopec.dev/hardware.html">
+  <meta property="og:title" content="Hardware — Josef">
+  <meta property="og:description" content="Full specs for desktop, MacBook Air M5, Proxmox server, and phone.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://skopec.dev/hardware.html">
+  <meta property="og:image" content="https://skopec.dev/og-image.jpg">
+  <meta property="og:image:alt" content="Josef. — skopec.dev">
+  <meta property="og:site_name" content="skopec.dev">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hardware — Josef">
+  <meta name="twitter:description" content="Full specs for desktop, MacBook Air M5, Proxmox server, and phone.">
+  <meta name="twitter:image" content="https://skopec.dev/og-image.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Syne:wght@500..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">Josef<span>.</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="site-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="hardware.html" aria-current="page">Hardware</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <header class="page-hero wrap reveal">
+      <h1>Hardware</h1>
+      <p>The machines I use every day — desktop build, daily driver laptop, Proxmox server, and phone.</p>
+    </header>
+
+    <section class="section" aria-labelledby="machines-title">
+      <div class="wrap reveal">
+        <p class="section-label">Gear</p>
+        <h2 id="machines-title">My machines</h2>
+        <p class="section-lead">Full component breakdown with key specs from each part.</p>
+        <ul class="stack-list">
+          <li class="stack-item">
+            <span class="tag">Desktop</span>
+            <h3>Custom build · 2022</h3>
+            <p>Main PC running Artix Linux with SwayFX wm — assembled in 2022.</p>
+            <dl class="spec-list">
+              <div><dt>CPU</dt><dd>AMD Ryzen 5 5600 — Zen 3 / Vermeer, 6C/12T, 3.5–4.4 GHz, 32 MB L3, 65 W TDP, AM4, unlocked</dd></div>
+              <div><dt>GPU</dt><dd>XFX Speedster SWFT 309 RX 6700 — RDNA 2, 2304 SP, 10 GB GDDR6 @ 16 Gbps (160-bit, 320 GB/s), boost up to ~2425 MHz, triple-fan, HDMI + 3× DP</dd></div>
+              <div><dt>RAM</dt><dd>Kingston FURY Beast RGB — 16 GB DDR4-3200 · CL16 (16-18-18) · ~1.35 V · Intel XMP 2.0</dd></div>
+              <div><dt>Storage</dt><dd>WD Blue SN570 1 TB — M.2 2280 NVMe, PCIe 3.0 ×4, up to ~3500/3000 MB/s read/write, TLC, ~600 TBW, 5-year warranty</dd></div>
+              <div><dt>Board</dt><dd>ASUS TUF Gaming B550-Plus — AM4 ATX, B550, 8+2 DrMOS VRM, 4× DDR4 (max 128 GB), PCIe 4.0 ×16, dual M.2, 2.5 GbE, USB 3.2 Gen 2</dd></div>
+              <div><dt>PSU</dt><dd>SilentiumPC Vero M3 Bronze 600 W — ATX, 80 PLUS Bronze (~90% @ 50% load), semi-modular, single +12 V rail up to ~588 W</dd></div>
+              <div><dt>Cooler</dt><dd>SilentiumPC Fera 5 — tower air cooler, 4× heatpipes, Fluctus 120 PWM (300–1800 RPM), rated ~220 W TDP</dd></div>
+              <div><dt>Case</dt><dd>SilentiumPC Signum SG1V EVO TG ARGB — ATX mid-tower (~447×216×413 mm), tempered glass, 4× Stella HP ARGB 120 mm included, GPU clearance ~325 mm</dd></div>
+            </dl>
+          </li>
+          <li class="stack-item">
+            <span class="tag">Laptop</span>
+            <h3>MacBook Air 13″ · M5 · base</h3>
+            <p>Portable machine for school and on-the-go work.</p>
+            <dl class="spec-list">
+              <div><dt>Chip</dt><dd>Apple M5 — 10-core CPU (4 performance + 6 efficiency), 8-core GPU, 16-core Neural Engine, ~153 GB/s memory bandwidth</dd></div>
+              <div><dt>Memory</dt><dd>16 GB unified memory (base)</dd></div>
+              <div><dt>Storage</dt><dd>512 GB SSD (base; Apple claims ~2× faster vs previous Air gen)</dd></div>
+              <div><dt>Display</dt><dd>13.6″ Liquid Retina IPS — 2560×1664 @ 224 ppi, 500 nits, 60 Hz, P3</dd></div>
+              <div><dt>Battery</dt><dd>Up to ~18 h video streaming / ~15 h wireless web (Apple rating)</dd></div>
+              <div><dt>I/O</dt><dd>2× Thunderbolt 4 · MagSafe · 3.5 mm · Wi-Fi 7 (N1) · Bluetooth 6 · ~1.24 kg</dd></div>
+            </dl>
+          </li>
+          <li class="stack-item">
+            <span class="tag">Server</span>
+            <h3>Proxmox server</h3>
+            <p>Home lab box for VMs and containers — usually runs headless.</p>
+            <dl class="spec-list">
+              <div><dt>CPU</dt><dd>Intel Xeon E5-2630L v4 — Broadwell-EP, 14 nm, 10C/20T, 1.8–2.9 GHz, 25 MB L3, 55 W TDP, LGA 2011-3, DDR4 ECC</dd></div>
+              <div><dt>GPU</dt><dd>NVIDIA GeForce GT 440 — Fermi GF108-class entry GPU (~96 CUDA, ~65 W); used only for BIOS, then headless</dd></div>
+              <div><dt>RAM</dt><dd>40 GB ECC registered DDR4 (RDIMM) — dual-channel on this board, CPU supports DDR4-1600/1866/2133</dd></div>
+              <div><dt>Storage</dt><dd>Samsung 970 EVO OEM 256 GB NVMe (PCIe 3.0 ×4, Phoenix controller, ~3400/1500 MB/s class) · WD 2.5″ 512 GB HDD · WD 3.5″ 320 GB HDD</dd></div>
+              <div><dt>Board</dt><dd>Huananzhi X99-P4F — mATX (215×185 mm), LGA 2011-3, 4× DDR4 (max 128 GB), 2× M.2 NVMe PCIe 3.0 ×4, 4× SATA 3 Gb/s, 1× PCIe 3.0 ×16, Realtek GbE, 6-phase VRM</dd></div>
+              <div><dt>PSU</dt><dd>Corsair CX450 — 450 W ATX, 80 PLUS Bronze, non-modular, ~100k h MTBF rating</dd></div>
+              <div><dt>Cooler</dt><dd>Endorfy Fera 5 — same Synergy Cooling design as SilentiumPC Fera 5; 4× heatpipes, 120 mm PWM, ~220 W TDP class</dd></div>
+              <div><dt>Case</dt><dd>mATX case reused from an old office PC</dd></div>
+            </dl>
+          </li>
+          <li class="stack-item">
+            <span class="tag">Mobile</span>
+            <h3>Xiaomi Redmi Note 11 Pro 5G · 6/128</h3>
+            <p>Daily driver phone.</p>
+            <dl class="spec-list">
+              <div><dt>Chipset</dt><dd>Qualcomm Snapdragon 695 5G (SM6375, 6 nm) — 2× Kryo 660 @ up to 2.2 GHz + 6× @ 1.7 GHz · Adreno 619</dd></div>
+              <div><dt>Display</dt><dd>6.67″ Super AMOLED DotDisplay — 1080×2400, 120 Hz, ~395 ppi, DCI-P3, HBM ~700 nits / peak ~1200 nits, Gorilla Glass 5</dd></div>
+              <div><dt>Memory</dt><dd>6 GB LPDDR4X + 128 GB UFS 2.2 · microSD expandable (shared SIM slot)</dd></div>
+              <div><dt>Camera</dt><dd>108 MP f/1.9 wide (1/1.52″) + 8 MP ultrawide 118° + 2 MP macro · 16 MP front</dd></div>
+              <div><dt>Battery</dt><dd>5000 mAh · 67 W wired turbo charge (USB-C)</dd></div>
+              <div><dt>Body</dt><dd>~164.2 × 76.1 × 8.1 mm · ~202 g · dual speakers · 3.5 mm jack · side fingerprint · Bluetooth 5.1 / Wi-Fi 5</dd></div>
+            </dl>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© <span data-year></span> Josef · skopec.dev</span>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="index.html#connect">Get in touch</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

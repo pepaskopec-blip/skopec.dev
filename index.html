@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Josef Skopec — 16-year-old student from the Czech Republic. Graphic design, web development, and a Proxmox home lab.">
+  <title>Josef — portfolio &amp; home lab · skopec.dev</title>
+  <link rel="canonical" href="https://skopec.dev/">
+  <meta property="og:title" content="Josef — portfolio &amp; home lab">
+  <meta property="og:description" content="Student designer &amp; developer from the Czech Republic. Projects, hardware, and self-hosted services.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://skopec.dev/">
+  <meta property="og:image" content="https://skopec.dev/og-image.jpg">
+  <meta property="og:image:alt" content="Josef. — skopec.dev">
+  <meta property="og:site_name" content="skopec.dev">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Josef — portfolio &amp; home lab">
+  <meta name="twitter:description" content="Student designer &amp; developer from the Czech Republic. Projects, hardware, and self-hosted services.">
+  <meta name="twitter:image" content="https://skopec.dev/og-image.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Syne:wght@500..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Josef Skopec",
+    "url": "https://skopec.dev/",
+    "email": "mailto:josef@skopec.dev",
+    "jobTitle": "Student — graphic design & web development",
+    "affiliation": {
+      "@type": "EducationalOrganization",
+      "name": "SSŠVT"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "CZ"
+    },
+    "sameAs": [
+      "https://github.com/pepaskopec-blip",
+      "https://www.linkedin.com/in/josef-skopec-69380234b/",
+      "https://x.com/ishoot4fun11",
+      "https://www.instagram.com/skopcaak1",
+      "https://www.tiktok.com/@skopcaak_1",
+      "https://www.threads.com/@skopcaak1",
+      "https://itch.io/profile/skopcaak",
+      "https://quipee.me/u/skopcaak_1"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Who are you?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Josef — a 16-year-old student at SSŠVT in the Czech Republic, into graphic design, web development, and home labbing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I get access to your services?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most *.skopec.dev services are private. If you know me, ask — otherwise they are not open to the public."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is the source for this site?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "On GitHub: pepaskopec-blip/skopec.dev-reimagined. Older version: pepaskopec-blip/skopec.dev."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What hardware do you run?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Desktop, MacBook Air M5, a Proxmox Xeon box, and a Redmi Note 11 Pro 5G — full specs on the Hardware page."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I contact you?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Email josef@skopec.dev, or use Discord (ishootn4fun) and the other links in Get in touch."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">Josef<span>.</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="site-nav">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="hardware.html">Hardware</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <section class="hero wrap">
+      <div class="hero-content">
+        <p class="hero-brand" aria-label="Josef">Josef<em>.</em></p>
+        <h1>Design, the web, and a rack that never sleeps.</h1>
+        <p>Sixteen, based in the Czech Republic — building interfaces by day and running a Proxmox lab by night.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#services">My services</a>
+          <a class="btn btn-ghost" href="projects.html">See projects</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="wrap reveal">
+        <p class="section-label">About</p>
+        <h2 id="about-title">Hey, I’m Josef.</h2>
+        <p class="about-text">
+          I’m a 16-year-old student from the Czech Republic specializing in graphic design and web development at SSŠVT.
+          I’m a home lab enthusiast and developer — I run my own Proxmox server where I host things like Jellyfin for movies and TV shows,
+          Navidrome for music, Ollama for local AI, SearXNG as a search engine, and more.
+        </p>
+        <p class="about-text">
+          Outside of screens I train five times a week on a UL / PPL split.
+        </p>
+        <div class="meta-row">
+          <span><strong>School</strong> SSŠVT</span>
+          <span><strong>Focus</strong> Graphic design &amp; web</span>
+          <span><strong>Lab</strong> Proxmox @ home</span>
+          <span><strong>Gym</strong> 5× / week · UL/PPL</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services" aria-labelledby="services-title">
+      <div class="wrap reveal">
+        <p class="section-label">Self-hosted</p>
+        <h2 id="services-title">Services</h2>
+        <p class="section-lead">Things I run on my lab — open a service if you have access.</p>
+        <ul class="service-list">
+          <li>
+            <a href="https://proxmox.skopec.dev" target="_blank" rel="noopener noreferrer">
+              <span class="service-name">Proxmox</span>
+              <span class="service-host">proxmox.skopec.dev</span>
+              <span class="service-arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://jelly.skopec.dev" target="_blank" rel="noopener noreferrer">
+              <span class="service-name">Jellyfin</span>
+              <span class="service-host">jelly.skopec.dev</span>
+              <span class="service-arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://navi.skopec.dev" target="_blank" rel="noopener noreferrer">
+              <span class="service-name">Navidrome</span>
+              <span class="service-host">navi.skopec.dev</span>
+              <span class="service-arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://ai.skopec.dev" target="_blank" rel="noopener noreferrer">
+              <span class="service-name">Ollama</span>
+              <span class="service-host">ai.skopec.dev</span>
+              <span class="service-arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://search.skopec.dev" target="_blank" rel="noopener noreferrer">
+              <span class="service-name">SearXNG</span>
+              <span class="service-host">search.skopec.dev</span>
+              <span class="service-arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://convert.skopec.dev" target="_blank" rel="noopener noreferrer">
+              <span class="service-name">ConvertX</span>
+              <span class="service-host">convert.skopec.dev</span>
+              <span class="service-arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="friends" aria-labelledby="friends-title">
+      <div class="wrap reveal">
+        <p class="section-label">People</p>
+        <h2 id="friends-title">Friends</h2>
+        <p class="section-lead">A few sites worth visiting.</p>
+        <ul class="friend-list">
+          <li>
+            <a href="https://dvorakmortonxd.dev" target="_blank" rel="noopener noreferrer">
+              <span class="friend-name">Martin Dvořák</span>
+              <span class="friend-url">dvorakmortonxd.dev</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://bukovinafilip.com" target="_blank" rel="noopener noreferrer">
+              <span class="friend-name">Filip Bukovina</span>
+              <span class="friend-url">bukovinafilip.com</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://vlcak.me" target="_blank" rel="noopener noreferrer">
+              <span class="friend-name">Tomáš Vlk</span>
+              <span class="friend-url">vlcak.me</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="wrap reveal">
+        <p class="section-label">FAQ</p>
+        <h2 id="faq-title">Quick answers</h2>
+        <p class="section-lead">A few things people usually ask.</p>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Who are you?</summary>
+            <p>Josef — a 16-year-old student at SSŠVT in the Czech Republic, into graphic design, web development, and home labbing.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can I get access to your services?</summary>
+            <p>Most *.skopec.dev services are private. If you know me, ask — otherwise they’re not open to the public.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Where’s the source for this site?</summary>
+            <p>On GitHub: <a href="https://github.com/pepaskopec-blip/skopec.dev-reimagined" target="_blank" rel="noopener noreferrer">skopec.dev-reimagined</a>. Older version lives in <a href="https://github.com/pepaskopec-blip/skopec.dev" target="_blank" rel="noopener noreferrer">skopec.dev</a>.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What hardware do you run?</summary>
+            <p>Desktop, MacBook Air M5, a Proxmox Xeon box, and a Redmi Note 11 Pro 5G — full specs on the <a href="hardware.html">Hardware</a> page.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How do I contact you?</summary>
+            <p>Email <a href="mailto:josef@skopec.dev">josef@skopec.dev</a>, or use Discord (<strong>ishootn4fun</strong>) and the other links in <a href="#connect">Get in touch</a>.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="connect" aria-labelledby="connect-title">
+      <div class="wrap reveal">
+        <p class="section-label">Contact</p>
+        <h2 id="connect-title">Get in touch</h2>
+        <p class="section-lead">Find me across the web — or just send an email.</p>
+        <div class="social-row" aria-label="Social links">
+          <a class="social-link" href="https://github.com/pepaskopec-blip" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.27 2.75 1.05A9.3 9.3 0 0 1 12 6.9c.85 0 1.71.12 2.51.35 1.9-1.32 2.74-1.05 2.74-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.95.68 1.92 0 1.38-.01 2.49-.01 2.83 0 .26.18.59.69.48A10.27 10.27 0 0 0 22 12.26C22 6.58 17.52 2 12 2z"/></svg>
+          </a>
+          <a class="social-link" href="https://git.dvorakmortonxd.dev/skopcak" target="_blank" rel="noopener noreferrer" aria-label="Forgejo" title="Forgejo">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.3 1.3c-.4 0-.8.1-1.1.3L3.4 6.2c-.7.4-1.1 1.1-1.1 1.9v7.8c0 .8.4 1.5 1.1 1.9l7.8 4.6c.7.4 1.5.4 2.2 0l7.8-4.6c.7-.4 1.1-1.1 1.1-1.9V8.1c0-.8-.4-1.5-1.1-1.9l-7.8-4.6c-.3-.2-.7-.3-1.1-.3zm0 2.1c.1 0 .2 0 .3.1l6.9 4.1c.2.1.3.3.3.5v6.8c0 .2-.1.4-.3.5l-6.9 4.1c-.2.1-.4.1-.6 0l-6.9-4.1c-.2-.1-.3-.3-.3-.5V8.1c0-.2.1-.4.3-.5l6.9-4.1c.1-.1.2-.1.3-.1zm-.1 3.2c-1.9 0-3.4 1.3-3.4 3.2 0 1.3.7 2.4 1.8 2.9v3.2h3.2v-3.2c1.1-.5 1.8-1.6 1.8-2.9 0-1.9-1.5-3.2-3.4-3.2zm0 1.7c.8 0 1.4.6 1.4 1.5S13 11 12.2 11s-1.4-.6-1.4-1.5.6-1.5 1.4-1.5z"/></svg>
+          </a>
+          <a class="social-link" href="https://www.linkedin.com/in/josef-skopec-69380234b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.73V1.73C24 .77 23.21 0 22.23 0z"/></svg>
+          </a>
+          <a class="social-link" href="https://x.com/ishoot4fun11" target="_blank" rel="noopener noreferrer" aria-label="X" title="X">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.24 2H21.5l-7.19 8.22L22.5 22h-6.57l-5.15-6.73L5.05 22H1.77l7.69-8.79L1.5 2h6.73l4.65 6.16L18.24 2zm-1.15 18h1.81L7.03 3.89H5.09L17.09 20z"/></svg>
+          </a>
+          <a class="social-link" href="https://www.instagram.com/skopcaak1" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.2A4.8 4.8 0 1 0 16.8 12 4.81 4.81 0 0 0 12 7.2zm0 7.92A3.12 3.12 0 1 1 15.12 12 3.12 3.12 0 0 1 12 15.12zM17.4 6.9a1.12 1.12 0 1 1-1.12-1.12A1.12 1.12 0 0 1 17.4 6.9zM21.6 12c0-1.58.01-2.82-.05-3.82a5.52 5.52 0 0 0-1.5-3.23 5.52 5.52 0 0 0-3.23-1.5C15.82 3.39 14.58 3.4 13 3.4h-2c-1.58 0-2.82-.01-3.82.05a5.52 5.52 0 0 0-3.23 1.5 5.52 5.52 0 0 0-1.5 3.23C2.39 8.18 2.4 9.42 2.4 11v2c0 1.58-.01 2.82.05 3.82a5.52 5.52 0 0 0 1.5 3.23 5.52 5.52 0 0 0 3.23 1.5c1 .06 2.24.05 3.82.05h2c1.58 0 2.82.01 3.82-.05a5.52 5.52 0 0 0 3.23-1.5 5.52 5.52 0 0 0 1.5-3.23c.06-1 .05-2.24.05-3.82zm-1.68 5.57a3.84 3.84 0 0 1-2.16 2.16c-.71.28-1.51.43-3.31.45-1.63.01-2.13.02-3.45.02s-1.82-.01-3.45-.02c-1.8-.02-2.6-.17-3.31-.45a3.84 3.84 0 0 1-2.16-2.16c-.28-.71-.43-1.51-.45-3.31-.01-1.63-.02-2.13-.02-3.45s.01-1.82.02-3.45c.02-1.8.17-2.6.45-3.31a3.84 3.84 0 0 1 2.16-2.16c.71-.28 1.51-.43 3.31-.45C9.18 4.41 9.68 4.4 11 4.4h2c1.32 0 1.82.01 3.45.02 1.8.02 2.6.17 3.31.45a3.84 3.84 0 0 1 2.16 2.16c.28.71.43 1.51.45 3.31.01 1.63.02 2.13.02 3.45s-.01 1.82-.02 3.45c-.02 1.8-.17 2.6-.45 3.31z"/></svg>
+          </a>
+          <a class="social-link" href="https://www.tiktok.com/@skopcaak_1" target="_blank" rel="noopener noreferrer" aria-label="TikTok" title="TikTok">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .56.04.82.12V9.01a6.33 6.33 0 0 0-.82-.05A6.34 6.34 0 0 0 3.15 15.3a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.73a8.2 8.2 0 0 0 4.76 1.52V6.79a4.85 4.85 0 0 1-1-.1z"/></svg>
+          </a>
+          <a class="social-link" href="https://www.snapchat.com/add/skopcaak?share_id=xwTiIsZlpos&amp;locale=en-US" target="_blank" rel="noopener noreferrer" aria-label="Snapchat" title="Snapchat">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.15 2c-3.2 0-5.5 2.35-5.5 5.68v.5c0 .18-.05 2.28-1.1 3.67-.45.6-.95 1.05-1.48 1.35-.2.12-.26.3-.2.48.1.3.45.45.9.55.5.12 1.05.18 1.35.55.2.25.2.58.35.9.18.4.55.7 1.3.7.35 0 .7-.05 1.1-.15.15-.04.3-.02.42.08.7.55 1.75.95 3.1.95s2.4-.4 3.1-.95c.12-.1.27-.12.42-.08.4.1.75.15 1.1.15.75 0 1.12-.3 1.3-.7.15-.32.15-.65.35-.9.3-.37.85-.43 1.35-.55.45-.1.8-.25.9-.55.06-.18 0-.36-.2-.48-.53-.3-1.03-.75-1.48-1.35-1.05-1.39-1.1-3.49-1.1-3.67v-.5C17.65 4.35 15.35 2 12.15 2z"/></svg>
+          </a>
+          <a class="social-link" href="https://www.threads.com/@skopcaak1" target="_blank" rel="noopener noreferrer" aria-label="Threads" title="Threads">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.7 10.1c-.1-2.3-1.4-3.8-3.8-3.9-1.4 0-2.6.6-3.2 1.6l1.4.95c.4-.65 1.1-1 1.9-1 1.3.05 2 1 2.05 2.55-.45-.2-.95-.3-1.5-.3-2.2 0-3.65 1.35-3.65 3.35 0 1.85 1.35 3.15 3.3 3.15 1.25 0 2.3-.55 2.85-1.55.4.9.95 1.35 1.9 1.4v-1.55c-.45 0-.7-.25-.85-.8v-4.05zm-3.15 5.05c-1.05 0-1.75-.65-1.75-1.65 0-1.15.8-1.85 2.1-1.85.45 0 .9.1 1.3.25v1.15c0 1.2-.7 2.1-1.65 2.1zM12.1 2C6.55 2 2.1 6.5 2.1 12s4.45 10 10 10 10-4.5 10-10-4.45-10-10-10zm0 18.2c-4.55 0-8.2-3.7-8.2-8.2s3.65-8.2 8.2-8.2 8.2 3.7 8.2 8.2-3.65 8.2-8.2 8.2z"/></svg>
+          </a>
+          <a class="social-link" href="https://itch.io/profile/skopcaak" target="_blank" rel="noopener noreferrer" aria-label="itch.io" title="itch.io">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.1 2.4 1.4 7.5c-.1.35.15.7.5.75l2.2.25v9.55c0 .55.45 1 1 1h14c.55 0 1-.45 1-1V8.5l2.2-.25c.35-.05.6-.4.5-.75L21 2.4c-.1-.3-.4-.5-.7-.5H3.8c-.3 0-.6.2-.7.5zM7.5 9.2c.9 1.15 1.95 1.8 3.15 1.8s2.25-.65 3.15-1.8c.9 1.15 1.95 1.8 3.15 1.8.35 0 .7-.05 1.05-.15v7.35H6.45V10.85c.35.1.7.15 1.05.15 1.2 0 2.25-.65 3.15-1.8H7.5zM4.55 3.7h14.9l1.1 3.3-1.55.2c-.7.1-1.25-.5-1.15-1.15l.15-.8h-1.55l-.25 1.35c-.1.55-.65.95-1.2.85l-.85-.15-.15.85c-.1.55-.65.95-1.2.85l-.85-.15-.15.85c-.1.55-.65.95-1.2.85l-.85-.15-.15.85c-.1.55-.65.95-1.2.85l-.85-.15-.15.85c-.1.55-.65.95-1.2.85l-.85-.15-.25-1.35H5.6l.15.8c.1.65-.45 1.25-1.15 1.15L3.05 7l1.5-3.3z"/></svg>
+          </a>
+          <a class="social-link" href="https://discord.com/app" target="_blank" rel="noopener noreferrer" aria-label="Discord: ishootn4fun" title="Discord: ishootn4fun">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.1 16.1 0 0 0-4.8 0c-.14-.34-.36-.76-.54-1.09l-.07-.03c-1.5.26-2.93.71-4.27 1.33l-.03.02C2.92 9.04 2.2 12.64 2.56 16.2l.01.04a16.3 16.3 0 0 0 4.92 2.5l.05-.04c.38-.52.71-1.07 1-1.65l-.02-.01a10.7 10.7 0 0 1-1.62-.78l.04-.03c.13-.1.26-.2.38-.3a11.7 11.7 0 0 0 9.36 0c.13.11.26.21.39.31l.04.02c-.52.3-1.06.56-1.62.79l-.02.01c.29.58.62 1.13 1 1.65l.05.04a16.24 16.24 0 0 0 4.93-2.5l.01-.04c.42-4.12-.71-7.69-2.99-10.87l-.03-.01zM8.89 14.37c-.9 0-1.63-.83-1.63-1.84s.72-1.84 1.63-1.84 1.65.83 1.63 1.84c0 1.01-.72 1.84-1.63 1.84zm6.23 0c-.9 0-1.63-.83-1.63-1.84s.72-1.84 1.63-1.84 1.65.83 1.63 1.84c0 1.01-.73 1.84-1.63 1.84z"/></svg>
+          </a>
+          <a class="social-link" href="mailto:josef@skopec.dev" aria-label="Email josef@skopec.dev" title="josef@skopec.dev">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.2-8 5.05L4 8.2V6l8 5.05L20 6z"/></svg>
+          </a>
+          <a class="social-link" href="https://quipee.me/u/skopcaak_1" target="_blank" rel="noopener noreferrer" aria-label="Quipee" title="Quipee">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5A9.5 9.5 0 1 0 18.2 18l2.1 2.1c.4.4 1 .4 1.4 0 .4-.4.4-1 0-1.4L19.7 16.8A9.5 9.5 0 0 0 12 2.5zm0 2.2a7.3 7.3 0 1 1 0 14.6 7.3 7.3 0 0 1 0-14.6zm0 2.4a4.9 4.9 0 1 0 3.35 8.45l1.45 1.45a.75.75 0 0 0 1.06-1.06l-1.45-1.45A4.9 4.9 0 0 0 12 7.1zm0 1.7a3.2 3.2 0 1 1 0 6.4 3.2 3.2 0 0 1 0-6.4z"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© <span data-year></span> Josef · skopec.dev</span>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="projects.html">Projects</a>
+        <a href="hardware.html">Hardware</a>
+        <a href="#faq">FAQ</a>
+        <a href="#connect">Get in touch</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
