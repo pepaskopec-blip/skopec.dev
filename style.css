@@ -1,4 +1,4 @@
-/* skopec.dev — cool workshop / signal aesthetic (dark) */
+/* skopec.dev — cool workshop / signal aesthetic (dark by default) */
 :root {
   --bg: #07090d;
   --bg-deep: #0c1018;
@@ -12,12 +12,37 @@
   --accent: #ff4a1c;
   --accent-ink: #ff7a52;
   --glow: rgba(255, 74, 28, 0.22);
+  --glow-cool: rgba(60, 100, 160, 0.12);
+  --header-bg: rgba(7, 9, 13, 0.82);
+  --menu-bg: rgba(12, 16, 24, 0.97);
+  --sheen: rgba(255, 255, 255, 0.06);
+  color-scheme: dark;
   --radius: 2px;
   --nav-h: 4.25rem;
   --font-display: "Syne", sans-serif;
   --font-body: "Instrument Sans", sans-serif;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --max: 72rem;
+}
+
+:root[data-theme="light"] {
+  --bg: #f6f7f9;
+  --bg-deep: #e7eaef;
+  --ink: #11151c;
+  --ink-soft: #333d4b;
+  --muted: #5b6675;
+  --line: rgba(17, 21, 28, 0.1);
+  --line-strong: rgba(17, 21, 28, 0.2);
+  --surface: rgba(17, 21, 28, 0.03);
+  --surface-solid: #ffffff;
+  --accent: #dc3c11;
+  --accent-ink: #b32f08;
+  --glow: rgba(255, 74, 28, 0.16);
+  --glow-cool: rgba(60, 100, 160, 0.1);
+  --header-bg: rgba(246, 247, 249, 0.85);
+  --menu-bg: rgba(255, 255, 255, 0.97);
+  --sheen: rgba(17, 21, 28, 0.05);
+  color-scheme: light;
 }
 
 *,
@@ -40,10 +65,10 @@ body {
   background-color: var(--bg);
   background-image:
     radial-gradient(ellipse 90% 55% at 8% -10%, var(--glow), transparent 55%),
-    radial-gradient(ellipse 70% 45% at 100% 0%, rgba(60, 100, 160, 0.12), transparent 50%),
+    radial-gradient(ellipse 70% 45% at 100% 0%, var(--glow-cool), transparent 50%),
     linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
   background-attachment: fixed;
-  color-scheme: dark;
+  transition: background-color 0.3s var(--ease), color 0.3s var(--ease);
 }
 
 body::before {
@@ -105,7 +130,7 @@ a:hover {
   display: flex;
   align-items: center;
   backdrop-filter: blur(14px) saturate(1.2);
-  background: rgba(7, 9, 13, 0.82);
+  background: var(--header-bg);
   border-bottom: 1px solid var(--line);
 }
 
@@ -141,8 +166,14 @@ a:hover {
   align-items: center;
   gap: 0.35rem;
   list-style: none;
-  margin: 0;
+  margin: 0 0 0 auto;
   padding: 0;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .nav-links a {
@@ -188,6 +219,45 @@ a:hover {
   height: 2px;
   margin: 5px auto;
   background: var(--ink);
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--surface-solid);
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease), background 0.2s var(--ease);
+}
+
+.theme-toggle:hover {
+  color: var(--accent);
+  border-color: var(--ink);
+}
+
+.theme-toggle svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.theme-toggle .icon-moon,
+:root[data-theme="light"] .theme-toggle .icon-sun {
+  display: none;
+}
+
+:root[data-theme="light"] .theme-toggle .icon-moon {
+  display: block;
 }
 
 /* —— Layout —— */
@@ -252,7 +322,7 @@ a:hover {
   height: min(52vw, 34rem);
   border-radius: 50%;
   background:
-    radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.06), transparent 55%),
+    radial-gradient(circle at 35% 35%, var(--sheen), transparent 55%),
     conic-gradient(from 210deg at 50% 50%, transparent 0 55%, var(--glow) 70%, transparent 100%);
   border: 1px solid var(--line);
   opacity: 0.85;
@@ -886,7 +956,7 @@ a:hover {
     align-items: stretch;
     gap: 0.25rem;
     padding: 0.75rem 1.25rem 1rem;
-    background: rgba(12, 16, 24, 0.97);
+    background: var(--menu-bg);
     border-bottom: 1px solid var(--line);
     backdrop-filter: blur(12px);
   }

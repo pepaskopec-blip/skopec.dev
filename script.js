@@ -5,6 +5,37 @@
     node.textContent = year;
   });
 
+  const root = document.documentElement;
+  const themeToggle = document.querySelector(".theme-toggle");
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
+  const themeColors = { dark: "#07090d", light: "#f6f7f9" };
+
+  const applyTheme = (theme) => {
+    root.dataset.theme = theme;
+    if (themeMeta) themeMeta.setAttribute("content", themeColors[theme]);
+    if (themeToggle) {
+      themeToggle.setAttribute(
+        "aria-label",
+        theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+      );
+      themeToggle.setAttribute("aria-pressed", theme === "light" ? "true" : "false");
+    }
+  };
+
+  applyTheme(root.dataset.theme === "light" ? "light" : "dark");
+
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const next = root.dataset.theme === "light" ? "dark" : "light";
+      applyTheme(next);
+      try {
+        localStorage.setItem("theme", next);
+      } catch (error) {
+        /* storage unavailable — theme resets to dark on reload */
+      }
+    });
+  }
+
   const toggle = document.querySelector(".nav-toggle");
   const nav = document.querySelector("#site-nav");
 
