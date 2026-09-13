@@ -15,3 +15,20 @@
 - Ollama: https://ai.skopec.dev
 - SearXNG: https://search.skopec.dev
 - ConvertX: https://convert.skopec.dev
+- NAS: local only
+- Pi-hole: local only
+- Immich: local only
+- Cloudflare Tunnels: local only (exposes services outside the LAN)
+
+## Projects
+- skopec.dev — this site
+- Homelab — Proxmox and self-hosted services
+- Snake-Pygame-
+- BatchGym
+- maturita.c — https://git.dvorakmortonxd.dev/edu/maturita.c
+
+## Friends
+- Martin Dvořák — https://dvorakmortonxd.dev
+- Filip Bukovina — https://bukovinafilip.com
+- Tomáš Vlk — https://vlcak.me
+- Danny Koťan — https://k0t4tkos-portfolio.com
