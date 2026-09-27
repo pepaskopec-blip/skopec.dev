@@ -10,15 +10,16 @@
 
 ## Services
 - Proxmox: https://proxmox.skopec.dev
-- Jellyfin: https://jelly.skopec.dev
-- Navidrome: https://navi.skopec.dev
-- Ollama: https://ai.skopec.dev
-- SearXNG: https://search.skopec.dev
-- ConvertX: https://convert.skopec.dev
-- NAS: local only
-- Pi-hole: local only
-- Immich: local only
-- Cloudflare Tunnels: local only (exposes services outside the LAN)
+- Jellyfin: https://jelly.skopec.dev · 10.0.0.101:8096
+- Navidrome: https://navi.skopec.dev · 10.0.0.103:4533
+- Ollama: https://ai.skopec.dev · 10.0.0.106:3000
+- SearXNG: https://search.skopec.dev · 10.0.0.104:8080
+- ConvertX: https://convert.skopec.dev · 10.0.0.107:3000
+- NAS: 10.0.0.102
+- Pi-hole: 10.0.0.100:80
+- Immich: 10.0.0.109:2283
+- Cloudflare Tunnels: 10.0.0.105 (exposes services outside the LAN)
+- Tailscale: 10.0.0.110 (remote access to local-only services)
 
 ## Projects
 - skopec.dev — this site
