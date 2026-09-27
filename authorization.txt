@@ -2,11 +2,11 @@ I, Josef Skopec, own and operate the Jellyfin server at jelly.skopec.dev. I auth
 
 Scope:
 - Target: jelly.skopec.dev and the Jellyfin instance running on it.
-- Allowed: authenticated security testing, checking for misconfigurations, weak auth, exposed endpoints, known Jellyfin CVEs, and reporting what you find.
+- Allowed: authenticated security testing, checking for misconfigurations, weak auth, exposed endpoints, and known Jellyfin CVEs, and reporting what you find.
+- Password-strength testing: I authorize limited, rate-limited password-guessing against accounts I own, to assess password strength. This must be done at a low request rate that does not disrupt availability or lock accounts out, and must stop if lockout or service impact is likely. I accept the risk to the accounts I've named for this.
+- Accounts in scope for password testing: [hackie, tata, verca].
 - Not allowed: deleting, modifying, or exfiltrating any media or user data; disrupting availability.
-- I’ll create a test account for you at [hackie], and I understand you’ll only touch data tied to that account.
+- Test account created for the assistant: hackie.
 - This authorization is valid until [28.9.2026].
 
-Signed, Josef Skopec — [28.9.2026]
-
---
+Signed, Josef Skopec — [date]
