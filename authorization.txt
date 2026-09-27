@@ -1,0 +1,12 @@
+I, Josef Skopec, own and operate the Jellyfin server at jelly.skopec.dev. I authorize Filip Bukovina (and his assistant) to perform authorized security testing against it.
+
+Scope:
+- Target: jelly.skopec.dev and the Jellyfin instance running on it.
+- Allowed: authenticated security testing, checking for misconfigurations, weak auth, exposed endpoints, known Jellyfin CVEs, and reporting what you find.
+- Not allowed: deleting, modifying, or exfiltrating any media or user data; disrupting availability.
+- I’ll create a test account for you at [hackie], and I understand you’ll only touch data tied to that account.
+- This authorization is valid until [28.9.2026].
+
+Signed, Josef Skopec — [28.9.2026]
+
+--
