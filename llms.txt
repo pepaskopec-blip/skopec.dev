@@ -9,7 +9,8 @@
 - [Privacy](https://skopec.dev/privacy.html): Short privacy note for this personal site
 
 ## Services
-- Proxmox: https://proxmox.skopec.dev
+Local 10.0.0.x addresses work only on the home network or with Josef’s Tailscale.
+- Proxmox: https://proxmox.skopec.dev · 10.0.0.200:8006
 - Jellyfin: https://jelly.skopec.dev · 10.0.0.101:8096
 - Navidrome: https://navi.skopec.dev · 10.0.0.103:4533
 - Ollama: https://ai.skopec.dev · 10.0.0.106:3000
