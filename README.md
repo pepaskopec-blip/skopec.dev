@@ -35,4 +35,4 @@ This repo holds the main source files of the site — the core HTML pages, style
 
 ## License
 
-This project is for personal use. Feel free to look around for inspiration, but please don’t copy the content as your own.
+This project is licensed under the GNU General Public License v3.0. See [LICENSE](LICENSE).
