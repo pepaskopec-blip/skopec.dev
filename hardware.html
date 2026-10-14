@@ -34,7 +34,7 @@
       }
     })();
   </script>
-  <link rel="stylesheet" href="style.css?v=20261018">
+  <link rel="stylesheet" href="style.css?v=20261022">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -82,70 +82,362 @@
           <li><span aria-current="page">Hardware</span></li>
         </ol>
       </nav>
-      <h1>Hardware</h1>
-      <p>The machines I use every day — desktop build, daily driver laptop, Proxmox server, and phone.</p>
+      <div class="projects-hero-top">
+        <div>
+          <h1>Hardware</h1>
+          <p>The machines I use every day — desktop build, daily driver laptop, Proxmox server, and phone.</p>
+        </div>
+        <div class="project-filters" role="toolbar" aria-label="Filter hardware">
+          <button class="filter-chip is-active" type="button" data-hw-filter="all">All <span>4</span></button>
+          <button class="filter-chip" type="button" data-hw-filter="desktop">Desktop</button>
+          <button class="filter-chip" type="button" data-hw-filter="laptop">Laptop</button>
+          <button class="filter-chip" type="button" data-hw-filter="server">Server</button>
+          <button class="filter-chip" type="button" data-hw-filter="mobile">Mobile</button>
+        </div>
+      </div>
+
+      <ul class="hw-overview" aria-label="Combined hardware totals">
+        <li>
+          <span class="hw-overview-label">Total cores</span>
+          <strong>34 cores</strong>
+          <span class="hw-overview-sub">48 threads across 4 devices</span>
+        </li>
+        <li>
+          <span class="hw-overview-label">Combined memory</span>
+          <strong>78 GB RAM</strong>
+          <span class="hw-overview-sub">ECC DDR4 + DDR4 + Unified + LPDDR4X</span>
+        </li>
+        <li>
+          <span class="hw-overview-label">Total storage</span>
+          <strong>~2.7 TB</strong>
+          <span class="hw-overview-sub">NVMe SSDs + Proxmox HDD array</span>
+        </li>
+        <li>
+          <span class="hw-overview-label">Operating systems</span>
+          <strong>4 platforms</strong>
+          <span class="hw-overview-sub">Artix Linux · macOS · Proxmox · Android</span>
+        </li>
+      </ul>
     </header>
 
-    <section class="section" aria-labelledby="machines-title">
+    <section class="section projects-section" aria-labelledby="machines-title">
       <div class="wrap reveal">
         <p class="section-label">Gear</p>
         <h2 id="machines-title">My machines</h2>
         <p class="section-lead">Full component breakdown with key specs from each part.</p>
-        <ul class="stack-list">
-          <li class="stack-item">
-            <span class="tag">Desktop</span>
-            <h3>Custom build · 2022</h3>
-            <p>Main PC running Artix Linux with SwayFX wm — assembled in 2022.</p>
-            <dl class="spec-list">
-              <div><dt>CPU</dt><dd>AMD Ryzen 5 5600 — Zen 3 / Vermeer, 6C/12T, 3.5–4.4 GHz, 32 MB L3, 65 W TDP, AM4, unlocked</dd></div>
-              <div><dt>GPU</dt><dd>XFX Speedster SWFT 309 RX 6700 — RDNA 2, 2304 SP, 10 GB GDDR6 @ 16 Gbps (160-bit, 320 GB/s), boost up to ~2425 MHz, triple-fan, HDMI + 3× DP</dd></div>
-              <div><dt>RAM</dt><dd>Kingston FURY Beast RGB — 16 GB DDR4-3200 · CL16 (16-18-18) · ~1.35 V · Intel XMP 2.0</dd></div>
-              <div><dt>Storage</dt><dd>WD Blue SN570 1 TB — M.2 2280 NVMe, PCIe 3.0 ×4, up to ~3500/3000 MB/s read/write, TLC, ~600 TBW, 5-year warranty</dd></div>
-              <div><dt>Board</dt><dd>ASUS TUF Gaming B550-Plus — AM4 ATX, B550, 8+2 DrMOS VRM, 4× DDR4 (max 128 GB), PCIe 4.0 ×16, dual M.2, 2.5 GbE, USB 3.2 Gen 2</dd></div>
-              <div><dt>PSU</dt><dd>SilentiumPC Vero M3 Bronze 600 W — ATX, 80 PLUS Bronze (~90% @ 50% load), semi-modular, single +12 V rail up to ~588 W</dd></div>
-              <div><dt>Cooler</dt><dd>SilentiumPC Fera 5 — tower air cooler, 4× heatpipes, Fluctus 120 PWM (300–1800 RPM), rated ~220 W TDP</dd></div>
-              <div><dt>Case</dt><dd>SilentiumPC Signum SG1V EVO TG ARGB — ATX mid-tower (~447×216×413 mm), tempered glass, 4× Stella HP ARGB 120 mm included, GPU clearance ~325 mm</dd></div>
+
+        <ul class="hw-grid">
+          <!-- 1. Desktop -->
+          <li class="hw-card" data-hw-category="desktop">
+            <div class="hw-card-top">
+              <div class="hw-card-intro">
+                <div class="project-card-meta">
+                  <span class="tag">Desktop</span>
+                  <span class="project-status">Artix Linux · SwayFX</span>
+                </div>
+                <h3>Custom build · 2022</h3>
+                <p>Main PC running Artix Linux with SwayFX wm — assembled in 2022.</p>
+                <ul class="project-pills" aria-label="Key desktop specs">
+                  <li>Ryzen 5 5600</li>
+                  <li>RX 6700 10 GB</li>
+                  <li>16 GB DDR4-3200</li>
+                  <li>1 TB NVMe</li>
+                  <li>600 W 80+ Bronze</li>
+                </ul>
+              </div>
+              <div class="hw-visual" aria-hidden="true">
+                <div class="mock-fetch">
+                  <div class="mock-fetch-bar">
+                    <span class="mock-dots"><i></i><i></i><i></i></span>
+                    <span>josef@artix ~ fastfetch</span>
+                  </div>
+                  <div class="mock-fetch-body">
+                    <pre class="fetch-ascii">   /\
+  /  \
+ / /\ \
+/ /  \ \
+\/    \/</pre>
+                    <div class="fetch-lines">
+                      <div><b>OS</b> Artix Linux x86_64</div>
+                      <div><b>WM</b> SwayFX (Wayland)</div>
+                      <div><b>CPU</b> Ryzen 5 5600 (12) @ 4.4GHz</div>
+                      <div><b>GPU</b> Radeon RX 6700 [10GB]</div>
+                      <div><b>MEM</b> 3.1 GiB / 16.0 GiB DDR4</div>
+                      <div class="fetch-palette"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <dl class="hw-spec-grid">
+              <div>
+                <dt>CPU</dt>
+                <dd><strong>AMD Ryzen 5 5600</strong>Zen 3 / Vermeer, 6C/12T, 3.5–4.4 GHz, 32 MB L3, 65 W TDP, AM4, unlocked</dd>
+              </div>
+              <div>
+                <dt>GPU</dt>
+                <dd><strong>XFX Speedster SWFT 309 RX 6700</strong>RDNA 2, 2304 SP, 10 GB GDDR6 @ 16 Gbps (160-bit, 320 GB/s), boost up to ~2425 MHz, triple-fan, HDMI + 3× DP</dd>
+              </div>
+              <div>
+                <dt>RAM</dt>
+                <dd><strong>Kingston FURY Beast RGB — 16 GB</strong>DDR4-3200 · CL16 (16-18-18) · ~1.35 V · Intel XMP 2.0</dd>
+              </div>
+              <div>
+                <dt>Storage</dt>
+                <dd><strong>WD Blue SN570 1 TB</strong>M.2 2280 NVMe, PCIe 3.0 ×4, up to ~3500/3000 MB/s read/write, TLC, ~600 TBW, 5-year warranty</dd>
+              </div>
+              <div>
+                <dt>Board</dt>
+                <dd><strong>ASUS TUF Gaming B550-Plus</strong>AM4 ATX, B550, 8+2 DrMOS VRM, 4× DDR4 (max 128 GB), PCIe 4.0 ×16, dual M.2, 2.5 GbE, USB 3.2 Gen 2</dd>
+              </div>
+              <div>
+                <dt>PSU</dt>
+                <dd><strong>SilentiumPC Vero M3 Bronze 600 W</strong>ATX, 80 PLUS Bronze (~90% @ 50% load), semi-modular, single +12 V rail up to ~588 W</dd>
+              </div>
+              <div>
+                <dt>Cooler</dt>
+                <dd><strong>SilentiumPC Fera 5</strong>Tower air cooler, 4× heatpipes, Fluctus 120 PWM (300–1800 RPM), rated ~220 W TDP</dd>
+              </div>
+              <div>
+                <dt>Case</dt>
+                <dd><strong>SilentiumPC Signum SG1V EVO TG ARGB</strong>ATX mid-tower (~447×216×413 mm), tempered glass, 4× Stella HP ARGB 120 mm included, GPU clearance ~325 mm</dd>
+              </div>
             </dl>
           </li>
-          <li class="stack-item">
-            <span class="tag">Laptop</span>
-            <h3>MacBook Air 13″ · M5 · base</h3>
-            <p>Portable machine for school and on-the-go work.</p>
-            <dl class="spec-list">
-              <div><dt>Chip</dt><dd>Apple M5 — 10-core CPU (4 performance + 6 efficiency), 8-core GPU, 16-core Neural Engine, ~153 GB/s memory bandwidth</dd></div>
-              <div><dt>Memory</dt><dd>16 GB unified memory (base)</dd></div>
-              <div><dt>Storage</dt><dd>512 GB SSD (base; Apple claims ~2× faster vs previous Air gen)</dd></div>
-              <div><dt>Display</dt><dd>13.6″ Liquid Retina IPS — 2560×1664 @ 224 ppi, 500 nits, 60 Hz, P3</dd></div>
-              <div><dt>Battery</dt><dd>Up to ~18 h video streaming / ~15 h wireless web (Apple rating)</dd></div>
-              <div><dt>I/O</dt><dd>2× Thunderbolt 4 · MagSafe · 3.5 mm · Wi-Fi 7 (N1) · Bluetooth 6 · ~1.24 kg</dd></div>
+
+          <!-- 2. Laptop -->
+          <li class="hw-card" data-hw-category="laptop">
+            <div class="hw-card-top">
+              <div class="hw-card-intro">
+                <div class="project-card-meta">
+                  <span class="tag">Laptop</span>
+                  <span class="project-status">macOS · Daily driver</span>
+                </div>
+                <h3>MacBook Air 13″ · M5 · base</h3>
+                <p>Portable machine for school and on-the-go work.</p>
+                <ul class="project-pills" aria-label="Key laptop specs">
+                  <li>Apple M5 (10C)</li>
+                  <li>16 GB Unified</li>
+                  <li>512 GB SSD</li>
+                  <li>13.6″ Liquid Retina</li>
+                  <li>Wi-Fi 7 · 1.24 kg</li>
+                </ul>
+              </div>
+              <div class="hw-visual" aria-hidden="true">
+                <div class="mock-soc">
+                  <div class="mock-soc-die">
+                    <span class="soc-label">APPLE SILICON</span>
+                    <strong class="soc-title">M5</strong>
+                    <div class="soc-blocks">
+                      <span>4P + 6E CPU</span>
+                      <span>8-Core GPU</span>
+                      <span>16-Core ANE</span>
+                      <span>153 GB/s UMA</span>
+                    </div>
+                  </div>
+                  <div class="mock-soc-side">
+                    <div class="soc-stat">
+                      <span>Display</span>
+                      <strong>2560 × 1664 · P3</strong>
+                    </div>
+                    <div class="soc-stat">
+                      <span>Battery</span>
+                      <strong>Up to 18 h</strong>
+                    </div>
+                    <div class="soc-stat">
+                      <span>Wireless</span>
+                      <strong>Wi-Fi 7 (N1) · BT 6</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <dl class="hw-spec-grid">
+              <div>
+                <dt>Chip</dt>
+                <dd><strong>Apple M5</strong>10-core CPU (4 performance + 6 efficiency), 8-core GPU, 16-core Neural Engine, ~153 GB/s memory bandwidth</dd>
+              </div>
+              <div>
+                <dt>Memory</dt>
+                <dd><strong>16 GB unified memory</strong>Base configuration</dd>
+              </div>
+              <div>
+                <dt>Storage</dt>
+                <dd><strong>512 GB SSD</strong>Base; Apple claims ~2× faster vs previous Air gen</dd>
+              </div>
+              <div>
+                <dt>Display</dt>
+                <dd><strong>13.6″ Liquid Retina IPS</strong>2560×1664 @ 224 ppi, 500 nits, 60 Hz, P3 wide color</dd>
+              </div>
+              <div>
+                <dt>Battery</dt>
+                <dd><strong>Up to ~18 h video / ~15 h web</strong>Apple wireless web &amp; streaming rating</dd>
+              </div>
+              <div>
+                <dt>I/O</dt>
+                <dd><strong>2× Thunderbolt 4 · MagSafe · 3.5 mm</strong>Wi-Fi 7 (N1) · Bluetooth 6 · ~1.24 kg</dd>
+              </div>
             </dl>
           </li>
-          <li class="stack-item">
-            <span class="tag">Server</span>
-            <h3>Proxmox server</h3>
-            <p>Home lab box for VMs and containers — usually runs headless.If you need hosting, VM, VPS or a wesbsite dm me on IG or sent me an email. </p>
-            <dl class="spec-list">
-              <div><dt>CPU</dt><dd>Intel Xeon E5-2630L v4 — Broadwell-EP, 14 nm, 10C/20T, 1.8–2.9 GHz, 25 MB L3, 55 W TDP, LGA 2011-3, DDR4 ECC</dd></div>
-              <div><dt>GPU</dt><dd>NVIDIA GeForce GT 440 — Fermi GF108-class entry GPU (~96 CUDA, ~65 W); used only for BIOS, then headless</dd></div>
-              <div><dt>RAM</dt><dd>40 GB ECC registered DDR4 (RDIMM) — dual-channel on this board, CPU supports DDR4-1600/1866/2133</dd></div>
-              <div><dt>Storage</dt><dd>Samsung 970 EVO OEM 256 GB NVMe (PCIe 3.0 ×4, Phoenix controller, ~3400/1500 MB/s class) · WD 2.5″ 512 GB HDD · WD 3.5″ 320 GB HDD</dd></div>
-              <div><dt>Board</dt><dd>Huananzhi X99-P4F — mATX (215×185 mm), LGA 2011-3, 4× DDR4 (max 128 GB), 2× M.2 NVMe PCIe 3.0 ×4, 4× SATA 3 Gb/s, 1× PCIe 3.0 ×16, Realtek GbE, 6-phase VRM</dd></div>
-              <div><dt>PSU</dt><dd>Corsair CX450 — 450 W ATX, 80 PLUS Bronze, non-modular, ~100k h MTBF rating</dd></div>
-              <div><dt>Cooler</dt><dd>Endorfy Fera 5 — same Synergy Cooling design as SilentiumPC Fera 5; 4× heatpipes, 120 mm PWM, ~220 W TDP class</dd></div>
-              <div><dt>Case</dt><dd>mATX case reused from an old office PC</dd></div>
+
+          <!-- 3. Server -->
+          <li class="hw-card" data-hw-category="server">
+            <div class="hw-card-top">
+              <div class="hw-card-intro">
+                <div class="project-card-meta">
+                  <span class="tag">Server</span>
+                  <span class="project-status">Proxmox VE · Headless 24/7</span>
+                </div>
+                <h3>Proxmox server</h3>
+                <p>Home lab box for VMs and containers — usually runs headless. If you need hosting, VM, VPS or a website dm me on IG or send me an email.</p>
+                <ul class="project-pills" aria-label="Key server specs">
+                  <li>Xeon E5-2630L v4</li>
+                  <li>10C / 20T · 55 W</li>
+                  <li>40 GB ECC RDIMM</li>
+                  <li>NVMe + 2× WD HDD</li>
+                </ul>
+                <div class="hw-hosting-cta">
+                  <span>Need a VM, VPS or web hosting?</span>
+                  <a href="mailto:josef@skopec.dev">josef@skopec.dev →</a>
+                  <a href="https://www.instagram.com/skopcaak1" target="_blank" rel="noopener noreferrer">@skopcaak1 →</a>
+                </div>
+              </div>
+              <div class="hw-visual" aria-hidden="true">
+                <div class="mock-server-unit">
+                  <div class="server-unit-top">
+                    <span class="mock-status-dot"></span>
+                    <span class="server-unit-name">PROXMOX NODE · LGA 2011-3</span>
+                    <span class="server-unit-tdp">55 W TDP</span>
+                  </div>
+                  <div class="server-bays">
+                    <div class="server-bay">
+                      <span class="bay-type">NVMe</span>
+                      <strong>970 EVO 256 GB</strong>
+                      <span class="bay-sub">PCIe 3.0 ×4 · OS &amp; VMs</span>
+                    </div>
+                    <div class="server-bay">
+                      <span class="bay-type">SATA 2.5″</span>
+                      <strong>WD 512 GB</strong>
+                      <span class="bay-sub">Bulk storage</span>
+                    </div>
+                    <div class="server-bay">
+                      <span class="bay-type">SATA 3.5″</span>
+                      <strong>WD 320 GB</strong>
+                      <span class="bay-sub">Backups &amp; media</span>
+                    </div>
+                  </div>
+                  <div class="server-mem-strip">
+                    <span>RAM</span>
+                    <strong>40 GB DDR4 ECC Registered (RDIMM)</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <dl class="hw-spec-grid">
+              <div>
+                <dt>CPU</dt>
+                <dd><strong>Intel Xeon E5-2630L v4</strong>Broadwell-EP, 14 nm, 10C/20T, 1.8–2.9 GHz, 25 MB L3, 55 W TDP, LGA 2011-3, DDR4 ECC</dd>
+              </div>
+              <div>
+                <dt>GPU</dt>
+                <dd><strong>NVIDIA GeForce GT 440</strong>Fermi GF108-class entry GPU (~96 CUDA, ~65 W); used only for BIOS, then headless</dd>
+              </div>
+              <div>
+                <dt>RAM</dt>
+                <dd><strong>40 GB ECC registered DDR4 (RDIMM)</strong>Dual-channel on this board, CPU supports DDR4-1600/1866/2133</dd>
+              </div>
+              <div>
+                <dt>Storage</dt>
+                <dd><strong>Samsung 970 EVO OEM 256 GB NVMe + 2× WD HDD</strong>PCIe 3.0 ×4, Phoenix controller, ~3400/1500 MB/s class · WD 2.5″ 512 GB HDD · WD 3.5″ 320 GB HDD</dd>
+              </div>
+              <div>
+                <dt>Board</dt>
+                <dd><strong>Huananzhi X99-P4F</strong>mATX (215×185 mm), LGA 2011-3, 4× DDR4 (max 128 GB), 2× M.2 NVMe PCIe 3.0 ×4, 4× SATA 3 Gb/s, 1× PCIe 3.0 ×16, Realtek GbE, 6-phase VRM</dd>
+              </div>
+              <div>
+                <dt>PSU</dt>
+                <dd><strong>Corsair CX450 — 450 W</strong>ATX, 80 PLUS Bronze, non-modular, ~100k h MTBF rating</dd>
+              </div>
+              <div>
+                <dt>Cooler</dt>
+                <dd><strong>Endorfy Fera 5</strong>Same Synergy Cooling design as SilentiumPC Fera 5; 4× heatpipes, 120 mm PWM, ~220 W TDP class</dd>
+              </div>
+              <div>
+                <dt>Case</dt>
+                <dd><strong>Reused mATX office chassis</strong>mATX case reused from an old office PC</dd>
+              </div>
             </dl>
           </li>
-          <li class="stack-item">
-            <span class="tag">Mobile</span>
-            <h3>Xiaomi Redmi Note 11 Pro 5G · 6/128</h3>
-            <p>Daily driver phone.</p>
-            <dl class="spec-list">
-              <div><dt>Chipset</dt><dd>Qualcomm Snapdragon 695 5G (SM6375, 6 nm) — 2× Kryo 660 @ up to 2.2 GHz + 6× @ 1.7 GHz · Adreno 619</dd></div>
-              <div><dt>Display</dt><dd>6.67″ Super AMOLED DotDisplay — 1080×2400, 120 Hz, ~395 ppi, DCI-P3, HBM ~700 nits / peak ~1200 nits, Gorilla Glass 5</dd></div>
-              <div><dt>Memory</dt><dd>6 GB LPDDR4X + 128 GB UFS 2.2 · microSD expandable (shared SIM slot)</dd></div>
-              <div><dt>Camera</dt><dd>108 MP f/1.9 wide (1/1.52″) + 8 MP ultrawide 118° + 2 MP macro · 16 MP front</dd></div>
-              <div><dt>Battery</dt><dd>5000 mAh · 67 W wired turbo charge (USB-C)</dd></div>
-              <div><dt>Body</dt><dd>~164.2 × 76.1 × 8.1 mm · ~202 g · dual speakers · 3.5 mm jack · side fingerprint · Bluetooth 5.1 / Wi-Fi 5</dd></div>
+
+          <!-- 4. Mobile -->
+          <li class="hw-card" data-hw-category="mobile">
+            <div class="hw-card-top">
+              <div class="hw-card-intro">
+                <div class="project-card-meta">
+                  <span class="tag">Mobile</span>
+                  <span class="project-status">Daily driver</span>
+                </div>
+                <h3>Xiaomi Redmi Note 11 Pro 5G · 6/128</h3>
+                <p>Daily driver phone.</p>
+                <ul class="project-pills" aria-label="Key phone specs">
+                  <li>Snapdragon 695 5G</li>
+                  <li>6.67″ 120 Hz AMOLED</li>
+                  <li>108 MP Main Cam</li>
+                  <li>5000 mAh · 67 W</li>
+                </ul>
+              </div>
+              <div class="hw-visual" aria-hidden="true">
+                <div class="mock-phone">
+                  <div class="mock-phone-cam">
+                    <span class="cam-lens cam-main"><i></i></span>
+                    <div class="cam-aux">
+                      <span class="cam-lens"></span>
+                      <span class="cam-lens"></span>
+                    </div>
+                    <span class="cam-tag">108 MP · 1/1.52″</span>
+                  </div>
+                  <div class="mock-phone-specs">
+                    <div>
+                      <span>Panel</span>
+                      <strong>120 Hz Super AMOLED</strong>
+                    </div>
+                    <div>
+                      <span>Peak Brightness</span>
+                      <strong>1200 nits · DCI-P3</strong>
+                    </div>
+                    <div>
+                      <span>Charging</span>
+                      <strong>67 W Turbo · 5000 mAh</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <dl class="hw-spec-grid">
+              <div>
+                <dt>Chipset</dt>
+                <dd><strong>Qualcomm Snapdragon 695 5G (SM6375, 6 nm)</strong>2× Kryo 660 @ up to 2.2 GHz + 6× @ 1.7 GHz · Adreno 619</dd>
+              </div>
+              <div>
+                <dt>Display</dt>
+                <dd><strong>6.67″ Super AMOLED DotDisplay</strong>1080×2400, 120 Hz, ~395 ppi, DCI-P3, HBM ~700 nits / peak ~1200 nits, Gorilla Glass 5</dd>
+              </div>
+              <div>
+                <dt>Memory</dt>
+                <dd><strong>6 GB LPDDR4X + 128 GB UFS 2.2</strong>microSD expandable (shared SIM slot)</dd>
+              </div>
+              <div>
+                <dt>Camera</dt>
+                <dd><strong>108 MP f/1.9 wide (1/1.52″)</strong>+ 8 MP ultrawide 118° + 2 MP macro · 16 MP front</dd>
+              </div>
+              <div>
+                <dt>Battery</dt>
+                <dd><strong>5000 mAh</strong>67 W wired turbo charge (USB-C)</dd>
+              </div>
+              <div>
+                <dt>Body</dt>
+                <dd><strong>~164.2 × 76.1 × 8.1 mm · ~202 g</strong>Dual speakers · 3.5 mm jack · side fingerprint · Bluetooth 5.1 / Wi-Fi 5</dd>
+              </div>
             </dl>
           </li>
         </ul>
@@ -165,6 +457,6 @@
     </div>
   </footer>
 
-  <script src="script.js" defer></script>
+  <script src="script.js?v=20261022" defer></script>
 </body>
 </html>

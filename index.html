@@ -34,7 +34,7 @@
       }
     })();
   </script>
-  <link rel="stylesheet" href="style.css?v=20261018">
+  <link rel="stylesheet" href="style.css?v=20261022">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -178,6 +178,65 @@
         <div class="hero-actions">
           <a class="btn btn-primary" href="#services">My services</a>
           <a class="btn btn-ghost" href="projects.html">See projects</a>
+        </div>
+      </div>
+      <div class="hero-radar-wrap">
+        <div class="hero-radar" data-radar aria-label="Homelab services radar">
+          <div class="hero-radar-rings" aria-hidden="true">
+            <span></span>
+            <span></span>
+          </div>
+          <a class="radar-node radar-node-core" style="--x: 50%; --y: 50%;" href="https://10.0.0.200:8006" target="_blank" rel="noopener noreferrer"
+             data-name="Proxmox" data-role="Virtual machines · 10.0.0.200">
+            <span class="radar-dot"></span>
+            <span class="radar-label">Proxmox</span>
+          </a>
+          <a class="radar-node" style="--x: 64.6%; --y: 37.8%;" href="https://jelly.skopec.dev" target="_blank" rel="noopener noreferrer"
+             data-name="Jellyfin" data-role="Movies &amp; TV · jelly.skopec.dev">
+            <span class="radar-dot"></span>
+            <span class="radar-label">Jellyfin</span>
+          </a>
+          <a class="radar-node" style="--x: 31.1%; --y: 51.7%;" href="http://10.0.0.106:3000" target="_blank" rel="noopener noreferrer"
+             data-name="Ollama" data-role="Local AI · 10.0.0.106:3000">
+            <span class="radar-dot"></span>
+            <span class="radar-label">Ollama</span>
+          </a>
+          <a class="radar-node" style="--x: 54.9%; --y: 68.4%;" href="http://10.0.0.100/admin" target="_blank" rel="noopener noreferrer"
+             data-name="Pi-hole" data-role="DNS &amp; ad blocking · 10.0.0.100">
+            <span class="radar-dot"></span>
+            <span class="radar-label">Pi-hole</span>
+          </a>
+          <a class="radar-node" style="--x: 34%; --y: 20%;" href="http://10.0.0.111:22300" target="_blank" rel="noopener noreferrer"
+             data-name="Joplin" data-role="Notes · 10.0.0.111:22300">
+            <span class="radar-dot"></span>
+            <span class="radar-label">Joplin</span>
+          </a>
+          <a class="radar-node" style="--x: 83%; --y: 41.8%;" href="http://10.0.0.109:2283" target="_blank" rel="noopener noreferrer"
+             data-name="Immich" data-role="Photos · 10.0.0.109:2283">
+            <span class="radar-dot"></span>
+            <span class="radar-label">Immich</span>
+          </a>
+          <a class="radar-node" style="--x: 76%; --y: 71.9%;" href="http://10.0.0.103:4533" target="_blank" rel="noopener noreferrer"
+             data-name="Navidrome" data-role="Music · 10.0.0.103:4533">
+            <span class="radar-dot"></span>
+            <span class="radar-label">Navidrome</span>
+          </a>
+          <a class="radar-node" style="--x: 30.5%; --y: 77.9%;" href="http://10.0.0.104:8080" target="_blank" rel="noopener noreferrer"
+             data-name="SearXNG" data-role="Search · 10.0.0.104:8080">
+            <span class="radar-dot"></span>
+            <span class="radar-label">SearXNG</span>
+          </a>
+          <a class="radar-node" style="--x: 20.6%; --y: 33%;" href="http://10.0.0.107:3000" target="_blank" rel="noopener noreferrer"
+             data-name="ConvertX" data-role="File conversion · 10.0.0.107:3000">
+            <span class="radar-dot"></span>
+            <span class="radar-label">ConvertX</span>
+          </a>
+        </div>
+        <div class="radar-hud" data-radar-hud aria-live="polite">
+          <span class="radar-hud-dot" aria-hidden="true"></span>
+          <span class="radar-hud-name" data-radar-name>Homelab</span>
+          <span class="radar-hud-sep" aria-hidden="true">·</span>
+          <span class="radar-hud-role" data-radar-role>Proxmox VE — 9 nodes online</span>
         </div>
       </div>
     </section>
@@ -448,6 +507,6 @@
     </div>
   </footer>
 
-  <script src="script.js" defer></script>
+  <script src="script.js?v=20261022" defer></script>
 </body>
 </html>

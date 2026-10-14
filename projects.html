@@ -34,7 +34,7 @@
       }
     })();
   </script>
-  <link rel="stylesheet" href="style.css?v=20261018">
+  <link rel="stylesheet" href="style.css?v=20261022">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -82,63 +82,266 @@
           <li><span aria-current="page">Projects</span></li>
         </ol>
       </nav>
-      <h1>Projects</h1>
-      <p>Websites, the homelab, games, and school projects.</p>
+      <div class="projects-hero-top">
+        <div>
+          <h1>Projects</h1>
+          <p>Websites, the homelab, games, and school projects.</p>
+        </div>
+        <div class="project-filters" role="toolbar" aria-label="Filter projects">
+          <button class="filter-chip is-active" type="button" data-filter="all">All <span>6</span></button>
+          <button class="filter-chip" type="button" data-filter="apps">Apps &amp; Web</button>
+          <button class="filter-chip" type="button" data-filter="infra">Homelab &amp; Program</button>
+          <button class="filter-chip" type="button" data-filter="games">Games</button>
+        </div>
+      </div>
     </header>
 
-    <section class="section" aria-labelledby="projects-list-title">
+    <section class="section projects-section" aria-labelledby="projects-list-title">
       <div class="wrap reveal">
         <p class="section-label">Selected</p>
         <h2 id="projects-list-title">Work</h2>
         <p class="section-lead">Things I’ve built or run — open a project for more.</p>
-        <ul class="project-list">
-          <li class="project-item">
-            <span class="tag">HTML</span>
-            <h3>
-              <a href="https://github.com/pepaskopec-blip/skopec.dev" target="_blank" rel="noopener noreferrer">skopec.dev</a>
-            </h3>
-            <p>This site, written in html, hosted on my Homelab/Proxmox server. It has caching enabled on Cloudflared so it does not have to load everything from the origin server.</p>
-            <a class="project-link" href="https://github.com/pepaskopec-blip/skopec.dev" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+
+        <ul class="project-grid">
+          <!-- Graduately (Featured full-width card) -->
+          <li class="project-card project-card-featured" data-category="apps">
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span class="tag">Swift, Kotlin</span>
+                <span class="project-badge">Featured project</span>
+              </div>
+              <h3>
+                <a href="https://github.com/pepaskopec-blip/Graduately" target="_blank" rel="noopener noreferrer">Graduately</a>
+              </h3>
+              <p>My biggest project yet. It is an educational SwiftUI/ Kotlin app for maturita/graduation preparation — The app is crossplatform and it is available on Mac, iPhone, Android, iPad, Windows and Linux. I am really proud of it.</p>
+              <ul class="project-pills" aria-label="Platforms and technologies">
+                <li>SwiftUI</li>
+                <li>Kotlin + Compose</li>
+                <li>macOS &amp; iOS</li>
+                <li>Android</li>
+                <li>Windows &amp; Linux</li>
+                <li>13 subjects</li>
+              </ul>
+              <div class="project-card-actions">
+                <a class="btn btn-primary" href="https://github.com/pepaskopec-blip/Graduately" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+                <a class="btn btn-ghost" href="https://github.com/pepaskopec-blip/Graduately#install" target="_blank" rel="noopener noreferrer">Install guide</a>
+              </div>
+            </div>
+            <a class="project-preview project-preview-graduately" href="https://github.com/pepaskopec-blip/Graduately" target="_blank" rel="noopener noreferrer" aria-label="Open Graduately on GitHub">
+              <img class="preview-graduately-shot" src="graduately-home.webp" width="1600" height="1199" loading="lazy" decoding="async" alt="Graduately app dashboard screenshot">
+              <img class="preview-graduately-icon" src="graduately-icon.webp" width="256" height="256" loading="lazy" decoding="async" alt="">
+            </a>
           </li>
-          <li class="project-item">
-            <span class="tag">Proxmox</span>
-            <h3>
-              <a href="index.html#services">Homelab</a>
-            </h3>
-            <p>I just wanted a NAS server, but now I host almost everything. It uses Proxmox as the operating system and virtualization. I have more than ten LXC containers and VMs for my services. I also set up automatic restarts for maximum safety and updates. </p>
-            <a class="project-link" href="index.html#services">See services →</a>
+
+          <!-- Homelab -->
+          <li class="project-card" data-category="infra">
+            <a class="project-preview project-preview-homelab" href="index.html#services" aria-hidden="true" tabindex="-1">
+              <div class="mock-rack">
+                <div class="mock-rack-header">
+                  <span class="mock-status-dot"></span>
+                  <span class="mock-rack-title">pve-node · 10.0.0.200</span>
+                  <span class="mock-rack-uptime">10+ LXC / VMs</span>
+                </div>
+                <div class="mock-rack-bars">
+                  <div class="mock-bar-row">
+                    <span>CPU · Xeon 10C/20T</span>
+                    <div class="mock-bar"><i style="width: 34%"></i></div>
+                  </div>
+                  <div class="mock-bar-row">
+                    <span>RAM · 40 GB ECC</span>
+                    <div class="mock-bar"><i style="width: 62%"></i></div>
+                  </div>
+                </div>
+                <div class="mock-service-chips">
+                  <span>Jellyfin</span>
+                  <span>Ollama</span>
+                  <span>Navidrome</span>
+                  <span>Immich</span>
+                  <span>Pi-hole</span>
+                  <span>SearXNG</span>
+                  <span>Joplin</span>
+                </div>
+              </div>
+            </a>
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span class="tag">Proxmox</span>
+                <span class="project-status">Self-hosted · 24/7</span>
+              </div>
+              <h3>
+                <a href="index.html#services">Homelab</a>
+              </h3>
+              <p>I just wanted a NAS server, but now I host almost everything. It uses Proxmox as the operating system and virtualization. I have more than ten LXC containers and VMs for my services. I also set up automatic restarts for maximum safety and updates.</p>
+              <ul class="project-pills" aria-label="Technologies">
+                <li>Proxmox VE</li>
+                <li>LXC &amp; QEMU</li>
+                <li>Tailscale</li>
+                <li>Cloudflare Tunnels</li>
+              </ul>
+              <a class="project-link" href="index.html#services">See services →</a>
+            </div>
           </li>
-          <li class="project-item">
-            <span class="tag">Python</span>
-            <h3>
-              <a href="https://github.com/pepaskopec-blip/Snake-Pygame-" target="_blank" rel="noopener noreferrer">Snake-Pygame-</a>
-            </h3>
-            <p>My first game in python, it is like 90% ai code, when I made it for the first time, I thought that it looks good, but now it looks like ai slop. Still it is very solid game packed with a lot of features, so it is pretty fun to play or try :D  </p>
-            <a class="project-link" href="https://github.com/pepaskopec-blip/Snake-Pygame-" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+
+          <!-- skopec.dev -->
+          <li class="project-card" data-category="apps">
+            <a class="project-preview project-preview-site" href="https://github.com/pepaskopec-blip/skopec.dev" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+              <div class="mock-browser">
+                <div class="mock-browser-bar">
+                  <span class="mock-dots"><i></i><i></i><i></i></span>
+                  <span class="mock-url">https://skopec.dev</span>
+                  <span class="mock-cache-tag">CF HIT</span>
+                </div>
+                <div class="mock-browser-canvas">
+                  <div class="mock-site-hero">
+                    <div class="mock-site-lines">
+                      <span class="mock-line-title">Josef<i>.</i></span>
+                      <span class="mock-line-sub"></span>
+                      <span class="mock-line-sub short"></span>
+                    </div>
+                    <div class="mock-site-orb"></div>
+                  </div>
+                  <div class="mock-pipeline">
+                    <span>Proxmox Origin</span>
+                    <span class="mock-arrow">→</span>
+                    <span>Cloudflared</span>
+                    <span class="mock-arrow">→</span>
+                    <span class="mock-edge">Edge Cache</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span class="tag">HTML</span>
+                <span class="project-status">Live · Cached</span>
+              </div>
+              <h3>
+                <a href="https://github.com/pepaskopec-blip/skopec.dev" target="_blank" rel="noopener noreferrer">skopec.dev</a>
+              </h3>
+              <p>This site, written in html, hosted on my Homelab/Proxmox server. It has caching enabled on Cloudflared so it does not have to load everything from the origin server.</p>
+              <ul class="project-pills" aria-label="Technologies">
+                <li>HTML5 &amp; CSS3</li>
+                <li>Vanilla JS</li>
+                <li>Cloudflared</li>
+                <li>Zero dependencies</li>
+              </ul>
+              <a class="project-link" href="https://github.com/pepaskopec-blip/skopec.dev" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+            </div>
           </li>
-          <li class="project-item">
-            <span class="tag">Batchfile</span>
-            <h3>
-              <a href="https://github.com/pepaskopec-blip/BatchGym" target="_blank" rel="noopener noreferrer">BatchGym</a>
-            </h3>
-            <p>First game ever — a freshman school project for console application, written in bash, it can natively run only on Windows. Text-based RPG that simulates a gym visit: manage money, buy supplements, and complete sets.</p>
-            <a class="project-link" href="https://github.com/pepaskopec-blip/BatchGym" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+
+          <!-- Snake-Pygame- -->
+          <li class="project-card" data-category="games">
+            <div class="project-preview project-preview-snake">
+              <div class="mock-arcade">
+                <div class="mock-arcade-hud">
+                  <span>SNAKE.PY</span>
+                  <span data-snake-score>SCORE 0140</span>
+                </div>
+                <canvas class="snake-canvas" data-snake-canvas width="280" height="126" aria-label="Animated Snake game preview"></canvas>
+              </div>
+            </div>
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span class="tag">Python</span>
+                <span class="project-status">Arcade game</span>
+              </div>
+              <h3>
+                <a href="https://github.com/pepaskopec-blip/Snake-Pygame-" target="_blank" rel="noopener noreferrer">Snake-Pygame-</a>
+              </h3>
+              <p>My first game in python, it is like 90% ai code, when I made it for the first time, I thought that it looks good, but now it looks like ai slop. Still it is very solid game packed with a lot of features, so it is pretty fun to play or try :D</p>
+              <ul class="project-pills" aria-label="Technologies">
+                <li>Python</li>
+                <li>Pygame</li>
+                <li>Power-ups</li>
+                <li>Arcade modes</li>
+              </ul>
+              <a class="project-link" href="https://github.com/pepaskopec-blip/Snake-Pygame-" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+            </div>
           </li>
-          <li class="project-item">
-            <span class="tag">Swift, Kotlin</span>
-            <h3>
-              <a href="https://github.com/pepaskopec-blip/Graduately" target="_blank" rel="noopener noreferrer">Graduately</a>
-            </h3>
-            <p>My biggest project yet. It is an educational SwiftUI/ Kotlin app for maturita/graduation preparation — The app is crossplatform and it is available on Mac, iPhone, Android, iPad, Windows and Linux. I am really proud of it.</p>
-            <a class="project-link" href="https://github.com/pepaskopec-blip/Graduately" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
-            </li>
-          <li class="project-item">
-            <span class="tag">Terra</span>
-            <h3>
-              <a href="https://terra.hackclub.com" target="_blank" rel="noopener noreferrer">Terra</a>
-            </h3>
-            <p>Terra is You Ship, We Ship program rub by Hack Club. It combines gamified farming mechanics with real-world software developement, where coding translates into in-game resources to earn a free modular laptop or tablet.</p>
-            <a class="project-link" href="https://terra.hackclub.com/" target="_blank" rel="noopener noreferrer">View their site</a>
+
+          <!-- BatchGym -->
+          <li class="project-card" data-category="games">
+            <a class="project-preview project-preview-batch" href="https://github.com/pepaskopec-blip/BatchGym" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+              <div class="mock-terminal">
+                <div class="mock-terminal-bar">
+                  <span>C:\WINDOWS\system32\cmd.exe — BatchGym.bat</span>
+                  <span>×</span>
+                </div>
+                <div class="mock-terminal-body">
+                  <div class="term-header">[ BATCH GYM RPG · DAY 12 · CASH: $85 ]</div>
+                  <div class="term-stats">
+                    <span>STR ████████░░ 80%</span>
+                    <span>NRG ███████░░░ 70%</span>
+                  </div>
+                  <div class="term-log">&gt; Stack: Creatine + Whey Isolate</div>
+                  <div class="term-prompt">&gt; [1] Bench Press  [2] Shop  [3] Rest<i class="term-cursor"></i></div>
+                </div>
+              </div>
+            </a>
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span class="tag">Batchfile</span>
+                <span class="project-status">Console RPG</span>
+              </div>
+              <h3>
+                <a href="https://github.com/pepaskopec-blip/BatchGym" target="_blank" rel="noopener noreferrer">BatchGym</a>
+              </h3>
+              <p>First game ever — a freshman school project for console application, written in bash, it can natively run only on Windows. Text-based RPG that simulates a gym visit: manage money, buy supplements, and complete sets.</p>
+              <ul class="project-pills" aria-label="Technologies">
+                <li>Windows Batch</li>
+                <li>CLI RPG</li>
+                <li>School project</li>
+              </ul>
+              <a class="project-link" href="https://github.com/pepaskopec-blip/BatchGym" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+            </div>
+          </li>
+
+          <!-- Terra -->
+          <li class="project-card" data-category="infra">
+            <a class="project-preview project-preview-terra" href="https://terra.hackclub.com/" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+              <div class="mock-terra">
+                <div class="mock-terra-top">
+                  <span class="mock-terra-badge">HACK CLUB · YSWS</span>
+                  <span class="mock-terra-duration">3 MONTHS</span>
+                </div>
+                <div class="mock-terra- tracks">
+                  <div class="mock-terra-track">
+                    <div class="mock-terra-label">
+                      <span>Human coding</span>
+                      <strong>10h / week</strong>
+                    </div>
+                    <div class="mock-bar"><i style="width: 78%"></i></div>
+                  </div>
+                  <div class="mock-terra-track">
+                    <div class="mock-terra-label">
+                      <span>AI coding</span>
+                      <strong>30h / week</strong>
+                    </div>
+                    <div class="mock-bar"><i style="width: 65%"></i></div>
+                  </div>
+                </div>
+                <div class="mock-terra-reward">
+                  <span>Final reward</span>
+                  <strong>Framework Laptop / iPad</strong>
+                </div>
+              </div>
+            </a>
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span class="tag">Terra</span>
+                <span class="project-status">Hack Club · Active</span>
+              </div>
+              <h3>
+                <a href="https://terra.hackclub.com" target="_blank" rel="noopener noreferrer">Terra</a>
+              </h3>
+              <p>Terra is You Ship, We Ship program rub by Hack Club. It combines gamified farming mechanics with real-world software developement, where coding translates into in-game resources to earn a free modular laptop or tablet.</p>
+              <ul class="project-pills" aria-label="Program details">
+                <li>Hack Club</li>
+                <li>10h / 30h weekly</li>
+                <li>Framework / iPad</li>
+              </ul>
+              <a class="project-link" href="https://terra.hackclub.com/" target="_blank" rel="noopener noreferrer">View their site →</a>
+            </div>
           </li>
         </ul>
       </div>
@@ -157,6 +360,6 @@
     </div>
   </footer>
 
-  <script src="script.js" defer></script>
+  <script src="script.js?v=20261022" defer></script>
 </body>
 </html>
