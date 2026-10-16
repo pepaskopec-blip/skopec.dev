@@ -10,14 +10,15 @@
 
 ## Services
 Local 10.0.0.x addresses work only on the home network or with Josef’s Tailscale.
-- Proxmox: https://proxmox.skopec.dev · 10.0.0.200:8006
+- Proxmox: 10.0.0.200:8006
 - Jellyfin: https://jelly.skopec.dev · 10.0.0.101:8096
-- Navidrome: https://navi.skopec.dev · 10.0.0.103:4533
-- Ollama: https://ai.skopec.dev · 10.0.0.106:3000
-- SearXNG: https://search.skopec.dev · 10.0.0.104:8080
-- ConvertX: https://convert.skopec.dev · 10.0.0.107:3000
+- Navidrome: 10.0.0.103:4533
+- Ollama: 10.0.0.106:3000
+- SearXNG: 10.0.0.104:8080
+- ConvertX: 10.0.0.107:3000
 - NAS: 10.0.0.102
 - Pi-hole: 10.0.0.100:80
+- Joplin: 10.0.0.111:22300
 - Immich: 10.0.0.109:2283
 - Cloudflare Tunnels: 10.0.0.105 (exposes services outside the LAN)
 - Tailscale: 10.0.0.110 (remote access to local-only services)
@@ -27,7 +28,8 @@ Local 10.0.0.x addresses work only on the home network or with Josef’s Tailsca
 - Homelab — Proxmox and self-hosted services
 - Snake-Pygame-
 - BatchGym
-- maturita.c — https://git.dvorakmortonxd.dev/edu/maturita.c
+- Graduately — https://github.com/pepaskopec-blip/Graduately
+- Terra
 
 ## Friends
 - Martin Dvořák — https://dvorakmortonxd.dev
