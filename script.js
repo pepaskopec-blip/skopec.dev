@@ -57,6 +57,12 @@
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") setOpen(false);
     });
+
+    document.addEventListener("click", (event) => {
+      if (!nav.classList.contains("is-open")) return;
+      if (nav.contains(event.target) || toggle.contains(event.target)) return;
+      setOpen(false);
+    });
   }
 
   const radar = document.querySelector("[data-radar]");
@@ -157,9 +163,14 @@
   const projectCards = document.querySelectorAll(".project-card[data-category]");
   if (filterChips.length && projectCards.length) {
     filterChips.forEach((chip) => {
+      chip.setAttribute("aria-pressed", chip.classList.contains("is-active") ? "true" : "false");
       chip.addEventListener("click", () => {
         const filter = chip.dataset.filter;
-        filterChips.forEach((c) => c.classList.toggle("is-active", c === chip));
+        filterChips.forEach((c) => {
+          const on = c === chip;
+          c.classList.toggle("is-active", on);
+          c.setAttribute("aria-pressed", on ? "true" : "false");
+        });
         projectCards.forEach((card) => {
           const match = filter === "all" || card.dataset.category === filter;
           card.hidden = !match;
@@ -172,9 +183,14 @@
   const hwCards = document.querySelectorAll(".hw-card[data-hw-category]");
   if (hwChips.length && hwCards.length) {
     hwChips.forEach((chip) => {
+      chip.setAttribute("aria-pressed", chip.classList.contains("is-active") ? "true" : "false");
       chip.addEventListener("click", () => {
         const filter = chip.dataset.hwFilter;
-        hwChips.forEach((c) => c.classList.toggle("is-active", c === chip));
+        hwChips.forEach((c) => {
+          const on = c === chip;
+          c.classList.toggle("is-active", on);
+          c.setAttribute("aria-pressed", on ? "true" : "false");
+        });
         hwCards.forEach((card) => {
           const match = filter === "all" || card.dataset.hwCategory === filter;
           card.hidden = !match;
