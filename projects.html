@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Josef’s projects — skopec.dev, Proxmox homelab, Snake in Pygame, BatchGym, Graduately, and more.">
-  <title>Projects — websites &amp; games · Josef</title>
+  <meta name="description" content="Josef’s projects — Graduately, skopec.dev, the Proxmox homelab, Jellyfin, Immich, Ollama, and more.">
+  <title>Projects — websites, services &amp; games · Josef</title>
   <link rel="canonical" href="https://skopec.dev/projects.html">
   <meta property="og:title" content="Projects — Josef">
-  <meta property="og:description" content="Projects, websites, homelab, games, and school experiments.">
+  <meta property="og:description" content="Projects, websites, homelab services, games, and school experiments.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://skopec.dev/projects.html">
   <meta property="og:image" content="https://skopec.dev/og-image.jpg">
@@ -15,7 +15,7 @@
   <meta property="og:site_name" content="skopec.dev">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Projects — Josef">
-  <meta name="twitter:description" content="Websites, homelab, games, and school experiments.">
+  <meta name="twitter:description" content="Websites, homelab services, games, and school experiments.">
   <meta name="twitter:image" content="https://skopec.dev/og-image.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +34,7 @@
       }
     })();
   </script>
-  <link rel="stylesheet" href="style.css?v=20261023">
+  <link rel="stylesheet" href="style.css?v=20261025">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -85,12 +85,13 @@
       <div class="projects-hero-top">
         <div>
           <h1>Projects</h1>
-          <p>Websites, the homelab, games, and school projects.</p>
+          <p>Websites, self-hosted services, games, and school projects.</p>
         </div>
         <div class="project-filters" role="toolbar" aria-label="Filter projects">
-          <button class="filter-chip is-active" type="button" data-filter="all">All <span>6</span></button>
+          <button class="filter-chip is-active" type="button" data-filter="all">All <span>14</span></button>
           <button class="filter-chip" type="button" data-filter="apps">Apps &amp; Web</button>
           <button class="filter-chip" type="button" data-filter="infra">Homelab &amp; Program</button>
+          <button class="filter-chip" type="button" data-filter="services">Services</button>
           <button class="filter-chip" type="button" data-filter="games">Games</button>
         </div>
       </div>
@@ -347,10 +348,274 @@
             </div>
           </li>
 
+          <!-- Jellyfin -->
+          <li class="project-card" data-category="services">
+            <a class="project-preview" href="https://jelly.skopec.dev" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+              <div class="mock-svc">
+                <div class="mock-svc-top">
+                  <span class="mock-status-dot"></span>
+                  <span>jellyfin</span>
+                  <span class="mock-svc-host">jelly.skopec.dev</span>
+                </div>
+                <div class="mock-posters" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+                <div class="mock-now"><strong>Library</strong> · movies &amp; TV on the NAS</div>
+              </div>
+            </a>
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span class="tag">Jellyfin</span>
+                <span class="project-status">Movies &amp; TV</span>
+              </div>
+              <h3>
+                <a href="https://jelly.skopec.dev" target="_blank" rel="noopener noreferrer">Jellyfin</a>
+              </h3>
+              <p>Movies and TV on my own server, with the library on the NAS. This is the one service with a public address — jelly.skopec.dev — the rest stay on the LAN or Tailscale.</p>
+              <ul class="project-pills" aria-label="Details">
+                <li>Self-hosted</li>
+                <li>Movies &amp; TV</li>
+                <li>jelly.skopec.dev</li>
+              </ul>
+              <a class="project-link" href="https://jelly.skopec.dev" target="_blank" rel="noopener noreferrer">Open Jellyfin →</a>
+            </div>
+          </li>
+
+          <!-- Navidrome -->
+          <li class="project-card" data-category="services">
+            <a class="project-preview" href="http://10.0.0.103:4533" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+              <div class="mock-svc">
+                <div class="mock-svc-top">
+                  <span class="mock-status-dot"></span>
+                  <span>navidrome</span>
+                  <span class="mock-svc-host">10.0.0.103:4533</span>
+                </div>
+                <div class="mock-track">
+                  <div class="mock-album" aria-hidden="true"></div>
+                  <div>
+                    <div class="mock-track-title">Library</div>
+                    <div class="mock-track-by">Music · on the LAN</div>
+                    <div class="mock-bar"><i style="width: 46%"></i></div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span class="tag">Navidrome</span>
+                <span class="project-status">Music</span>
+              </div>
+              <h3>
+                <a href="http://10.0.0.103:4533" target="_blank" rel="noopener noreferrer">Navidrome</a>
+              </h3>
+              <p>Music from the homelab. Navidrome serves the library over the Subsonic API, so the same collection plays in the browser or in a phone app on my network.</p>
+              <ul class="project-pills" aria-label="Details">
+                <li>Self-hosted</li>
+                <li>Subsonic API</li>
+                <li>Music</li>
+              </ul>
+              <a class="project-link" href="http://10.0.0.103:4533" target="_blank" rel="noopener noreferrer">Open Navidrome →</a>
+            </div>
+          </li>
+
           <!-- Ollama -->
-          
-          
-          
+          <li class="project-card" data-category="services">
+            <a class="project-preview" href="http://10.0.0.106:3000" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+              <div class="mock-svc">
+                <div class="mock-svc-top">
+                  <span class="mock-status-dot"></span>
+                  <span>ollama</span>
+                  <span class="mock-svc-host">10.0.0.106:3000</span>
+                </div>
+                <div class="mock-chat">
+                  <div class="mock-bubble ask">run it locally</div>
+                  <div class="mock-bubble reply">model on the homelab · stays on the network</div>
+                </div>
+              </div>
+            </a>
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span class="tag">Ollama</span>
+                <span class="project-status">Local AI</span>
+              </div>
+              <h3>
+                <a href="http://10.0.0.106:3000" target="_blank" rel="noopener noreferrer">Ollama</a>
+              </h3>
+              <p>Local AI on the Proxmox box. Models run on my hardware, so a prompt stays on the network instead of going out to a hosted API.</p>
+              <ul class="project-pills" aria-label="Details">
+                <li>Self-hosted</li>
+                <li>Local LLM</li>
+                <li>Private</li>
+              </ul>
+              <a class="project-link" href="http://10.0.0.106:3000" target="_blank" rel="noopener noreferrer">Open Ollama →</a>
+            </div>
+          </li>
+
+          <!-- SearXNG -->
+          <li class="project-card" data-category="services">
+            <a class="project-preview" href="http://10.0.0.104:8080" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+              <div class="mock-svc">
+                <div class="mock-svc-top">
+                  <span class="mock-status-dot"></span>
+                  <span>searxng</span>
+                  <span class="mock-svc-host">10.0.0.104:8080</span>
+                </div>
+                <div class="mock-search"><span class="mock-search-icon" aria-hidden="true">⌕</span><span>search the web</span></div>
+                <div class="mock-search-meta"><span>general</span><span>images</span><span>news</span></div>
+              </div>
+            </a>
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span class="tag">SearXNG</span>
+                <span class="project-status">Search</span>
+              </div>
+              <h3>
+                <a href="http://10.0.0.104:8080" target="_blank" rel="noopener noreferrer">SearXNG</a>
+              </h3>
+              <p>Search I run myself. SearXNG asks other engines and brings the results back, without an account on a big search site.</p>
+              <ul class="project-pills" aria-label="Details">
+                <li>Self-hosted</li>
+                <li>Metasearch</li>
+                <li>Private</li>
+              </ul>
+              <a class="project-link" href="http://10.0.0.104:8080" target="_blank" rel="noopener noreferrer">Open SearXNG →</a>
+            </div>
+          </li>
+
+          <!-- ConvertX -->
+          <li class="project-card" data-category="services">
+            <a class="project-preview" href="http://10.0.0.107:3000" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+              <div class="mock-svc">
+                <div class="mock-svc-top">
+                  <span class="mock-status-dot"></span>
+                  <span>convertx</span>
+                  <span class="mock-svc-host">10.0.0.107:3000</span>
+                </div>
+                <div class="mock-jobs">
+                  <div><span>image</span><em>→</em><span>png</span><b>local</b></div>
+                  <div><span>document</span><em>→</em><span>pdf</span><b>local</b></div>
+                  <div><span>audio</span><em>→</em><span>mp3</span><b>local</b></div>
+                </div>
+              </div>
+            </a>
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span class="tag">ConvertX</span>
+                <span class="project-status">File conversion</span>
+              </div>
+              <h3>
+                <a href="http://10.0.0.107:3000" target="_blank" rel="noopener noreferrer">ConvertX</a>
+              </h3>
+              <p>File conversion on the lab. When something needs another format, it converts here instead of uploading the file to a random website.</p>
+              <ul class="project-pills" aria-label="Details">
+                <li>Self-hosted</li>
+                <li>Files</li>
+                <li>Private</li>
+              </ul>
+              <a class="project-link" href="http://10.0.0.107:3000" target="_blank" rel="noopener noreferrer">Open ConvertX →</a>
+            </div>
+          </li>
+
+          <!-- Pi-hole -->
+          <li class="project-card" data-category="services">
+            <a class="project-preview" href="http://10.0.0.100/admin" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+              <div class="mock-svc">
+                <div class="mock-svc-top">
+                  <span class="mock-status-dot"></span>
+                  <span>pi-hole</span>
+                  <span class="mock-svc-host">10.0.0.100</span>
+                </div>
+                <div class="mock-stat">
+                  <strong>DNS</strong>
+                  <span>ads &amp; trackers</span>
+                </div>
+                <div class="mock-bar"><i style="width: 38%"></i></div>
+                <div class="mock-stat-rows">
+                  <div><span>Blocking</span><span>on</span></div>
+                  <div><span>Resolver</span><span>LAN</span></div>
+                </div>
+              </div>
+            </a>
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span class="tag">Pi-hole</span>
+                <span class="project-status">DNS</span>
+              </div>
+              <h3>
+                <a href="http://10.0.0.100/admin" target="_blank" rel="noopener noreferrer">Pi-hole</a>
+              </h3>
+              <p>DNS for the network, with ad blocking in front of it. Devices that use this resolver drop a lot of ads and trackers before the page loads.</p>
+              <ul class="project-pills" aria-label="Details">
+                <li>DNS</li>
+                <li>Ad blocking</li>
+                <li>Network</li>
+              </ul>
+              <a class="project-link" href="http://10.0.0.100/admin" target="_blank" rel="noopener noreferrer">Open Pi-hole →</a>
+            </div>
+          </li>
+
+          <!-- Joplin -->
+          <li class="project-card" data-category="services">
+            <a class="project-preview" href="http://10.0.0.111:22300" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+              <div class="mock-svc">
+                <div class="mock-svc-top">
+                  <span class="mock-status-dot"></span>
+                  <span>joplin</span>
+                  <span class="mock-svc-host">10.0.0.111:22300</span>
+                </div>
+                <div class="mock-notes">
+                  <div><i></i>Notes</div>
+                  <div><i></i>Sync server</div>
+                  <div><i></i>On the homelab</div>
+                </div>
+              </div>
+            </a>
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span class="tag">Joplin</span>
+                <span class="project-status">Notes</span>
+              </div>
+              <h3>
+                <a href="http://10.0.0.111:22300" target="_blank" rel="noopener noreferrer">Joplin</a>
+              </h3>
+              <p>Notes that sync to the homelab. Joplin is the notebook, and the sync target is my own server instead of someone else’s cloud.</p>
+              <ul class="project-pills" aria-label="Details">
+                <li>Self-hosted</li>
+                <li>Notes</li>
+                <li>Sync</li>
+              </ul>
+              <a class="project-link" href="http://10.0.0.111:22300" target="_blank" rel="noopener noreferrer">Open Joplin →</a>
+            </div>
+          </li>
+
+          <!-- Immich -->
+          <li class="project-card" data-category="services">
+            <a class="project-preview" href="http://10.0.0.109:2283" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+              <div class="mock-svc">
+                <div class="mock-svc-top">
+                  <span class="mock-status-dot"></span>
+                  <span>immich</span>
+                  <span class="mock-svc-host">10.0.0.109:2283</span>
+                </div>
+                <div class="mock-photos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                <div class="mock-now"><strong>Library</strong> · photos on the NAS</div>
+              </div>
+            </a>
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span class="tag">Immich</span>
+                <span class="project-status">Photos</span>
+              </div>
+              <h3>
+                <a href="http://10.0.0.109:2283" target="_blank" rel="noopener noreferrer">Immich</a>
+              </h3>
+              <p>Photo library on the NAS. Immich is where the pictures live, with a web UI instead of a shared folder.</p>
+              <ul class="project-pills" aria-label="Details">
+                <li>Self-hosted</li>
+                <li>Photos</li>
+                <li>NAS</li>
+              </ul>
+              <a class="project-link" href="http://10.0.0.109:2283" target="_blank" rel="noopener noreferrer">Open Immich →</a>
+            </div>
+          </li>
         </ul>
       </div>
     </section>

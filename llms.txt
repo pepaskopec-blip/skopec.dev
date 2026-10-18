@@ -30,6 +30,7 @@ Local 10.0.0.x addresses work only on the home network or with Josef’s Tailsca
 - BatchGym
 - Graduately — https://github.com/pepaskopec-blip/Graduately
 - Terra
+- Jellyfin, Navidrome, Ollama, SearXNG, ConvertX, Pi-hole, Joplin, Immich — services from the homelab, also listed on the Projects page
 
 ## Friends
 - Martin Dvořák — https://dvorakmortonxd.dev
