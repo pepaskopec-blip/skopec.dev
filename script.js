@@ -218,11 +218,29 @@
       }
     };
 
+    const snakePalette = () => {
+      const light = document.documentElement.dataset.theme === "light";
+      return light
+        ? {
+            grid: "rgba(17, 21, 28, 0.08)",
+            food: "#dc3c11",
+            head: "#11151c",
+            body: "179, 47, 8",
+          }
+        : {
+            grid: "rgba(238, 242, 246, 0.04)",
+            food: "#ff4a1c",
+            head: "#eef2f6",
+            body: "255, 122, 82",
+          };
+    };
+
     const drawSnake = () => {
       if (!ctx) return;
+      const palette = snakePalette();
       ctx.clearRect(0, 0, snakeCanvas.width, snakeCanvas.height);
 
-      ctx.strokeStyle = "rgba(238, 242, 246, 0.04)";
+      ctx.strokeStyle = palette.grid;
       ctx.lineWidth = 1;
       for (let x = 0; x <= cols; x++) {
         ctx.beginPath();
@@ -237,14 +255,14 @@
         ctx.stroke();
       }
 
-      ctx.fillStyle = "#ff4a1c";
+      ctx.fillStyle = palette.food;
       ctx.beginPath();
       ctx.arc(food.x * cell + cell / 2, food.y * cell + cell / 2, 4.5, 0, Math.PI * 2);
       ctx.fill();
 
       snake.forEach((seg, idx) => {
         const alpha = Math.max(0.28, 1 - idx * 0.09);
-        ctx.fillStyle = idx === 0 ? "#eef2f6" : `rgba(255, 122, 82, ${alpha})`;
+        ctx.fillStyle = idx === 0 ? palette.head : `rgba(${palette.body}, ${alpha})`;
         ctx.fillRect(seg.x * cell + 2, seg.y * cell + 2, cell - 4, cell - 4);
       });
     };
@@ -296,6 +314,10 @@
     if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       setInterval(stepSnake, 180);
     }
+    new MutationObserver(drawSnake).observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
   }
 
   const revealItems = document.querySelectorAll(".reveal");

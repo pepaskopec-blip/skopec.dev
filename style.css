@@ -1590,6 +1590,17 @@ a:hover {
   color: var(--accent-ink);
 }
 
+:root[data-theme="light"] .mock-arcade {
+  background: #f4f6f8;
+  box-shadow: 0 14px 30px rgba(17, 21, 28, 0.08);
+}
+
+:root[data-theme="light"] .mock-arcade-hud {
+  color: var(--ink-soft);
+  background: rgba(17, 21, 28, 0.04);
+  border-bottom-color: var(--line);
+}
+
 .snake-canvas {
   display: block;
   width: 100%;
@@ -1656,6 +1667,30 @@ a:hover {
   margin-left: 0.2rem;
   vertical-align: -1px;
   background: var(--accent);
+}
+
+:root[data-theme="light"] .mock-terminal {
+  background: #f7f8fa;
+  box-shadow: 0 14px 30px rgba(17, 21, 28, 0.08);
+}
+
+:root[data-theme="light"] .mock-terminal-bar {
+  color: var(--muted);
+  background: #eef1f4;
+  border-bottom-color: var(--line);
+}
+
+:root[data-theme="light"] .mock-terminal-body {
+  color: var(--ink-soft);
+}
+
+:root[data-theme="light"] .term-stats,
+:root[data-theme="light"] .term-log {
+  color: var(--muted);
+}
+
+:root[data-theme="light"] .term-prompt {
+  color: var(--ink);
 }
 
 /* Terra challenge preview */
