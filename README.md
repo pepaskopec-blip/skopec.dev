@@ -10,8 +10,7 @@ This repo holds the main source files of the site — the core HTML pages, style
 - `robots.txt` — crawler rules  
 - `llms.txt` — short summary for AI crawlers  
 - `favicon.svg` / `favicon-32.png` / `apple-touch-icon.png` — icons  
-- `og-image.jpg` — social share image  
-- `.idea/` — IDE config files  
+- `og-image.jpg` — social share image   
 
 ## Structure
 
@@ -30,7 +29,6 @@ This repo holds the main source files of the site — the core HTML pages, style
 ├── sitemap.xml         # sitemap for search engines
 ├── robots.txt          # crawler rules
 ├── llms.txt
-└── .idea/              # IDE config
 ```
 
 ## License
