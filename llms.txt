@@ -10,18 +10,23 @@
 
 ## Services
 Local 10.0.0.x addresses work only on the home network or with Josef’s Tailscale.
-- Proxmox: 10.0.0.200:8006
-- Jellyfin: https://jelly.skopec.dev · 10.0.0.101:8096
-- Navidrome: 10.0.0.103:4533
-- Ollama: 10.0.0.106:3000
-- SearXNG: 10.0.0.104:8080
-- ConvertX: 10.0.0.107:3000
-- NAS: 10.0.0.102
-- Pi-hole: 10.0.0.100:80
-- Joplin: 10.0.0.111:22300
-- Immich: 10.0.0.109:2283
-- Cloudflare Tunnels: 10.0.0.105 (exposes services outside the LAN)
-- Tailscale: 10.0.0.110 (remote access to local-only services)
+- Proxmox VE: 10.0.0.200:8006 (13 LXCs + 1 VM)
+- Pi-hole & DNSCrypt (CT 100): 10.0.0.100/admin
+- Jellyfin (CT 101): https://jelly.skopec.dev · 10.0.0.101:8096
+- Seerr (CT 101): 10.0.0.101:5055 (media requests & discovery)
+- *Arr Automation Stack (CT 101): Sonarr (10.0.0.101:8989), Radarr (:7878), Bazarr (:6767), Prowlarr (:9696), qBittorrent (:8080)
+- OpenMediaVault NAS (VM 102): 10.0.0.102 (SMB storage server)
+- Navidrome (CT 103): 10.0.0.103:4533
+- SearXNG (CT 104): 10.0.0.104:8080
+- Cloudflare Tunnels (CT 105): 10.0.0.105 (exposes services outside the LAN)
+- Open WebUI & Ollama (CT 106): 10.0.0.106:3000 (Open WebUI) · 10.0.0.106:11434 (Ollama API)
+- ConvertX (CT 107): 10.0.0.107:3000
+- Nginx Web Server (CT 108): 10.0.0.108 (serves skopec.dev)
+- Immich (CT 109): 10.0.0.109:2283
+- Tailscale (CT 110): 10.0.0.110 (Mesh VPN Gateway for remote access to local-only services)
+- Joplin Server (CT 111): 10.0.0.111:22300
+- Homepage (CT 112): 10.0.0.112 (Homelab Command Center unified dashboard)
+- Nextcloud (CT 113): 10.0.0.113 (self-hosted cloud storage & files)
 
 ## Projects
 - skopec.dev — this site
@@ -30,7 +35,7 @@ Local 10.0.0.x addresses work only on the home network or with Josef’s Tailsca
 - BatchGym
 - Graduately — https://github.com/pepaskopec-blip/Graduately
 - Terra
-- Jellyfin, Navidrome, Ollama, SearXNG, ConvertX, Pi-hole, Joplin, Immich — services from the homelab, also listed on the Projects page
+- Homepage, Jellyfin, Seerr, *Arr stack (Sonarr, Radarr, Bazarr, Prowlarr, qBittorrent), Navidrome, Open WebUI & Ollama, SearXNG, ConvertX, Pi-hole, Joplin, Immich, Nextcloud, OpenMediaVault NAS — services from the homelab, also listed on the Projects page
 
 ## Friends
 - Martin Dvořák — https://dvorakmortonxd.dev

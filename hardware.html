@@ -34,7 +34,7 @@
       }
     })();
   </script>
-  <link rel="stylesheet" href="style.css?v=20261111">
+  <link rel="stylesheet" href="style.css?v=20261119">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -291,7 +291,7 @@
                   <span class="project-status">Proxmox VE · Headless 24/7</span>
                 </div>
                 <h3>Proxmox server</h3>
-                <p>Home lab box for VMs and containers — usually runs headless. If you need hosting, VM, VPS or a website dm me on IG or send me an email.</p>
+                <p>Home lab box running 13 LXC containers and 1 VM (OpenMediaVault NAS) — usually runs headless. If you need hosting, VM, VPS or a website dm me on IG or send me an email.</p>
                 <ul class="project-pills" aria-label="Key server specs">
                   <li>Xeon E5-2630L v4</li>
                   <li>10C / 20T · 55 W</li>
@@ -322,12 +322,12 @@
                     <div class="server-bay">
                       <span class="bay-type">SATA 2.5″</span>
                       <strong>WD 512 GB</strong>
-                      <span class="bay-sub">Bulk storage</span>
+                      <span class="bay-sub">Media disk (sda)</span>
                     </div>
                     <div class="server-bay">
                       <span class="bay-type">SATA 3.5″</span>
                       <strong>WD 320 GB</strong>
-                      <span class="bay-sub">Backups &amp; media</span>
+                      <span class="bay-sub">NAS &amp; Nextcloud (sdb)</span>
                     </div>
                   </div>
                   <div class="server-mem-strip">
@@ -352,7 +352,7 @@
               </div>
               <div>
                 <dt>Storage</dt>
-                <dd><strong>Samsung 970 EVO OEM 256 GB NVMe + 2× WD HDD</strong>PCIe 3.0 ×4, Phoenix controller, ~3400/1500 MB/s class · WD 2.5″ 512 GB HDD · WD 3.5″ 320 GB HDD</dd>
+                <dd><strong>Samsung 970 EVO OEM 256 GB NVMe + 2× WD HDD</strong>PCIe 3.0 ×4, Phoenix controller, ~3400/1500 MB/s class · WD 2.5″ 512 GB HDD (Media) · WD 3.5″ 320 GB HDD (NAS)</dd>
               </div>
               <div>
                 <dt>Board</dt>
@@ -461,6 +461,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20261111" defer></script>
+  <script src="script.js?v=20261119" defer></script>
 </body>
 </html>

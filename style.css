@@ -1627,7 +1627,7 @@ a:hover {
 
 .mock-jobs div {
   display: grid;
-  grid-template-columns: 5.2rem auto auto 1fr;
+  grid-template-columns: 5.5rem auto auto 1fr;
   gap: 0.45rem;
   align-items: center;
   color: var(--ink-soft);
@@ -1744,6 +1744,62 @@ a:hover {
 .mock-photos i:nth-child(3),
 .mock-photos i:nth-child(4) {
   background: linear-gradient(145deg, #3d5a80, #121820);
+}
+
+.mock-dash-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.4rem;
+  margin-bottom: 0.55rem;
+}
+
+.mock-dash-metrics div {
+  padding: 0.4rem 0.5rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+}
+
+.mock-dash-metrics strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 750;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.mock-dash-metrics span {
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.mock-dash-tiles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.35rem;
+}
+
+.mock-dash-tiles span {
+  display: flex;
+  align-items: center;
+  gap: 0.38rem;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.7rem;
+  color: var(--ink-soft);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+}
+
+.mock-dash-tiles i {
+  width: 0.36rem;
+  height: 0.36rem;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
 }
 
 .tag {

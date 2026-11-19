@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Josef’s projects — Graduately, skopec.dev, the Proxmox homelab, Jellyfin, Immich, Ollama, and more.">
+  <meta name="description" content="Josef’s projects — Graduately, skopec.dev, the Proxmox homelab, Jellyfin, Nextcloud, Homepage, Immich, Ollama, and more.">
   <title>Projects — websites, services &amp; games · Josef</title>
   <link rel="canonical" href="https://skopec.dev/projects.html">
   <meta property="og:title" content="Projects — Josef">
@@ -34,7 +34,7 @@
       }
     })();
   </script>
-  <link rel="stylesheet" href="style.css?v=20261111">
+  <link rel="stylesheet" href="style.css?v=20261119">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -88,7 +88,7 @@
           <p>Websites, self-hosted services, games, and school projects.</p>
         </div>
         <div class="project-filters" role="toolbar" aria-label="Filter projects">
-          <button class="filter-chip is-active" type="button" data-filter="all">All <span>14</span></button>
+          <button class="filter-chip is-active" type="button" data-filter="all">All <span>19</span></button>
           <button class="filter-chip" type="button" data-filter="apps">Apps &amp; Web</button>
           <button class="filter-chip" type="button" data-filter="infra">Homelab &amp; Program</button>
           <button class="filter-chip" type="button" data-filter="services">Services</button>
@@ -140,8 +140,8 @@
               <div class="mock-rack">
                 <div class="mock-rack-header">
                   <span class="mock-status-dot"></span>
-                  <span class="mock-rack-title">pve-node · 10.0.0.200</span>
-                  <span class="mock-rack-uptime">10+ LXC / VMs</span>
+                  <span class="mock-rack-title">proxmox · 10.0.0.200</span>
+                  <span class="mock-rack-uptime">13 LXC · 1 VM</span>
                 </div>
                 <div class="mock-rack-bars">
                   <div class="mock-bar-row">
@@ -155,13 +155,19 @@
                 </div>
                 <div class="mock-service-chips">
                   <span>Jellyfin</span>
-                  <span>Ollama</span>
-                  <span>Navidrome</span>
+                  <span>Seerr</span>
+                  <span>*Arr Stack</span>
+                  <span>Nextcloud</span>
+                  <span>Homepage</span>
                   <span>Immich</span>
+                  <span>Navidrome</span>
+                  <span>Ollama</span>
                   <span>Pi-hole</span>
                   <span>SearXNG</span>
+                  <span>ConvertX</span>
                   <span>Joplin</span>
-                  <span>NAS</span>
+                  <span>OMV NAS</span>
+                  <span>Nginx</span>
                   <span>Tailscale</span>
                   <span>Cloudflared</span>
                 </div>
@@ -175,10 +181,10 @@
               <h3>
                 <a href="hardware.html">Homelab</a>
               </h3>
-              <p>I just wanted a NAS server, but now I host almost everything. It uses Proxmox as the operating system and virtualization. I have more than ten LXC containers and VMs for my services. I also set up automatic restarts for maximum safety and updates.</p>
+              <p>I just wanted a NAS server, but now I host almost everything. It uses Proxmox VE with 13 LXC containers and 1 VM (OpenMediaVault NAS) for all my services, monitored from a Homepage dashboard, with automatic updates and restarts.</p>
               <ul class="project-pills" aria-label="Technologies">
                 <li>Proxmox VE</li>
-                <li>LXC &amp; QEMU</li>
+                <li>13 LXC &amp; 1 VM</li>
                 <li>Tailscale</li>
                 <li>Cloudflare Tunnels</li>
               </ul>
@@ -205,7 +211,7 @@
                     <div class="mock-site-orb"></div>
                   </div>
                   <div class="mock-pipeline">
-                    <span>Proxmox Origin</span>
+                    <span>Nginx (CT 108)</span>
                     <span class="mock-arrow">→</span>
                     <span>Cloudflared</span>
                     <span class="mock-arrow">→</span>
@@ -222,12 +228,12 @@
               <h3>
                 <a href="https://github.com/pepaskopec-blip/skopec.dev" target="_blank" rel="noopener noreferrer">skopec.dev</a>
               </h3>
-              <p>This site, written in html, hosted on my Homelab/Proxmox server. It has caching enabled on Cloudflared so it does not have to load everything from the origin server.</p>
+              <p>This site, written in HTML, hosted on Nginx (CT 108) on my Proxmox homelab. It runs behind a Cloudflare Tunnel with caching enabled so it does not have to load everything from the origin server.</p>
               <ul class="project-pills" aria-label="Technologies">
                 <li>HTML5 &amp; CSS3</li>
                 <li>Vanilla JS</li>
+                <li>Nginx</li>
                 <li>Cloudflared</li>
-                <li>Zero dependencies</li>
               </ul>
               <a class="project-link" href="https://github.com/pepaskopec-blip/skopec.dev" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
             </div>
@@ -348,6 +354,47 @@
             </div>
           </li>
 
+          <!-- Homepage -->
+          <li class="project-card" data-category="services">
+            <a class="project-preview" href="http://10.0.0.112" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+              <div class="mock-svc">
+                <div class="mock-svc-top">
+                  <span class="mock-status-dot"></span>
+                  <span>homepage</span>
+                  <span class="mock-svc-host">10.0.0.112</span>
+                </div>
+                <div class="mock-dash-metrics">
+                  <div><strong>13</strong><span>LXC</span></div>
+                  <div><strong>1</strong><span>VM</span></div>
+                  <div><strong>Live</strong><span>Sensors</span></div>
+                </div>
+                <div class="mock-dash-tiles">
+                  <span><i></i>Proxmox</span>
+                  <span><i></i>Jellyfin</span>
+                  <span><i></i>Nextcloud</span>
+                  <span><i></i>Pi-hole</span>
+                </div>
+              </div>
+            </a>
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span class="tag">Homepage</span>
+                <span class="project-status">Dashboard</span>
+              </div>
+              <h3>
+                <a href="http://10.0.0.112" target="_blank" rel="noopener noreferrer">Homepage</a>
+              </h3>
+              <p>Unified Homelab Command Center dashboard for the whole server. Shows live Proxmox CPU, RAM, and disk thermal sensors, service widgets, status checks, the LXC/VM fleet, and quick log shortcuts.</p>
+              <ul class="project-pills" aria-label="Details">
+                <li>Self-hosted</li>
+                <li>Dashboard</li>
+                <li>Telemetry</li>
+                <li>CT 112</li>
+              </ul>
+              <a class="project-link" href="http://10.0.0.112" target="_blank" rel="noopener noreferrer">Open Homepage →</a>
+            </div>
+          </li>
+
           <!-- Jellyfin -->
           <li class="project-card" data-category="services">
             <a class="project-preview" href="https://jelly.skopec.dev" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
@@ -369,13 +416,84 @@
               <h3>
                 <a href="https://jelly.skopec.dev" target="_blank" rel="noopener noreferrer">Jellyfin</a>
               </h3>
-              <p>Movies and TV on my own server, with the library on the NAS. This is the one service with a public address — jelly.skopec.dev — the rest stay on the LAN or Tailscale.</p>
+              <p>Movies and TV on my own server, fed by Seerr and the *Arr automation stack with the library on the NAS. This is the one service with a public address — jelly.skopec.dev — the rest stay on the LAN or Tailscale.</p>
               <ul class="project-pills" aria-label="Details">
                 <li>Self-hosted</li>
                 <li>Movies &amp; TV</li>
                 <li>jelly.skopec.dev</li>
               </ul>
               <a class="project-link" href="https://jelly.skopec.dev" target="_blank" rel="noopener noreferrer">Open Jellyfin →</a>
+            </div>
+          </li>
+
+          <!-- Seerr -->
+          <li class="project-card" data-category="services">
+            <a class="project-preview" href="http://10.0.0.101:5055" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+              <div class="mock-svc">
+                <div class="mock-svc-top">
+                  <span class="mock-status-dot"></span>
+                  <span>seerr</span>
+                  <span class="mock-svc-host">10.0.0.101:5055</span>
+                </div>
+                <div class="mock-notes">
+                  <div><i></i>Discover movies &amp; shows</div>
+                  <div><i></i>Request to Sonarr &amp; Radarr</div>
+                  <div><i></i>Synced with Jellyfin</div>
+                </div>
+              </div>
+            </a>
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span class="tag">Seerr</span>
+                <span class="project-status">Media Requests</span>
+              </div>
+              <h3>
+                <a href="http://10.0.0.101:5055" target="_blank" rel="noopener noreferrer">Seerr</a>
+              </h3>
+              <p>Media discovery and request portal for Jellyfin. Browse movies and TV series and send requests straight into the automated *Arr pipeline.</p>
+              <ul class="project-pills" aria-label="Details">
+                <li>Self-hosted</li>
+                <li>Requests</li>
+                <li>Jellyfin</li>
+                <li>CT 101</li>
+              </ul>
+              <a class="project-link" href="http://10.0.0.101:5055" target="_blank" rel="noopener noreferrer">Open Seerr →</a>
+            </div>
+          </li>
+
+          <!-- *Arr Automation Stack -->
+          <li class="project-card" data-category="services">
+            <a class="project-preview" href="http://10.0.0.112" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+              <div class="mock-svc">
+                <div class="mock-svc-top">
+                  <span class="mock-status-dot"></span>
+                  <span>*arr stack</span>
+                  <span class="mock-svc-host">10.0.0.101</span>
+                </div>
+                <div class="mock-jobs">
+                  <div><span>Sonarr</span><em>→</em><span>TV series</span><b>:8989</b></div>
+                  <div><span>Radarr</span><em>→</em><span>Movies</span><b>:7878</b></div>
+                  <div><span>Bazarr</span><em>→</em><span>CZ / EN subs</span><b>:6767</b></div>
+                  <div><span>Prowlarr</span><em>→</em><span>Indexers</span><b>:9696</b></div>
+                </div>
+              </div>
+            </a>
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span class="tag">*Arr Stack</span>
+                <span class="project-status">Media Automation</span>
+              </div>
+              <h3>
+                <a href="http://10.0.0.112" target="_blank" rel="noopener noreferrer">*Arr Automation Stack</a>
+              </h3>
+              <p>Automated media pipeline running inside CT 101 alongside Jellyfin: Sonarr for TV series, Radarr for movies, Bazarr for automatic Czech and English subtitles, Prowlarr with FlareSolverr for indexers, and qBittorrent for downloads.</p>
+              <ul class="project-pills" aria-label="Details">
+                <li>Sonarr &amp; Radarr</li>
+                <li>Bazarr</li>
+                <li>Prowlarr</li>
+                <li>qBittorrent</li>
+              </ul>
+              <a class="project-link" href="http://10.0.0.112" target="_blank" rel="noopener noreferrer">Open in Homepage →</a>
             </div>
           </li>
 
@@ -416,13 +534,13 @@
             </div>
           </li>
 
-          <!-- Ollama -->
+          <!-- Open WebUI & Ollama -->
           <li class="project-card" data-category="services">
             <a class="project-preview" href="http://10.0.0.106:3000" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
               <div class="mock-svc">
                 <div class="mock-svc-top">
                   <span class="mock-status-dot"></span>
-                  <span>ollama</span>
+                  <span>open webui · ollama</span>
                   <span class="mock-svc-host">10.0.0.106:3000</span>
                 </div>
                 <div class="mock-chat">
@@ -433,19 +551,20 @@
             </a>
             <div class="project-card-body">
               <div class="project-card-meta">
-                <span class="tag">Ollama</span>
+                <span class="tag">Ollama &amp; Open WebUI</span>
                 <span class="project-status">Local AI</span>
               </div>
               <h3>
-                <a href="http://10.0.0.106:3000" target="_blank" rel="noopener noreferrer">Ollama</a>
+                <a href="http://10.0.0.106:3000" target="_blank" rel="noopener noreferrer">Open WebUI &amp; Ollama</a>
               </h3>
-              <p>Local AI on the Proxmox box. Models run on my hardware, so a prompt stays on the network instead of going out to a hosted API. I do not have dedicated GPU, so all of the llms run on CPU, which limits me for only some weaker models under 15B parameters.</p>
+              <p>Local AI chat via Open WebUI (:3000) backed by the Ollama API (:11434) on the Proxmox box. Models run on my hardware, so prompts stay on the network instead of going out to a hosted API. I do not have a dedicated GPU, so all of the LLMs run on CPU, which limits me to smaller models under 15B parameters.</p>
               <ul class="project-pills" aria-label="Details">
-                <li>Self-hosted</li>
+                <li>Open WebUI</li>
+                <li>Ollama</li>
                 <li>Local LLM</li>
                 <li>Private</li>
               </ul>
-              <a class="project-link" href="http://10.0.0.106:3000" target="_blank" rel="noopener noreferrer">Open Ollama →</a>
+              <a class="project-link" href="http://10.0.0.106:3000" target="_blank" rel="noopener noreferrer">Open WebUI →</a>
             </div>
           </li>
 
@@ -529,7 +648,7 @@
                 </div>
                 <div class="mock-bar"><i style="width: 38%"></i></div>
                 <div class="mock-stat-rows">
-                  <div><span>Blocking</span><span>on</span></div>
+                  <div><span>Blocking</span><span>DNSCrypt · on</span></div>
                   <div><span>Resolver</span><span>LAN</span></div>
                 </div>
               </div>
@@ -546,7 +665,7 @@
               <ul class="project-pills" aria-label="Details">
                 <li>DNS</li>
                 <li>Ad blocking</li>
-                <li>Network</li>
+                <li>DNSCrypt</li>
               </ul>
               <a class="project-link" href="http://10.0.0.100/admin" target="_blank" rel="noopener noreferrer">Open Pi-hole →</a>
             </div>
@@ -596,24 +715,98 @@
                   <span class="mock-svc-host">10.0.0.109:2283</span>
                 </div>
                 <div class="mock-photos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-                <div class="mock-now"><strong>Library</strong> · photos on the NAS</div>
+                <div class="mock-now"><strong>Library</strong> · photos &amp; videos on the NAS</div>
               </div>
             </a>
             <div class="project-card-body">
               <div class="project-card-meta">
                 <span class="tag">Immich</span>
-                <span class="project-status">Photos</span>
+                <span class="project-status">Photos &amp; Videos</span>
               </div>
               <h3>
                 <a href="http://10.0.0.109:2283" target="_blank" rel="noopener noreferrer">Immich</a>
               </h3>
-              <p>Photo library on the NAS. Immich is where the pictures live, with a web UI instead of a shared folder.</p>
+              <p>Self-hosted photo and video library backed by the NAS. Immich is where my pictures and videos live, with a web UI and mobile backup instead of a shared folder.</p>
               <ul class="project-pills" aria-label="Details">
                 <li>Self-hosted</li>
                 <li>Photos</li>
                 <li>NAS</li>
               </ul>
               <a class="project-link" href="http://10.0.0.109:2283" target="_blank" rel="noopener noreferrer">Open Immich →</a>
+            </div>
+          </li>
+
+          <!-- Nextcloud -->
+          <li class="project-card" data-category="services">
+            <a class="project-preview" href="http://10.0.0.113" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+              <div class="mock-svc">
+                <div class="mock-svc-top">
+                  <span class="mock-status-dot"></span>
+                  <span>nextcloud</span>
+                  <span class="mock-svc-host">10.0.0.113</span>
+                </div>
+                <div class="mock-stat">
+                  <strong>Cloud</strong>
+                  <span>files &amp; sync</span>
+                </div>
+                <div class="mock-bar"><i style="width: 24%"></i></div>
+                <div class="mock-stat-rows">
+                  <div><span>Storage</span><span>NAS disk</span></div>
+                  <div><span>Access</span><span>LAN / Tailscale</span></div>
+                </div>
+              </div>
+            </a>
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span class="tag">Nextcloud</span>
+                <span class="project-status">Cloud Storage</span>
+              </div>
+              <h3>
+                <a href="http://10.0.0.113" target="_blank" rel="noopener noreferrer">Nextcloud</a>
+              </h3>
+              <p>Self-hosted cloud storage and file sync on my Proxmox server. Gives me my own private cloud drive for files and sharing instead of relying on third-party storage.</p>
+              <ul class="project-pills" aria-label="Details">
+                <li>Self-hosted</li>
+                <li>Cloud Storage</li>
+                <li>Files</li>
+                <li>CT 113</li>
+              </ul>
+              <a class="project-link" href="http://10.0.0.113" target="_blank" rel="noopener noreferrer">Open Nextcloud →</a>
+            </div>
+          </li>
+
+          <!-- OpenMediaVault NAS -->
+          <li class="project-card" data-category="services">
+            <a class="project-preview" href="http://10.0.0.102" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+              <div class="mock-svc">
+                <div class="mock-svc-top">
+                  <span class="mock-status-dot"></span>
+                  <span>openmediavault</span>
+                  <span class="mock-svc-host">10.0.0.102</span>
+                </div>
+                <div class="mock-jobs">
+                  <div><span>sda · 512G</span><em>→</em><span>Media</span><b>HDD</b></div>
+                  <div><span>sdb · 320G</span><em>→</em><span>NAS</span><b>HDD</b></div>
+                  <div><span>SMB</span><em>→</em><span>LAN shares</span><b>VM 102</b></div>
+                </div>
+              </div>
+            </a>
+            <div class="project-card-body">
+              <div class="project-card-meta">
+                <span class="tag">OpenMediaVault</span>
+                <span class="project-status">NAS · VM 102</span>
+              </div>
+              <h3>
+                <a href="http://10.0.0.102" target="_blank" rel="noopener noreferrer">OpenMediaVault NAS</a>
+              </h3>
+              <p>The SMB storage server that started the whole homelab — runs as the only full VM on Proxmox (VM 102) and provides shared storage for Jellyfin, Immich, Nextcloud, and the local network.</p>
+              <ul class="project-pills" aria-label="Details">
+                <li>NAS</li>
+                <li>SMB</li>
+                <li>VM 102</li>
+                <li>Storage</li>
+              </ul>
+              <a class="project-link" href="http://10.0.0.102" target="_blank" rel="noopener noreferrer">Open OpenMediaVault →</a>
             </div>
           </li>
         </ul>
@@ -633,6 +826,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20261111" defer></script>
+  <script src="script.js?v=20261119" defer></script>
 </body>
 </html>
