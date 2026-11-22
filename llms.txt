@@ -33,7 +33,7 @@ Local 10.0.0.x addresses work only on the home network or with Josef’s Tailsca
 - Homelab — Proxmox and self-hosted services
 - Snake-Pygame-
 - BatchGym
-- Graduately — https://github.com/pepaskopec-blip/Graduately
+- Graduately — https://graduately.skopec.dev
 - Terra
 - Homepage, Jellyfin, Seerr, *Arr stack (Sonarr, Radarr, Bazarr, Prowlarr, qBittorrent), Navidrome, Open WebUI & Ollama, SearXNG, ConvertX, Pi-hole, Joplin, Immich, Nextcloud, OpenMediaVault NAS — services from the homelab, also listed on the Projects page
 
