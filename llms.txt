@@ -33,7 +33,7 @@ Local 10.0.0.x addresses work only on the home network or with Josef’s Tailsca
 - Homelab — Proxmox and self-hosted services
 - Snake-Pygame-
 - BatchGym
-- Graduately — https://graduately.skopec.dev
+- Graduately (v1.3) — cross-platform Czech maturita exam prep app for macOS, iOS, Android, Windows & Linux (13 subjects, 625+ lessons, 82 reading-list books, GradAI tutor, daily streaks, leaderboard, Apple & Google sign-in) — https://graduately.skopec.dev
 - Terra
 - Homepage, Jellyfin, Seerr, *Arr stack (Sonarr, Radarr, Bazarr, Prowlarr, qBittorrent), Navidrome, Open WebUI & Ollama, SearXNG, ConvertX, Pi-hole, Joplin, Immich, Nextcloud, OpenMediaVault NAS — services from the homelab, also listed on the Projects page
 
